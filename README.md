@@ -1,36 +1,35 @@
-# Inicijalne upute za prijavu projekta iz Razvoja programskih proizvoda
-
-Poštovane kolegice i kolege, 
-
-čestitamo vam jer ste uspješno prijavili svoj projektni tim na kolegiju Razvoj programskih proizvoda, te je za vas automatski kreiran repozitorij koji ćete koristiti za verzioniranje vašega koda, ali i za pisanje dokumentacije.
-
-Ovaj dokument (README.md) predstavlja **osobnu iskaznicu vašeg projekta**. Vaš prvi zadatak je **prijaviti vlastiti projektni prijedlog** na način da ćete prijavu vašeg projekta, sukladno uputama danim u ovom tekstu, napisati upravo u ovaj dokument, umjesto ovoga teksta.
-
-Za upute o sintaksi koju možete koristiti u ovom dokumentu i kod pisanje vaše projektne dokumentacije pogledajte [ovaj link](https://guides.github.com/features/mastering-markdown/).
-Sav programski kod potrebno je verzionirati u glavnoj **master** grani i **obvezno** smjestiti u mapu Software. Sve artefakte (npr. slike) koje ćete koristiti u vašoj dokumentaciju obvezno verzionirati u posebnoj grani koja je već kreirana i koja se naziva **master-docs** i smjestiti u mapu Documentation.
-
-Nakon vaše prijave bit će vam dodijeljen mentor s kojim ćete tijekom semestra raditi na ovom projektu. Mentor će vam slati povratne informacije kroz sekciju Discussions također dostupnu na GitHubu vašeg projekta. A sada, vrijeme je da prijavite vaš projekt. Za prijavu vašeg projektnog prijedloga molimo vas koristite **predložak** koji je naveden u nastavku, a započnite tako da kliknete na *olovku* u desnom gornjem kutu ovoga dokumenta :) 
-
-# Naziv projekta
-(u redak iznad navedite kratki proizvoljni naziv projekta prikladan akademskoj zajednici, a ovaj tekst obrišite)
+# AutoPrime
 
 ## Projektni tim
 
 Ime i prezime | E-mail adresa (FOI) | JMBAG | Github korisničko ime
 ------------  | ------------------- | ----- | ---------------------
-Ime i prezime | mojaadresa@foi.hr | 000000000 | githubuser
-Ime i prezime | ... | ... | ...
+Bruno Pavlović | bpavlovic20@student.foi.hr | 0016146944  | BrunoPavlovic
+Andrej Antonić | aantonic20@student.foi.hr | 0016149694 | aantonic20
+Juraj Gaši | jgasi20@student.foi.hr | 0016151946 | jgasi
+Danijel Žebčević | dzebcevic20@student.foi.hr | 0016149470 | DanijelZebcevic
 
 ## Opis domene
-Umjesto ovih uputa opišite domenu ili problem koji pokrivate vašim  projektom. Domena može biti proizvoljna, ali obratite pozornost da sukladno ishodima učenja, domena omogući primjenu zahtijevanih koncepata kako je to navedeno u sljedećem poglavlju. Priložite odgovarajuće skice gdje je to prikladno.
+Trgovina autima jedna je od najprofitabilnijih trgovina na svijetu. U Hrvatskoj je posebno popularno kupovanje rabljenih auta te se traži aplikacija koja bi omogućila pregledavanje oglasa rabljenih auta. Zbog toga razloga smo odlučili napraviti aplikaciju koja je tomu namijenjena. U aplikaciju će se moći registrirati tko god hoće te će moći postaviti oglas u kojemu prodaje ili traži zamjenu za svoj automobil ili dio automobila koji želi prodati. Kada se uđe u aplikaciju prikazat će se oglasi u koje je moguće ući kako bi se vidjele dodatne informacije i specifikacije proizvoda. Već postavljeni oglas će se naknadno moći dodatno uređivati. Kada se uđe u oglas korisnik će imati dodatne funkcije dodavanja proizvoda u listu želja, pregledati profil prodavatelja kako bi mogli vidjeti je li pouzdan po broju zadovoljnih korisnika ili uspoređivanja proizvoda sa nekim drugim kako bi lakše mogao vidjeti koje su prednosti i nedostatci nekog proizvoda u usporedbi sa drugima. U glavnom izborniku oglase će biti moguće pretraživati po nazivu i filtrirati po nekim zadanim karakteristikama poput boje, godišta, marke itd. Sva prijašnja kupovina ili prodaja će biti vidljiva u obliku izvještaja. Softversko rješenje će se u ostatku dokumenta naslovljavati sa <napiši ime aplikacije>. Radi se o novom rješenju. AutoPrime će olakšati i ubrzati proces pronalaska i naručivanja automobila i svih proizvoda koji su vezani uz njih. Kroz AutoPrime neće biti moguće naručivanje proizvoda već će se ono izvoditi dogovorom sa prodavateljem. Neke od prednosti <napiši ime aplikacije> su brži i lakši proces naručivanja automobila i opreme, brži proces pronalaska traženih proizvoda i aktualni izvještaji o prodaji i kupovini.
+
 
 ## Specifikacija projekta
-Umjesto ovih uputa opišite zahtjeve za funkcionalnošću programskog proizvoda. Pobrojite osnovne funkcionalnosti i za svaku naznačite ime odgovornog člana tima. Opišite buduću arhitekturu programskog proizvoda. Obratite pozornost da bi arhitektura trebala biti višeslojna s odvojenom (dislociranom) bazom podatka koju ćemo za vas mi pripremiti i dati vam pristup naknadno. Također uzmite u obzir da bi svaki član tima treba biti odgovorana za otprilike 3 funkcionalnosti, te da bi opterećenje članova tima trebalo biti ujednačeno. Priložite odgovarajuće dijagrame i skice gdje je to prikladno. Funkcionalnosti sustava bobrojite u tablici ispod koristeći predložak koji slijedi:
-
 Oznaka | Naziv | Kratki opis | Odgovorni član tima
 ------ | ----- | ----------- | -------------------
-F01 | Login | Za pristup dnevniku potrebnba je autentikacija korisnika pomoću login funkcionalnosti. Korisnik se logira s podacima koji su mu dodijeljeni prilikom ... | Zlatko Stapić
-F02 | Pregled dnevnika | .... | ...
+F01 | Registracija, login i zaboravljena lozinka | U slučaju da korisnik nema kreiran račun, on se registrira kako bi se mogao prijaviti i pristupiti oglasniku.  Za pristup oglasniku potrebna je autentikacija korisnika pomoću login funkcionalnosti. Korisnik se logira s podacima s kojima se registrirao. Ako se korisnik ne može sjetiti svoje lozinke, odabirom funkcionalnosti zaboravljenje lozinke bit će mu moguća promjena lozinke uz dodatnu autentifikaciju. | Danijel Žebčević
+F02 | Kreiranje oglasa | Omogućuje se korisniku aplikacije da kreira svoj vlastiti oglas. | Danijel Žebčević
+F03 | Uređivanje oglasa | Nakon što se kreira oglas, postojat će mogućnost uređivanja tog kreiranog oglasa. | Juraj Gaši
+F04 | Uklanjanje oglasa | Korisnik može ukloniti kreirani oglas. | Juraj Gaši
+F05 | Detaljni pregled pojedinih oglasa | Klikom na oglas otvara se detaljan prikaz željenog oglasa. | Bruno Pavlović
+F06 | Pretraživanje oglasa | Korisnik upisuje proizvodi koji želi pronaći. | Bruno Pavlović
+F07 | Filtriranje | Korisnik će moći upravljati prikazom oglasa tako da označi koje karakteristike želi pretraživati. | Andrej Antonić
+F08 | Uspoređivanje | Korisnik otvara dva različita oglasa u isto vrijeme kako bi mogao usporediti njihove specifikacije. | Danijel Žebčević
+F09 | Pregled prijašnje kupovine |  Korisniku će biti dostupan pregled svih njegovih prijašnjih kupovina koje je imao u aplikaciji. | Juraj Gaši
+F10 | Lista želja | Korisnik označuje proizvode koje bi htio kupiti u budućnosti. | Bruno Pavlović
+F11 | Pregled profila prodavatelja | Korisniku su prikazane sve potrebne informacije o prodavatelju željenog proizvoda. | Andrej Antonić
+F12 | Recenzija prodavatelja | Korisnici aplikacije mogu napisati svoje mišljenje i iskustva s prodavateljem. | Andrej Antonić
+
 
 ## Tehnologije i oprema
+
 Umjesto ovih uputa jasno popišite sve tehnologije, alate i opremu koju ćete koristiti pri implementaciji vašeg rješenja. Projekti se razvijaju koristeći .Net Framework ili .Net Core razvojne okvire, a vrsta projekta može biti WinForms, WPF i UWP. Ne zaboravite planirati korištenje tehnologija u aktivnostima kao što su projektni menadžment ili priprema dokumentacije. Tehnologije koje ćete koristiti bi trebale biti javno dostupne, a ako ih ne budemo obrađivali na vježbama u vašoj dokumentaciji ćete morati navesti način preuzimanja, instaliranja i korištenja onih tehnologija koje su neopbodne kako bi se vaš programski proizvod preveo i pokrenuo. Pazite da svi alati koje ćete koristiti moraju imati odgovarajuću licencu. Što se tiče zahtjeva nastavnika, obvezno je koristiti git i GitHub za verzioniranje programskog koda, GitHub Wiki za pisanje tehničke i projektne dokumentacije, a projektne zadatke je potrebno planirati i pratiti u alatu GitHub projects. 
