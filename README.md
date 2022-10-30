@@ -17,17 +17,13 @@ Trgovina autima jedna je od najprofitabilnijih trgovina na svijetu. U Hrvatskoj 
 Oznaka | Naziv | Kratki opis | Odgovorni član tima
 ------ | ----- | ----------- | -------------------
 F01 | Registracija, login i zaboravljena lozinka | U slučaju da korisnik nema kreiran račun, on se registrira kako bi se mogao prijaviti i pristupiti oglasniku.  Za pristup oglasniku potrebna je autentikacija korisnika pomoću login funkcionalnosti. Korisnik se logira s podacima s kojima se registrirao. Ako se korisnik ne može sjetiti svoje lozinke, odabirom funkcionalnosti zaboravljenje lozinke bit će mu moguća promjena lozinke uz dodatnu autentifikaciju. | Danijel Žebčević
-F02 | Kreiranje oglasa | Omogućuje se korisniku aplikacije da kreira svoj vlastiti oglas. | Danijel Žebčević
-F03 | Uređivanje oglasa | Nakon što se kreira oglas, postojat će mogućnost uređivanja tog kreiranog oglasa. | Juraj Gaši
-F04 | Uklanjanje oglasa | Korisnik može ukloniti kreirani oglas. | Juraj Gaši
-F05 | Detaljni pregled pojedinih oglasa | Klikom na oglas otvara se detaljan prikaz željenog oglasa. | Bruno Pavlović
-F06 | Pretraživanje oglasa | Korisnik upisuje proizvodi koji želi pronaći. | Bruno Pavlović
-F07 | Filtriranje | Korisnik će moći upravljati prikazom oglasa tako da označi koje karakteristike želi pretraživati. | Andrej Antonić
-F08 | Uspoređivanje | Korisnik otvara dva različita oglasa u isto vrijeme kako bi mogao usporediti njihove specifikacije. | Danijel Žebčević
-F09 | Pregled prijašnje kupovine |  Korisniku će biti dostupan pregled svih njegovih prijašnjih kupovina koje je imao u aplikaciji. | Juraj Gaši
-F10 | Lista želja | Korisnik označuje proizvode koje bi htio kupiti u budućnosti. | Bruno Pavlović
-F11 | Pregled profila prodavatelja | Korisniku su prikazane sve potrebne informacije o prodavatelju željenog proizvoda. | Andrej Antonić
-F12 | Recenzija prodavatelja | Korisnici aplikacije mogu napisati svoje mišljenje i iskustva s prodavateljem. | Andrej Antonić
+F02 | Upravljanje oglasom | Omogućuje se korisniku da kreira, uređuje i uklanja oglase. | Danijel Žebčević
+F03 | Pregled oglasa | Aplikacija će omogućiti korisniku da upisuje proizvode koje želi te da filtrira njihovo pretraživanje. Nakon što je pronašao željeni oglas, moći će otvoriti njegov detaljan prikaz. | Bruno Pavlović
+F04 | Prikaži slične automobile | Korisnik može odabrati željene karakteristike automobila te prema njima pretraživati automobile. | Danijel Žebčević
+F05 | Kreiranje liste zanimljivih oglasa | Korisnik označuje proizvode koje bi htio kupiti u budućnosti. | Bruno Pavlović
+F06 | Pregled profila prodavatelja | Korisniku su prikazane sve potrebne informacije o prodavatelju željenog proizvoda, kao i svi njegovi pripadni oglasi. | Andrej Antonić
+F07 | Recenzija prodavatelja | Korisnici aplikacije ocjenjuju prodavatelja zvjezdicama te mogu ostavljati komentare. Komentare će biti moguće pregledati pojedinačno i skupno. | Andrej Antonić
+F08 | Aukcija za automobil | Prodavatelj zadaje početnu cijenu i trajanje aukcije. Korisnici daju svoju ponudu za auto te nakon isteka roka ga osvaja najveća ponuda  | Juraj Gaši
 
 
 ## Tehnologije i oprema
