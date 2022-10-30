@@ -17,7 +17,7 @@ Trgovina autima jedna je od najprofitabilnijih trgovina na svijetu. U Hrvatskoj 
 Oznaka | Naziv | Kratki opis | Odgovorni član tima
 ------ | ----- | ----------- | -------------------
 F01 | Registracija, login i zaboravljena lozinka | U slučaju da korisnik nema kreiran račun, on se registrira kako bi se mogao prijaviti i pristupiti oglasniku.  Za pristup oglasniku potrebna je autentikacija korisnika pomoću login funkcionalnosti. Korisnik se logira s podacima s kojima se registrirao. Ako se korisnik ne može sjetiti svoje lozinke, odabirom funkcionalnosti zaboravljenje lozinke bit će mu moguća promjena lozinke uz dodatnu autentifikaciju. | Danijel Žebčević
-F02 | Upravljanje oglasom | Omogućuje se korisniku da kreira, uređuje i uklanja oglase. | Danijel Žebčević
+F02 | Upravljanje oglasom | Omogućuje se korisniku da kreira, uređuje i uklanja oglase. | Juraj Gaši
 F03 | Pregled oglasa | Aplikacija će omogućiti korisniku da upisuje proizvode koje želi te da filtrira njihovo pretraživanje. Nakon što je pronašao željeni oglas, moći će otvoriti njegov detaljan prikaz. | Bruno Pavlović
 F04 | Prikaži slične automobile | Korisnik može odabrati željene karakteristike automobila te prema njima pretraživati automobile. | Danijel Žebčević
 F05 | Kreiranje liste zanimljivih oglasa | Korisnik označuje proizvode koje bi htio kupiti u budućnosti. | Bruno Pavlović
