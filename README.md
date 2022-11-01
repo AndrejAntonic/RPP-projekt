@@ -24,6 +24,7 @@ F05 | Kreiranje liste zanimljivih oglasa | Korisnik označuje proizvode koje bi 
 F06 | Pregled profila prodavatelja | Korisniku su prikazane sve potrebne informacije o prodavatelju željenog proizvoda, kao i svi njegovi pripadni oglasi. | Andrej Antonić
 F07 | Recenzija prodavatelja | Korisnici aplikacije ocjenjuju prodavatelja zvjezdicama te mogu ostavljati komentare. Komentare će biti moguće pregledati pojedinačno i skupno. | Andrej Antonić
 F08 | Aukcija za automobil | Prodavatelj zadaje početnu cijenu i trajanje aukcije. Korisnici daju svoju ponudu za auto te nakon isteka roka ga osvaja najveća ponuda  | Juraj Gaši
+F09 | Najtraženiji automobili | Prikazuju se najtraženiji automobili prema broju pregleda. | Bruno Pavlović
 
 
 ## Tehnologije i oprema
