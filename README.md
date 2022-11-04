@@ -25,6 +25,7 @@ F06 | Pregled profila prodavatelja | Korisniku su prikazane sve potrebne informa
 F07 | Recenzija prodavatelja | Korisnici aplikacije ocjenjuju prodavatelja zvjezdicama te mogu ostavljati komentare. Komentare će biti moguće pregledati pojedinačno i skupno. | Andrej Antonić
 F08 | Aukcija za automobil | Prodavatelj zadaje početnu cijenu i trajanje aukcije. Korisnici daju svoju ponudu za auto te nakon isteka roka ga osvaja najveća ponuda  | Juraj Gaši
 F09 | Najtraženiji automobili | Prikazuju se najtraženiji automobili prema broju pregleda. | Bruno Pavlović
+F10 | Kalkulator vrijednosti automobila | Korisnici aplikacije mogu odabrati marku i model svog automobila, unijeti starost i pređene kilometre te će aplikacija izračunati predviđenu vrijednost automobila | Andrej Antonić
 
 
 ## Tehnologije i oprema
