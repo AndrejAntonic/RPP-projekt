@@ -27,6 +27,7 @@ F08 | Aukcija za automobil | Prodavatelj zadaje početnu cijenu i trajanje aukci
 F09 | Najtraženiji automobili | Prikazuju se najtraženiji automobili prema broju pregleda. | Bruno Pavlović
 F10 | Kalkulator vrijednosti automobila | Korisnici aplikacije mogu odabrati marku i model svog automobila, unijeti starost i pređene kilometre te će aplikacija izračunati predviđenu vrijednost automobila. | Andrej Antonić
 F11 | Detaljni prikaz oštećenja | Ako je na autu označeno da ima ogrebotinu prikazuje detaljni prikaz slike oštećenja. | Juraj Gaši
+F12 | Leasing auta | Korisnik će moći staviti svoj auto na iznajmljivanje na određeno vrijeme za određenu cijenu. | Danijel Žebčević
 
 
 ## Tehnologije i oprema
