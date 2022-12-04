@@ -9,6 +9,7 @@
 
 # User-specific files
 /.vs/rpp22-bpavlovic-aantonic-jgasi-dzebcevic/v17/.suo
+.vs/
 .vs/*
 *.rsuser
 *.suo
