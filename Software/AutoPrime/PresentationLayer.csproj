@@ -52,8 +52,44 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmKalkulator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmKalkulator.Designer.cs">
+      <DependentUpon>FrmKalkulator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReview.Designer.cs">
+      <DependentUpon>FrmReview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmShowAllComments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmShowAllComments.Designer.cs">
+      <DependentUpon>FrmShowAllComments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmShowProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmShowProfile.Designer.cs">
+      <DependentUpon>FrmShowProfile.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmKalkulator.resx">
+      <DependentUpon>FrmKalkulator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReview.resx">
+      <DependentUpon>FrmReview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmShowAllComments.resx">
+      <DependentUpon>FrmShowAllComments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmShowProfile.resx">
+      <DependentUpon>FrmShowProfile.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
