@@ -46,48 +46,84 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Forms\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
+    <Compile Include="Forms\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmKalkulator.cs">
+    <Compile Include="Forms\FrmCreateAds.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmKalkulator.Designer.cs">
+    <Compile Include="Forms\FrmCreateAds.Designer.cs">
+      <DependentUpon>FrmCreateAds.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmCreateAuction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmCreateAuction.Designer.cs">
+      <DependentUpon>FrmCreateAuction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmEditAds.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmEditAds.Designer.cs">
+      <DependentUpon>FrmEditAds.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmKalkulator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmKalkulator.Designer.cs">
       <DependentUpon>FrmKalkulator.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmReview.cs">
+    <Compile Include="Forms\FrmReview.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmReview.Designer.cs">
+    <Compile Include="Forms\FrmReview.Designer.cs">
       <DependentUpon>FrmReview.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmShowAllComments.cs">
+    <Compile Include="Forms\FrmShowAllComments.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmShowAllComments.Designer.cs">
+    <Compile Include="Forms\FrmShowAllComments.Designer.cs">
       <DependentUpon>FrmShowAllComments.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmShowProfile.cs">
+    <Compile Include="Forms\FrmShowDamage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmShowProfile.Designer.cs">
+    <Compile Include="Forms\FrmShowDamage.Designer.cs">
+      <DependentUpon>FrmShowDamage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmShowProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmShowProfile.Designer.cs">
       <DependentUpon>FrmShowProfile.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FrmKalkulator.resx">
+    <EmbeddedResource Include="Forms\FrmCreateAds.resx">
+      <DependentUpon>FrmCreateAds.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmCreateAuction.resx">
+      <DependentUpon>FrmCreateAuction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmEditAds.resx">
+      <DependentUpon>FrmEditAds.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmKalkulator.resx">
       <DependentUpon>FrmKalkulator.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmReview.resx">
+    <EmbeddedResource Include="Forms\FrmReview.resx">
       <DependentUpon>FrmReview.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmShowAllComments.resx">
+    <EmbeddedResource Include="Forms\FrmShowAllComments.resx">
       <DependentUpon>FrmShowAllComments.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmShowProfile.resx">
+    <EmbeddedResource Include="Forms\FrmShowDamage.resx">
+      <DependentUpon>FrmShowDamage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmShowProfile.resx">
       <DependentUpon>FrmShowProfile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
