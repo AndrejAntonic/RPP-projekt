@@ -70,11 +70,35 @@
     <Compile Include="Forms\FrmEditAds.Designer.cs">
       <DependentUpon>FrmEditAds.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FrmForgotPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmForgotPassword.Designer.cs">
+      <DependentUpon>FrmForgotPassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FrmKalkulator.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\FrmKalkulator.Designer.cs">
       <DependentUpon>FrmKalkulator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmLeasing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmLeasing.Designer.cs">
+      <DependentUpon>FrmLeasing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmRegistration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmRegistration.Designer.cs">
+      <DependentUpon>FrmRegistration.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FrmReview.cs">
       <SubType>Form</SubType>
@@ -100,6 +124,12 @@
     <Compile Include="Forms\FrmShowProfile.Designer.cs">
       <DependentUpon>FrmShowProfile.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FrmShowSimilar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmShowSimilar.Designer.cs">
+      <DependentUpon>FrmShowSimilar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\FrmCreateAds.resx">
@@ -111,8 +141,20 @@
     <EmbeddedResource Include="Forms\FrmEditAds.resx">
       <DependentUpon>FrmEditAds.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmForgotPassword.resx">
+      <DependentUpon>FrmForgotPassword.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmKalkulator.resx">
       <DependentUpon>FrmKalkulator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmLeasing.resx">
+      <DependentUpon>FrmLeasing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmRegistration.resx">
+      <DependentUpon>FrmRegistration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmReview.resx">
       <DependentUpon>FrmReview.cs</DependentUpon>
@@ -125,6 +167,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmShowProfile.resx">
       <DependentUpon>FrmShowProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmShowSimilar.resx">
+      <DependentUpon>FrmShowSimilar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
