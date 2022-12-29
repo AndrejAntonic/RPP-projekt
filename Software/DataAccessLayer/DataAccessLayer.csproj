@@ -52,7 +52,19 @@
   <ItemGroup>
     <Compile Include="AutoPrimeModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\AukcijeRepository.cs" />
+    <Compile Include="Repositories\IznajmljenoRepository.cs" />
+    <Compile Include="Repositories\KorisnikRepository.cs" />
+    <Compile Include="Repositories\Kreirao_aukcije_korisnikRepository.cs" />
+    <Compile Include="Repositories\MarkaRepository.cs" />
+    <Compile Include="Repositories\ModelRepository.cs" />
+    <Compile Include="Repositories\MotorRepository.cs" />
+    <Compile Include="Repositories\OglasRepository.cs" />
+    <Compile Include="Repositories\OstecenjaRepository.cs" />
+    <Compile Include="Repositories\PonudaRepository.cs" />
+    <Compile Include="Repositories\RecenzijaRepository.cs" />
     <Compile Include="Repositories\Repository.cs" />
+    <Compile Include="Repositories\SlikaRepository.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
