@@ -32,6 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -41,10 +42,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Aukcije.cs" />
+    <Compile Include="Entities\Iznajmljeno.cs" />
+    <Compile Include="Entities\Korisnik.cs" />
+    <Compile Include="Entities\Kreirao_aukcije_korisnik.cs" />
+    <Compile Include="Entities\Marka.cs" />
+    <Compile Include="Entities\Model.cs" />
+    <Compile Include="Entities\Motor.cs" />
+    <Compile Include="Entities\Ogla.cs" />
+    <Compile Include="Entities\Oštećenja.cs" />
+    <Compile Include="Entities\Ponuda.cs" />
+    <Compile Include="Entities\Recenzija.cs" />
+    <Compile Include="Entities\Slika.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Entities\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
