@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Repositories
 {
-    internal class SlikaRepository : Repository<Slika>
+    public class SlikaRepository : Repository<Slika>
     {
         public SlikaRepository() : base (new AutoPrimeModel())
         {
@@ -22,7 +22,7 @@ namespace DataAccessLayer.Repositories
             return query;
         }
 
-        public IQueryable<Slika> GetCertainAuction(string phrase)
+        public IQueryable<Slika> GetCertainSlika(string phrase)
         {
             var query = from e in Entities
                         where e.Id_slike.ToString().Contains(phrase)
