@@ -33,12 +33,42 @@ namespace DataAccessLayer.Repositories
 
         public override int Add(Ponuda entity, bool saveChanges = true)
         {
-            return base.Add(entity, saveChanges);
+            var aukcijaa = Context.Aukcijes.SingleOrDefault(a => a.Id_aukcije == entity.Aukcije.Id_aukcije);
+            var ponuda = new Ponuda
+            {
+                Id_ponude = entity.Id_ponude,
+                Aukcije = aukcijaa,
+                Ponuda1 = entity.Ponuda1
+            };
+
+            Entities.Add(ponuda);
+            if (saveChanges)
+            {
+                return SaveChanges();
+            }
+            else
+            {
+                return 0;
+            }
         }
 
         public override int Update(Ponuda entity, bool saveChanges = true)
         {
-            throw new NotImplementedException();
+            var aukcijaa = Context.Aukcijes.SingleOrDefault(a => a.Id_aukcije == entity.Aukcije.Id_aukcije);
+            var ponuda = Entities.SingleOrDefault(p => p.Id_ponude == entity.Id_ponude);
+
+            ponuda.Id_ponude = entity.Id_ponude;
+            ponuda.Aukcije = aukcijaa;
+            ponuda.Ponuda1 = entity.Ponuda1;
+
+            if (saveChanges)
+            {
+                return SaveChanges();
+            }
+            else
+            {
+                return 0;
+            }
         }
     }
 }

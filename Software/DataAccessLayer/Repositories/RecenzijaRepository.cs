@@ -33,12 +33,49 @@ namespace DataAccessLayer.Repositories
 
         public override int Add(Recenzija entity, bool saveChanges = true)
         {
-            return base.Add(entity, saveChanges);
+            var korisnikk = Context.Korisniks.SingleOrDefault(k => k.Id == entity.Korisnik.Id_korisnika);
+            var recenzije = new Recenzija
+            {
+                Id_recenzije = entity.Id_recenzije,
+                Korisnik = korisnikk,
+                Ocjena = entity.Ocjena,
+                Komentar = entity.Komentar,
+                Za_korisnik_id = entity.Za_korisnik_id,
+                Od_korisnik_id = entity.Od_korisnik_id
+            };
+
+            Entities.Add(recenzije);
+            if (saveChanges)
+            {
+                return SaveChanges();
+            }
+            else
+            {
+                return 0;
+            }
         }
 
         public override int Update(Recenzija entity, bool saveChanges = true)
         {
-            throw new NotImplementedException();
+            var korisnikk = Context.Korisniks.SingleOrDefault(k => k.Id_korisnika == entity.Korisnik.Id_korisnika);
+            var recenzije = Entities.SingleOrDefault(r => r.Id_recenzije == entity.Id_recenzije);
+
+            recenzije.Id_recenzije = entity.Id_recenzije;
+            recenzije.Korisnik = korisnikk;
+            recenzije.Ocjena = entity.Ocjena;
+            recenzije.Komentar = entity.Komentar;
+            recenzije.Za_korisnik_id = entity.Za_korisnik_id;
+            recenzije.Od_korisnik_id = entity.Od_korisnik_id;
+
+
+            if (saveChanges)
+            {
+                return SaveChanges();
+            }
+            else
+            {
+                return 0;
+            }
         }
     }
 }

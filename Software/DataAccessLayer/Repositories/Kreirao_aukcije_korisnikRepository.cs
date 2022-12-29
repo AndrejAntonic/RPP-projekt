@@ -24,12 +24,38 @@ namespace DataAccessLayer.Repositories
 
         public override int Add(Kreirao_aukcije_korisnik entity, bool saveChanges = true)
         {
-            return base.Add(entity, saveChanges);
+            var korisnikkreirao = new Kreirao_aukcije_korisnik
+            {
+                Korisnik_id = entity.Korisnik_id,
+                Aukcija_id = entity.Aukcija_id
+            };
+
+            Entities.Add(korisnikkreirao);
+            if (saveChanges)
+            {
+                return SaveChanges();
+            }
+            else
+            {
+                return 0;
+            }
         }
 
         public override int Update(Kreirao_aukcije_korisnik entity, bool saveChanges = true)
         {
-            throw new NotImplementedException();
+            var korisnikkreirao = Entities.SingleOrDefault(kk => kk.Korisnik_id == entity.Korisnik_id);
+
+            korisnikkreirao.Korisnik_id = entity.Korisnik_id;
+            korisnikkreirao.Aukcija_id = entity.Aukcija_id;
+
+            if (saveChanges)
+            {
+                return SaveChanges();
+            }
+            else
+            {
+                return 0;
+            }
         }
     }
 }

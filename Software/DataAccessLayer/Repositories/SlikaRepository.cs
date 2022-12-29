@@ -33,12 +33,50 @@ namespace DataAccessLayer.Repositories
 
         public override int Add(Slika entity, bool saveChanges = true)
         {
-            return base.Add(entity, saveChanges);
+            var oglas = Context.Oglas.SingleOrDefault(o => o.Id_oglas == entity.Ogla.Id_oglas);
+            var ostecenja = Context.Oštećenja.SingleOrDefault(o => o.Id_ostecenja == entity.Oštećenja.Id_ostecenja);
+
+            var slika = new Slika
+            {
+                Id_slike = entity.Id_slike,
+                //oglas_id = oglas,
+                slika1 = entity.slika1,
+                Oštećenja = ostecenja,
+                ostecenje_id = entity.ostecenje_id
+            };
+
+            Entities.Add(slika);
+            if (saveChanges)
+            {
+                return SaveChanges();
+            }
+            else
+            {
+                return 0;
+            }
         }
 
         public override int Update(Slika entity, bool saveChanges = true)
         {
-            throw new NotImplementedException();
+            //var oglas = Context.Oglas.SingleOrDefault(o => o.Id_oglas == entity.Ogla.Id_oglas);
+            var ostecenja = Context.Oštećenja.SingleOrDefault(o => o.Id_ostecenja == entity.Oštećenja.Id_ostecenja);
+
+            var slika = Entities.SingleOrDefault(s => s.Id_slike == entity.Id_slike);
+
+            slika.Id_slike = entity.Id_slike;
+            slika.oglas_id = entity.oglas_id;
+            slika.slika1 = entity.slika1;
+            slika.Oštećenja = ostecenja;
+            slika.ostecenje_id = entity.ostecenje_id;
+
+            if (saveChanges)
+            {
+                return SaveChanges();
+            }
+            else
+            {
+                return 0;
+            }
         }
     }
 }

@@ -33,12 +33,41 @@ namespace DataAccessLayer.Repositories
 
         public override int Add(Oštećenja entity, bool saveChanges = true)
         {
-            return base.Add(entity, saveChanges);
+            var ostecenja = new Oštećenja
+            {
+                Id_ostecenja = entity.Id_ostecenja,
+                opis_ostecenja = entity.opis_ostecenja,
+                Slikas = entity.Slikas
+            };
+
+            Entities.Add(ostecenja);
+            if (saveChanges)
+            {
+                return SaveChanges();
+            }
+            else
+            {
+                return 0;
+            }
         }
 
         public override int Update(Oštećenja entity, bool saveChanges = true)
         {
-            throw new NotImplementedException();
+            var ostecenja = Entities.SingleOrDefault(o => o.Id_ostecenja == entity.Id_ostecenja);
+
+            ostecenja.Id_ostecenja = entity.Id_ostecenja;
+            ostecenja.opis_ostecenja = entity.opis_ostecenja;
+            ostecenja.Slikas = entity.Slikas;
+
+
+            if (saveChanges)
+            {
+                return SaveChanges();
+            }
+            else
+            {
+                return 0;
+            }
         }
     }
 }
