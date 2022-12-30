@@ -82,6 +82,12 @@
     <Compile Include="Forms\FrmCreateAuction.Designer.cs">
       <DependentUpon>FrmCreateAuction.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FrmDetailAdAndAuctionReview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmDetailAdAndAuctionReview.Designer.cs">
+      <DependentUpon>FrmDetailAdAndAuctionReview.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FrmEditAds.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,6 +164,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmCreateAuction.resx">
       <DependentUpon>FrmCreateAuction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmDetailAdAndAuctionReview.resx">
+      <DependentUpon>FrmDetailAdAndAuctionReview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmEditAds.resx">
       <DependentUpon>FrmEditAds.cs</DependentUpon>
