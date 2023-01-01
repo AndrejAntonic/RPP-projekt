@@ -49,6 +49,7 @@
             this.btnDodajOglas = new System.Windows.Forms.Button();
             this.btnOdustani = new System.Windows.Forms.Button();
             this.dtpDatum = new System.Windows.Forms.DateTimePicker();
+            this.label9 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -204,7 +205,7 @@
             // 
             // btnDodajOglas
             // 
-            this.btnDodajOglas.Location = new System.Drawing.Point(278, 513);
+            this.btnDodajOglas.Location = new System.Drawing.Point(281, 631);
             this.btnDodajOglas.Name = "btnDodajOglas";
             this.btnDodajOglas.Size = new System.Drawing.Size(96, 29);
             this.btnDodajOglas.TabIndex = 20;
@@ -214,7 +215,7 @@
             // 
             // btnOdustani
             // 
-            this.btnOdustani.Location = new System.Drawing.Point(380, 513);
+            this.btnOdustani.Location = new System.Drawing.Point(380, 631);
             this.btnOdustani.Name = "btnOdustani";
             this.btnOdustani.Size = new System.Drawing.Size(96, 29);
             this.btnOdustani.TabIndex = 21;
@@ -224,16 +225,26 @@
             // 
             // dtpDatum
             // 
-            this.dtpDatum.Location = new System.Drawing.Point(327, 430);
+            this.dtpDatum.Location = new System.Drawing.Point(276, 484);
             this.dtpDatum.Name = "dtpDatum";
             this.dtpDatum.Size = new System.Drawing.Size(200, 22);
             this.dtpDatum.TabIndex = 22;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(64, 489);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(49, 16);
+            this.label9.TabIndex = 23;
+            this.label9.Text = "Datum:";
             // 
             // FrmCreateAds
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(548, 587);
+            this.ClientSize = new System.Drawing.Size(548, 672);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.dtpDatum);
             this.Controls.Add(this.btnOdustani);
             this.Controls.Add(this.btnDodajOglas);
@@ -286,5 +297,6 @@
         private System.Windows.Forms.Button btnDodajOglas;
         private System.Windows.Forms.Button btnOdustani;
         private System.Windows.Forms.DateTimePicker dtpDatum;
+        private System.Windows.Forms.Label label9;
     }
 }
