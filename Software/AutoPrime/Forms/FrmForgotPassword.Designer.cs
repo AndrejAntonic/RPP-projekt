@@ -58,7 +58,7 @@
             // 
             // btnPromjeni
             // 
-            this.btnPromjeni.Location = new System.Drawing.Point(33, 287);
+            this.btnPromjeni.Location = new System.Drawing.Point(143, 287);
             this.btnPromjeni.Name = "btnPromjeni";
             this.btnPromjeni.Size = new System.Drawing.Size(75, 23);
             this.btnPromjeni.TabIndex = 2;
@@ -115,7 +115,7 @@
             // 
             // btnOdustani
             // 
-            this.btnOdustani.Location = new System.Drawing.Point(169, 287);
+            this.btnOdustani.Location = new System.Drawing.Point(224, 287);
             this.btnOdustani.Name = "btnOdustani";
             this.btnOdustani.Size = new System.Drawing.Size(75, 23);
             this.btnOdustani.TabIndex = 9;

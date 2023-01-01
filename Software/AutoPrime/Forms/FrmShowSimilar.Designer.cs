@@ -30,7 +30,7 @@
         {
             this.dgvOglasi = new System.Windows.Forms.DataGridView();
             this.btnDetaljan = new System.Windows.Forms.Button();
-            this.btnPocetna = new System.Windows.Forms.Button();
+            this.btnZatvori = new System.Windows.Forms.Button();
             this.btnLeasing = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOglasi)).BeginInit();
             this.SuspendLayout();
@@ -53,24 +53,27 @@
             this.btnDetaljan.TabIndex = 1;
             this.btnDetaljan.Text = "Detaljan prikaz";
             this.btnDetaljan.UseVisualStyleBackColor = true;
+            this.btnDetaljan.Click += new System.EventHandler(this.btnDetaljan_Click);
             // 
-            // btnPocetna
+            // btnZatvori
             // 
-            this.btnPocetna.Location = new System.Drawing.Point(178, 531);
-            this.btnPocetna.Name = "btnPocetna";
-            this.btnPocetna.Size = new System.Drawing.Size(98, 42);
-            this.btnPocetna.TabIndex = 2;
-            this.btnPocetna.Text = "Početna";
-            this.btnPocetna.UseVisualStyleBackColor = true;
+            this.btnZatvori.Location = new System.Drawing.Point(815, 531);
+            this.btnZatvori.Name = "btnZatvori";
+            this.btnZatvori.Size = new System.Drawing.Size(98, 42);
+            this.btnZatvori.TabIndex = 2;
+            this.btnZatvori.Text = "Zatvori";
+            this.btnZatvori.UseVisualStyleBackColor = true;
+            this.btnZatvori.Click += new System.EventHandler(this.btnPocetna_Click);
             // 
             // btnLeasing
             // 
-            this.btnLeasing.Location = new System.Drawing.Point(335, 531);
+            this.btnLeasing.Location = new System.Drawing.Point(131, 531);
             this.btnLeasing.Name = "btnLeasing";
             this.btnLeasing.Size = new System.Drawing.Size(98, 42);
             this.btnLeasing.TabIndex = 3;
             this.btnLeasing.Text = "Leasing auta";
             this.btnLeasing.UseVisualStyleBackColor = true;
+            this.btnLeasing.Click += new System.EventHandler(this.btnLeasing_Click);
             // 
             // FrmShowSimilar
             // 
@@ -78,7 +81,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(941, 600);
             this.Controls.Add(this.btnLeasing);
-            this.Controls.Add(this.btnPocetna);
+            this.Controls.Add(this.btnZatvori);
             this.Controls.Add(this.btnDetaljan);
             this.Controls.Add(this.dgvOglasi);
             this.Name = "FrmShowSimilar";
@@ -92,7 +95,7 @@
 
         private System.Windows.Forms.DataGridView dgvOglasi;
         private System.Windows.Forms.Button btnDetaljan;
-        private System.Windows.Forms.Button btnPocetna;
+        private System.Windows.Forms.Button btnZatvori;
         private System.Windows.Forms.Button btnLeasing;
     }
 }

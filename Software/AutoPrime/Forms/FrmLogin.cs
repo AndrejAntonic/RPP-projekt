@@ -16,5 +16,22 @@ namespace AutoPrime.Forms
         {
             InitializeComponent();
         }
+
+        private void btnZabLozinka_Click(object sender, EventArgs e)
+        {
+            FrmForgotPassword zaboravljenaLozinka = new FrmForgotPassword();
+            zaboravljenaLozinka.Show();
+        }
+
+        private void btnPrijava_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRegistracija_Click(object sender, EventArgs e)
+        {
+            FrmRegistration registracija = new FrmRegistration();
+            registracija.Show();
+        }
     }
 }

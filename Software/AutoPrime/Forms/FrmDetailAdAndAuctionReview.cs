@@ -21,5 +21,17 @@ namespace AutoPrime.Forms
         {
             Close();
         }
+
+        private void btnSlicni_Click(object sender, EventArgs e)
+        {
+            FrmShowSimilar slicniOglasi = new FrmShowSimilar();
+            slicniOglasi.Show();
+        }
+
+        private void btnOstecenja_Click(object sender, EventArgs e)
+        {
+            FrmShowDamage ostecenja = new FrmShowDamage();
+            ostecenja.Show();
+        }
     }
 }

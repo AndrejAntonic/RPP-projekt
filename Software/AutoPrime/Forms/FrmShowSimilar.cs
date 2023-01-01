@@ -16,5 +16,22 @@ namespace AutoPrime.Forms
         {
             InitializeComponent();
         }
+
+        private void btnDetaljan_Click(object sender, EventArgs e)
+        {
+            FrmDetailAdAndAuctionReview detaljni = new FrmDetailAdAndAuctionReview();
+            detaljni.Show();
+        }
+
+        private void btnLeasing_Click(object sender, EventArgs e)
+        {
+            FrmLeasing leasing = new FrmLeasing();
+            leasing.Show();
+        }
+
+        private void btnPocetna_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

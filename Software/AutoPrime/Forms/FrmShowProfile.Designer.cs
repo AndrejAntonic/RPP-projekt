@@ -205,6 +205,7 @@
             this.btnShowAllComments.TabIndex = 15;
             this.btnShowAllComments.Text = "Prikaži sve komentare";
             this.btnShowAllComments.UseVisualStyleBackColor = true;
+            this.btnShowAllComments.Click += new System.EventHandler(this.btnShowAllComments_Click);
             // 
             // FrmShowProfile
             // 

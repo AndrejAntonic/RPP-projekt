@@ -218,6 +218,7 @@
             this.btnSlicni.TabIndex = 20;
             this.btnSlicni.Text = "Slični oglasi";
             this.btnSlicni.UseVisualStyleBackColor = true;
+            this.btnSlicni.Click += new System.EventHandler(this.btnSlicni_Click);
             // 
             // btnZanimljivi
             // 
@@ -236,6 +237,7 @@
             this.btnOstecenja.TabIndex = 22;
             this.btnOstecenja.Text = "Oštećenja";
             this.btnOstecenja.UseVisualStyleBackColor = true;
+            this.btnOstecenja.Click += new System.EventHandler(this.btnOstecenja_Click);
             // 
             // btnKorime
             // 

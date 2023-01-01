@@ -77,6 +77,7 @@
             this.btnPrijava.TabIndex = 4;
             this.btnPrijava.Text = "Prijava";
             this.btnPrijava.UseVisualStyleBackColor = true;
+            this.btnPrijava.Click += new System.EventHandler(this.btnPrijava_Click);
             // 
             // btnZabLozinka
             // 
@@ -86,6 +87,7 @@
             this.btnZabLozinka.TabIndex = 6;
             this.btnZabLozinka.Text = "Zaboravljena lozinka";
             this.btnZabLozinka.UseVisualStyleBackColor = true;
+            this.btnZabLozinka.Click += new System.EventHandler(this.btnZabLozinka_Click);
             // 
             // btnRegistracija
             // 
@@ -95,6 +97,7 @@
             this.btnRegistracija.TabIndex = 7;
             this.btnRegistracija.Text = "Registracija";
             this.btnRegistracija.UseVisualStyleBackColor = true;
+            this.btnRegistracija.Click += new System.EventHandler(this.btnRegistracija_Click);
             // 
             // FrmLogin
             // 

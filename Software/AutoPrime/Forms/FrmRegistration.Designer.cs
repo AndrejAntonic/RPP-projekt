@@ -72,6 +72,7 @@
             this.btnRegistriraj.TabIndex = 3;
             this.btnRegistriraj.Text = "Registriraj";
             this.btnRegistriraj.UseVisualStyleBackColor = true;
+            this.btnRegistriraj.Click += new System.EventHandler(this.btnRegistriraj_Click);
             // 
             // btnPrijava
             // 
@@ -81,6 +82,7 @@
             this.btnPrijava.TabIndex = 7;
             this.btnPrijava.Text = "Idi na prijavu";
             this.btnPrijava.UseVisualStyleBackColor = true;
+            this.btnPrijava.Click += new System.EventHandler(this.btnPrijava_Click);
             // 
             // txtPrezime
             // 

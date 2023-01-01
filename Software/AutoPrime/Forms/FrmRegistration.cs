@@ -22,5 +22,15 @@ namespace AutoPrime.Forms
 
         }
 
+        private void btnPrijava_Click(object sender, EventArgs e)
+        {
+            FrmLogin logiranje = new FrmLogin();
+            logiranje.Show();
+        }
+
+        private void btnRegistriraj_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

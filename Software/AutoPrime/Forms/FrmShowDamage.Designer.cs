@@ -28,22 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvOstecenja = new System.Windows.Forms.DataGridView();
             this.txtOpisOstecenja = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnZatvori = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOstecenja)).BeginInit();
+            this.pbOstecenja = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbOstecenja)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dgvOstecenja
-            // 
-            this.dgvOstecenja.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOstecenja.Location = new System.Drawing.Point(12, 12);
-            this.dgvOstecenja.Name = "dgvOstecenja";
-            this.dgvOstecenja.RowHeadersWidth = 51;
-            this.dgvOstecenja.RowTemplate.Height = 24;
-            this.dgvOstecenja.Size = new System.Drawing.Size(776, 498);
-            this.dgvOstecenja.TabIndex = 0;
             // 
             // txtOpisOstecenja
             // 
@@ -71,28 +61,35 @@
             this.btnZatvori.UseVisualStyleBackColor = true;
             this.btnZatvori.Click += new System.EventHandler(this.btnZatvori_Click);
             // 
+            // pbOstecenja
+            // 
+            this.pbOstecenja.Location = new System.Drawing.Point(12, 12);
+            this.pbOstecenja.Name = "pbOstecenja";
+            this.pbOstecenja.Size = new System.Drawing.Size(776, 495);
+            this.pbOstecenja.TabIndex = 4;
+            this.pbOstecenja.TabStop = false;
+            // 
             // FrmShowDamage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 636);
+            this.Controls.Add(this.pbOstecenja);
             this.Controls.Add(this.btnZatvori);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtOpisOstecenja);
-            this.Controls.Add(this.dgvOstecenja);
             this.Name = "FrmShowDamage";
             this.Text = "Oštećenja na automobilu";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOstecenja)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbOstecenja)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dgvOstecenja;
         private System.Windows.Forms.TextBox txtOpisOstecenja;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnZatvori;
+        private System.Windows.Forms.PictureBox pbOstecenja;
     }
 }

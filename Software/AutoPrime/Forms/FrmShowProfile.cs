@@ -21,5 +21,11 @@ namespace AutoPrime
         {
             Close();
         }
+
+        private void btnShowAllComments_Click(object sender, EventArgs e)
+        {
+            FrmShowAllComments sviKomentari = new FrmShowAllComments();
+            sviKomentari.Show();
+        }
     }
 }
