@@ -76,6 +76,7 @@
             this.btnPregledOglasaAukcija.TabIndex = 3;
             this.btnPregledOglasaAukcija.Text = "Pregled oglasa i aukcija";
             this.btnPregledOglasaAukcija.UseVisualStyleBackColor = true;
+            this.btnPregledOglasaAukcija.Click += new System.EventHandler(this.btnPregledOglasaAukcija_Click);
             // 
             // btnKreirajOglas
             // 
@@ -85,6 +86,7 @@
             this.btnKreirajOglas.TabIndex = 4;
             this.btnKreirajOglas.Text = "Kreiraj oglas";
             this.btnKreirajOglas.UseVisualStyleBackColor = true;
+            this.btnKreirajOglas.Click += new System.EventHandler(this.btnKreirajOglas_Click);
             // 
             // btnKreirajAukciju
             // 
@@ -94,6 +96,7 @@
             this.btnKreirajAukciju.TabIndex = 5;
             this.btnKreirajAukciju.Text = "Kreiraj aukciju";
             this.btnKreirajAukciju.UseVisualStyleBackColor = true;
+            this.btnKreirajAukciju.Click += new System.EventHandler(this.btnKreirajAukciju_Click);
             // 
             // btnLeasing
             // 
@@ -103,6 +106,7 @@
             this.btnLeasing.TabIndex = 6;
             this.btnLeasing.Text = "Leasing";
             this.btnLeasing.UseVisualStyleBackColor = true;
+            this.btnLeasing.Click += new System.EventHandler(this.btnLeasing_Click);
             // 
             // btnKalkulator
             // 
@@ -112,6 +116,7 @@
             this.btnKalkulator.TabIndex = 7;
             this.btnKalkulator.Text = "Kalkulator";
             this.btnKalkulator.UseVisualStyleBackColor = true;
+            this.btnKalkulator.Click += new System.EventHandler(this.btnKalkulator_Click);
             // 
             // btnProfil
             // 
@@ -121,6 +126,7 @@
             this.btnProfil.TabIndex = 8;
             this.btnProfil.Text = "Profil";
             this.btnProfil.UseVisualStyleBackColor = true;
+            this.btnProfil.Click += new System.EventHandler(this.btnProfil_Click);
             // 
             // FrmIndex
             // 

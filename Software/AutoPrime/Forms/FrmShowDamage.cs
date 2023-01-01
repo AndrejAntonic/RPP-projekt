@@ -16,5 +16,10 @@ namespace AutoPrime.Forms
         {
             InitializeComponent();
         }
+
+        private void btnZatvori_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

@@ -28,20 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnPocetna = new System.Windows.Forms.Button();
+            this.btnZatvori = new System.Windows.Forms.Button();
             this.dgvOglasi = new System.Windows.Forms.DataGridView();
             this.btnDetaljno = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOglasi)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnPocetna
+            // btnZatvori
             // 
-            this.btnPocetna.Location = new System.Drawing.Point(37, 520);
-            this.btnPocetna.Name = "btnPocetna";
-            this.btnPocetna.Size = new System.Drawing.Size(82, 28);
-            this.btnPocetna.TabIndex = 0;
-            this.btnPocetna.Text = "Početna";
-            this.btnPocetna.UseVisualStyleBackColor = true;
+            this.btnZatvori.Location = new System.Drawing.Point(792, 526);
+            this.btnZatvori.Name = "btnZatvori";
+            this.btnZatvori.Size = new System.Drawing.Size(82, 28);
+            this.btnZatvori.TabIndex = 0;
+            this.btnZatvori.Text = "Zatvori";
+            this.btnZatvori.UseVisualStyleBackColor = true;
+            this.btnZatvori.Click += new System.EventHandler(this.btnZatvori_Click);
             // 
             // dgvOglasi
             // 
@@ -55,9 +56,9 @@
             // 
             // btnDetaljno
             // 
-            this.btnDetaljno.Location = new System.Drawing.Point(148, 515);
+            this.btnDetaljno.Location = new System.Drawing.Point(37, 515);
             this.btnDetaljno.Name = "btnDetaljno";
-            this.btnDetaljno.Size = new System.Drawing.Size(104, 39);
+            this.btnDetaljno.Size = new System.Drawing.Size(116, 39);
             this.btnDetaljno.TabIndex = 2;
             this.btnDetaljno.Text = "Detaljan prikaz";
             this.btnDetaljno.UseVisualStyleBackColor = true;
@@ -69,7 +70,7 @@
             this.ClientSize = new System.Drawing.Size(914, 571);
             this.Controls.Add(this.btnDetaljno);
             this.Controls.Add(this.dgvOglasi);
-            this.Controls.Add(this.btnPocetna);
+            this.Controls.Add(this.btnZatvori);
             this.Name = "FrmLeasing";
             this.Text = "FrmLeasing";
             ((System.ComponentModel.ISupportInitialize)(this.dgvOglasi)).EndInit();
@@ -79,7 +80,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnPocetna;
+        private System.Windows.Forms.Button btnZatvori;
         private System.Windows.Forms.DataGridView dgvOglasi;
         private System.Windows.Forms.Button btnDetaljno;
     }

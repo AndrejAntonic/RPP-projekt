@@ -69,6 +69,7 @@
             this.btnZatvori.TabIndex = 3;
             this.btnZatvori.Text = "Zatvori";
             this.btnZatvori.UseVisualStyleBackColor = true;
+            this.btnZatvori.Click += new System.EventHandler(this.btnZatvori_Click);
             // 
             // FrmShowDamage
             // 
