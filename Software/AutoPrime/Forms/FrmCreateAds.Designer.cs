@@ -209,6 +209,7 @@
             this.btnDodajOglas.TabIndex = 20;
             this.btnDodajOglas.Text = "Dodaj oglas";
             this.btnDodajOglas.UseVisualStyleBackColor = true;
+            this.btnDodajOglas.Click += new System.EventHandler(this.btnDodajOglas_Click);
             // 
             // btnOdustani
             // 
@@ -247,6 +248,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FrmCreateAds";
             this.Text = "Kreiranje novog oglasa";
+            this.Load += new System.EventHandler(this.FrmCreateAds_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
