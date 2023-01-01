@@ -48,6 +48,7 @@
             this.cbLeasing = new System.Windows.Forms.CheckBox();
             this.btnDodajOglas = new System.Windows.Forms.Button();
             this.btnOdustani = new System.Windows.Forms.Button();
+            this.dtpDatum = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // label1
@@ -221,11 +222,19 @@
             this.btnOdustani.UseVisualStyleBackColor = true;
             this.btnOdustani.Click += new System.EventHandler(this.btnOdustani_Click);
             // 
+            // dtpDatum
+            // 
+            this.dtpDatum.Location = new System.Drawing.Point(327, 430);
+            this.dtpDatum.Name = "dtpDatum";
+            this.dtpDatum.Size = new System.Drawing.Size(200, 22);
+            this.dtpDatum.TabIndex = 22;
+            // 
             // FrmCreateAds
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(548, 587);
+            this.Controls.Add(this.dtpDatum);
             this.Controls.Add(this.btnOdustani);
             this.Controls.Add(this.btnDodajOglas);
             this.Controls.Add(this.cbLeasing);
@@ -276,5 +285,6 @@
         private System.Windows.Forms.CheckBox cbLeasing;
         private System.Windows.Forms.Button btnDodajOglas;
         private System.Windows.Forms.Button btnOdustani;
+        private System.Windows.Forms.DateTimePicker dtpDatum;
     }
 }
