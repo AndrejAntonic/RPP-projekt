@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EntitiesLayer.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,7 +20,8 @@ namespace AutoPrime.Forms
 
         private void btnDetaljan_Click(object sender, EventArgs e)
         {
-            FrmDetailAdAndAuctionReview detaljni = new FrmDetailAdAndAuctionReview();
+            var odabrani = dgvOglasi.CurrentRow.DataBoundItem as Ogla;
+            FrmDetailAdAndAuctionReview detaljni = new FrmDetailAdAndAuctionReview(odabrani);
             detaljni.Show();
         }
 

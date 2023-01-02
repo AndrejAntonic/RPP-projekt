@@ -1,4 +1,5 @@
 ﻿using BusinessLogicModel.Services;
+using EntitiesLayer.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -39,6 +40,20 @@ namespace AutoPrime.Forms
         private void PrikaziOglase()
         {
             dgvOglasi.DataSource = oglasServices.GetOglas();
+        }
+
+        private void btnPregledOglasa_Click(object sender, EventArgs e)
+        {
+            Ogla odabrani = dgvOglasi.CurrentRow.DataBoundItem as Ogla;/*
+            odabrani = new Ogla
+            {
+                broj_pregleda = odabrani.broj_pregleda + 1
+            };
+            oglasServices.UpdateOglas(odabrani);*/
+
+            FrmDetailAdAndAuctionReview otvori = new FrmDetailAdAndAuctionReview(odabrani);
+            otvori.ShowDialog();
+            Close();
         }
     }
 }
