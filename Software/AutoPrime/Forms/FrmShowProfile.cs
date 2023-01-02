@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EntitiesLayer.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace AutoPrime
 {
     public partial class FrmShowProfile : Form
     {
+        Korisnik korisnik;
         public FrmShowProfile()
         {
             InitializeComponent();
@@ -26,6 +28,11 @@ namespace AutoPrime
         {
             FrmShowAllComments sviKomentari = new FrmShowAllComments();
             sviKomentari.Show();
+        }
+
+        private void FrmShowProfile_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -33,5 +33,11 @@ namespace AutoPrime.Forms
             FrmShowDamage ostecenja = new FrmShowDamage();
             ostecenja.Show();
         }
+
+        private void btnKorime_Click(object sender, EventArgs e)
+        {
+            FrmShowProfile profil = new FrmShowProfile();
+            profil.Show();
+        }
     }
 }
