@@ -50,7 +50,8 @@ namespace AutoPrime
 
         private void btnPregledOglasaAukcija_Click(object sender, EventArgs e)
         {
-
+            FrmAdAndAuctionReview frmAdAndAuctionReview = new FrmAdAndAuctionReview();
+            frmAdAndAuctionReview.ShowDialog();
         }
     }
 }
