@@ -255,6 +255,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FrmAdAndAuctionReview";
             this.Text = "FrmAdAndAuctionReview";
+            this.Load += new System.EventHandler(this.FrmAdAndAuctionReview_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOglasi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAukcije)).EndInit();
             this.ResumeLayout(false);

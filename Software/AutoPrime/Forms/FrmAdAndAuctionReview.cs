@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessLogicModel.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,8 @@ namespace AutoPrime.Forms
 {
     public partial class FrmAdAndAuctionReview : Form
     {
+        private OglasServices oglasServices = new OglasServices();
+        private AukcijeServices aukcijeServices = new AukcijeServices();
         public FrmAdAndAuctionReview()
         {
             InitializeComponent();
@@ -20,6 +23,22 @@ namespace AutoPrime.Forms
         private void btnClose_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void FrmAdAndAuctionReview_Load(object sender, EventArgs e)
+        {
+            PrikaziOglase();
+            PrikaziAukcije();
+        }
+
+        private void PrikaziAukcije()
+        {
+            dgvAukcije.DataSource = aukcijeServices.GetAukcije();
+        }
+
+        private void PrikaziOglase()
+        {
+            dgvOglasi.DataSource = oglasServices.GetOglas();
         }
     }
 }

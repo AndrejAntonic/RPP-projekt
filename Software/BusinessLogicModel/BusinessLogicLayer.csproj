@@ -57,7 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj">
-      <Project>{CA90B3F3-031A-4E0D-BBE7-9EEBA2CEADE9}</Project>
+      <Project>{ca90b3f3-031a-4e0d-bbe7-9eeba2ceade9}</Project>
       <Name>DataAccessLayer</Name>
     </ProjectReference>
     <ProjectReference Include="..\EntitiesLayer\EntitiesLayer.csproj">
