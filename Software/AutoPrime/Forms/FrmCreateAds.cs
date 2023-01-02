@@ -72,5 +72,10 @@ namespace AutoPrime.Forms
         {
             cmbMarkaVozila.DataSource = markaServices.GetMarkas();
         }
+
+        private void cmbMarkaVozila_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadAllModeli();
+        }
     }
 }

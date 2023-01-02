@@ -138,6 +138,7 @@
             this.cmbMarkaVozila.Name = "cmbMarkaVozila";
             this.cmbMarkaVozila.Size = new System.Drawing.Size(278, 24);
             this.cmbMarkaVozila.TabIndex = 11;
+            this.cmbMarkaVozila.SelectedIndexChanged += new System.EventHandler(this.cmbMarkaVozila_SelectedIndexChanged);
             // 
             // cmbModelVozila
             // 
