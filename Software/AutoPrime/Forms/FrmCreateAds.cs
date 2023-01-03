@@ -75,7 +75,15 @@ namespace AutoPrime.Forms
 
         private void cmbMarkaVozila_SelectedIndexChanged(object sender, EventArgs e)
         {
-            LoadAllModeli();
+            LoadWantedModels();
+        }
+
+        private void LoadWantedModels()
+        {
+            var odabrano = cmbMarkaVozila.SelectedItem as Marka;
+            int zeljeno;
+            zeljeno = odabrano.Id_marka;
+            cmbModelVozila.DataSource = modelServis.GetCertainModels(zeljeno);
         }
     }
 }
