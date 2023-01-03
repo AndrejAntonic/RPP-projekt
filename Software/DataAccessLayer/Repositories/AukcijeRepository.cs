@@ -39,6 +39,7 @@ namespace DataAccessLayer.Repositories
 
             var aukcije = new Aukcije
             {
+                Id_aukcije = entity.Id_aukcije,
                 naziv = entity.naziv,
                 Marka = markae,
                 Model = modelae,
@@ -47,7 +48,8 @@ namespace DataAccessLayer.Repositories
                 cijena = entity.cijena,
                 kilometraza = entity.kilometraza,
                 Motor = motorae,
-                datum_aukcije = entity.datum_aukcije
+                datum_aukcije = entity.datum_aukcije,
+                rok = entity.rok
             };
 
             Entities.Add(aukcije);

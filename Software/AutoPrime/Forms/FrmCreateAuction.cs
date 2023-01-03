@@ -14,10 +14,10 @@ namespace AutoPrime.Forms
 {
     public partial class FrmCreateAuction : Form
     {
-        private OglasServices oglasServis = new OglasServices();
         private ModelServices modelServis = new ModelServices();
         private MotorServices motorServis = new MotorServices();
         private MarkaServices markaServices = new MarkaServices();
+        private AukcijeServices aukcijeServis = new AukcijeServices();
         public FrmCreateAuction()
         {
             InitializeComponent();
@@ -66,7 +66,22 @@ namespace AutoPrime.Forms
 
         private void btnDodajAukciju_Click(object sender, EventArgs e)
         {
+            var aukcija = new Aukcije
+            {
+                Id_aukcije = 23,
+                naziv = txtNaslovOglasa.Text,
+                Marka = cmbMarkaVozila.SelectedItem as Marka,
+                Model = cmbModelVozila.SelectedItem as Model,
+                godina = Int32.Parse(txtGodinaProizvodnje.Text),
+                kilometraza = txtKilometraza.Text,
+                cijena = txtCijena.Text,
+                lokacija_vozila = txtLokacija.Text,
+                Motor = cmbMotor.SelectedItem as Motor,
+                datum_aukcije = dtpTrajanjeAukcije.Value,
+                rok = dtpIstekAukcije.Value
+            };
 
+            aukcijeServis.AddAuction(aukcija);
         }
     }
 }
