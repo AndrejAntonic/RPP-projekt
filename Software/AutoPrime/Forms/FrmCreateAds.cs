@@ -55,7 +55,6 @@ namespace AutoPrime.Forms
         {
             LoadAllMarke();
             LoadAllMotori();
-            LoadAllModeli();
         }
 
         private void LoadAllModeli()
