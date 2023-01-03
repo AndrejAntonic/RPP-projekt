@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.btnOdustani = new System.Windows.Forms.Button();
-            this.btnDodajOglas = new System.Windows.Forms.Button();
+            this.btnDodajAukciju = new System.Windows.Forms.Button();
             this.cbLeasing = new System.Windows.Forms.CheckBox();
             this.cbOstecenja = new System.Windows.Forms.CheckBox();
             this.cmbMotor = new System.Windows.Forms.ComboBox();
@@ -49,7 +49,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.mcTrajanjeAukcije = new System.Windows.Forms.MonthCalendar();
+            this.dtpTrajanjeAukcije = new System.Windows.Forms.DateTimePicker();
+            this.dtpIstekAukcije = new System.Windows.Forms.DateTimePicker();
+            this.label10 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnOdustani
@@ -62,15 +64,15 @@
             this.btnOdustani.UseVisualStyleBackColor = true;
             this.btnOdustani.Click += new System.EventHandler(this.btnOdustani_Click);
             // 
-            // btnDodajOglas
+            // btnDodajAukciju
             // 
-            this.btnDodajOglas.Location = new System.Drawing.Point(260, 729);
-            this.btnDodajOglas.Name = "btnDodajOglas";
-            this.btnDodajOglas.Size = new System.Drawing.Size(96, 29);
-            this.btnDodajOglas.TabIndex = 40;
-            this.btnDodajOglas.Text = "Dodaj oglas";
-            this.btnDodajOglas.UseVisualStyleBackColor = true;
-            this.btnDodajOglas.Click += new System.EventHandler(this.btnDodajOglas_Click);
+            this.btnDodajAukciju.Location = new System.Drawing.Point(251, 729);
+            this.btnDodajAukciju.Name = "btnDodajAukciju";
+            this.btnDodajAukciju.Size = new System.Drawing.Size(105, 29);
+            this.btnDodajAukciju.TabIndex = 40;
+            this.btnDodajAukciju.Text = "Dodaj aukciju";
+            this.btnDodajAukciju.UseVisualStyleBackColor = true;
+            this.btnDodajAukciju.Click += new System.EventHandler(this.btnDodajAukciju_Click);
             // 
             // cbLeasing
             // 
@@ -143,6 +145,7 @@
             this.cmbMarkaVozila.Name = "cmbMarkaVozila";
             this.cmbMarkaVozila.Size = new System.Drawing.Size(278, 24);
             this.cmbMarkaVozila.TabIndex = 31;
+            this.cmbMarkaVozila.SelectedIndexChanged += new System.EventHandler(this.cmbMarkaVozila_SelectedIndexChanged);
             // 
             // txtNaslovOglasa
             // 
@@ -232,21 +235,40 @@
             this.label9.TabIndex = 42;
             this.label9.Text = "Trajanje aukcije:";
             // 
-            // mcTrajanjeAukcije
+            // dtpTrajanjeAukcije
             // 
-            this.mcTrajanjeAukcije.Location = new System.Drawing.Point(196, 474);
-            this.mcTrajanjeAukcije.Name = "mcTrajanjeAukcije";
-            this.mcTrajanjeAukcije.TabIndex = 43;
+            this.dtpTrajanjeAukcije.Location = new System.Drawing.Point(258, 474);
+            this.dtpTrajanjeAukcije.Name = "dtpTrajanjeAukcije";
+            this.dtpTrajanjeAukcije.Size = new System.Drawing.Size(200, 22);
+            this.dtpTrajanjeAukcije.TabIndex = 44;
+            // 
+            // dtpIstekAukcije
+            // 
+            this.dtpIstekAukcije.Location = new System.Drawing.Point(258, 598);
+            this.dtpIstekAukcije.Name = "dtpIstekAukcije";
+            this.dtpIstekAukcije.Size = new System.Drawing.Size(200, 22);
+            this.dtpIstekAukcije.TabIndex = 46;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(47, 604);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(84, 16);
+            this.label10.TabIndex = 45;
+            this.label10.Text = "Istek aukcije:";
             // 
             // FrmCreateAuction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(549, 788);
-            this.Controls.Add(this.mcTrajanjeAukcije);
+            this.ClientSize = new System.Drawing.Size(549, 783);
+            this.Controls.Add(this.dtpIstekAukcije);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.dtpTrajanjeAukcije);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.btnOdustani);
-            this.Controls.Add(this.btnDodajOglas);
+            this.Controls.Add(this.btnDodajAukciju);
             this.Controls.Add(this.cbLeasing);
             this.Controls.Add(this.cbOstecenja);
             this.Controls.Add(this.cmbMotor);
@@ -267,6 +289,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FrmCreateAuction";
             this.Text = "Kreiranje nove aukcije";
+            this.Load += new System.EventHandler(this.FrmCreateAuction_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -275,7 +298,7 @@
         #endregion
 
         private System.Windows.Forms.Button btnOdustani;
-        private System.Windows.Forms.Button btnDodajOglas;
+        private System.Windows.Forms.Button btnDodajAukciju;
         private System.Windows.Forms.CheckBox cbLeasing;
         private System.Windows.Forms.CheckBox cbOstecenja;
         private System.Windows.Forms.ComboBox cmbMotor;
@@ -295,6 +318,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.MonthCalendar mcTrajanjeAukcije;
+        private System.Windows.Forms.DateTimePicker dtpTrajanjeAukcije;
+        private System.Windows.Forms.DateTimePicker dtpIstekAukcije;
+        private System.Windows.Forms.Label label10;
     }
 }
