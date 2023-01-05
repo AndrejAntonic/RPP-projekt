@@ -45,112 +45,113 @@
             // lblMake
             // 
             this.lblMake.AutoSize = true;
-            this.lblMake.Location = new System.Drawing.Point(16, 18);
+            this.lblMake.Location = new System.Drawing.Point(18, 22);
             this.lblMake.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMake.Name = "lblMake";
-            this.lblMake.Size = new System.Drawing.Size(118, 16);
+            this.lblMake.Size = new System.Drawing.Size(139, 20);
             this.lblMake.TabIndex = 0;
             this.lblMake.Text = "Marka automobila:";
             // 
             // lblModel
             // 
             this.lblModel.AutoSize = true;
-            this.lblModel.Location = new System.Drawing.Point(16, 52);
+            this.lblModel.Location = new System.Drawing.Point(18, 65);
             this.lblModel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblModel.Name = "lblModel";
-            this.lblModel.Size = new System.Drawing.Size(118, 16);
+            this.lblModel.Size = new System.Drawing.Size(138, 20);
             this.lblModel.TabIndex = 1;
             this.lblModel.Text = "Model automobila:";
             // 
             // lblPrice
             // 
             this.lblPrice.AutoSize = true;
-            this.lblPrice.Location = new System.Drawing.Point(16, 186);
+            this.lblPrice.Location = new System.Drawing.Point(18, 232);
             this.lblPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(146, 16);
+            this.lblPrice.Size = new System.Drawing.Size(170, 20);
             this.lblPrice.TabIndex = 2;
             this.lblPrice.Text = "Procijenjena vrijednost:";
             // 
             // lblMileage
             // 
             this.lblMileage.AutoSize = true;
-            this.lblMileage.Location = new System.Drawing.Point(16, 117);
+            this.lblMileage.Location = new System.Drawing.Point(18, 146);
             this.lblMileage.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMileage.Name = "lblMileage";
-            this.lblMileage.Size = new System.Drawing.Size(80, 16);
+            this.lblMileage.Size = new System.Drawing.Size(96, 20);
             this.lblMileage.TabIndex = 3;
             this.lblMileage.Text = "Kilometraža:";
             // 
             // lblYear
             // 
             this.lblYear.AutoSize = true;
-            this.lblYear.Location = new System.Drawing.Point(16, 85);
+            this.lblYear.Location = new System.Drawing.Point(18, 106);
             this.lblYear.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblYear.Name = "lblYear";
-            this.lblYear.Size = new System.Drawing.Size(57, 16);
+            this.lblYear.Size = new System.Drawing.Size(69, 20);
             this.lblYear.TabIndex = 4;
             this.lblYear.Text = "Godište:";
             // 
             // txtMileage
             // 
-            this.txtMileage.Location = new System.Drawing.Point(149, 113);
-            this.txtMileage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMileage.Location = new System.Drawing.Point(168, 141);
+            this.txtMileage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtMileage.Name = "txtMileage";
-            this.txtMileage.Size = new System.Drawing.Size(160, 22);
+            this.txtMileage.Size = new System.Drawing.Size(180, 26);
             this.txtMileage.TabIndex = 5;
             // 
             // txtYear
             // 
-            this.txtYear.Location = new System.Drawing.Point(149, 81);
-            this.txtYear.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtYear.Location = new System.Drawing.Point(168, 101);
+            this.txtYear.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtYear.Name = "txtYear";
-            this.txtYear.Size = new System.Drawing.Size(160, 22);
+            this.txtYear.Size = new System.Drawing.Size(180, 26);
             this.txtYear.TabIndex = 6;
             // 
             // txtPrice
             // 
             this.txtPrice.Enabled = false;
-            this.txtPrice.Location = new System.Drawing.Point(179, 182);
-            this.txtPrice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPrice.Location = new System.Drawing.Point(201, 228);
+            this.txtPrice.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(131, 22);
+            this.txtPrice.Size = new System.Drawing.Size(147, 26);
             this.txtPrice.TabIndex = 7;
             // 
             // cmbModel
             // 
             this.cmbModel.FormattingEnabled = true;
-            this.cmbModel.Location = new System.Drawing.Point(149, 48);
-            this.cmbModel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbModel.Location = new System.Drawing.Point(168, 60);
+            this.cmbModel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmbModel.Name = "cmbModel";
-            this.cmbModel.Size = new System.Drawing.Size(160, 24);
+            this.cmbModel.Size = new System.Drawing.Size(180, 28);
             this.cmbModel.TabIndex = 8;
             // 
             // cmbMake
             // 
             this.cmbMake.FormattingEnabled = true;
-            this.cmbMake.Location = new System.Drawing.Point(149, 15);
-            this.cmbMake.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbMake.Location = new System.Drawing.Point(168, 19);
+            this.cmbMake.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmbMake.Name = "cmbMake";
-            this.cmbMake.Size = new System.Drawing.Size(160, 24);
+            this.cmbMake.Size = new System.Drawing.Size(180, 28);
             this.cmbMake.TabIndex = 9;
+            this.cmbMake.SelectedIndexChanged += new System.EventHandler(this.cmbMake_SelectedIndexChanged);
             // 
             // btnCalculate
             // 
-            this.btnCalculate.Location = new System.Drawing.Point(319, 12);
-            this.btnCalculate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCalculate.Location = new System.Drawing.Point(359, 15);
+            this.btnCalculate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCalculate.Name = "btnCalculate";
-            this.btnCalculate.Size = new System.Drawing.Size(100, 28);
+            this.btnCalculate.Size = new System.Drawing.Size(112, 35);
             this.btnCalculate.TabIndex = 10;
             this.btnCalculate.Text = "Izračunaj";
             this.btnCalculate.UseVisualStyleBackColor = true;
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(319, 48);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnClose.Location = new System.Drawing.Point(359, 60);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(100, 28);
+            this.btnClose.Size = new System.Drawing.Size(112, 35);
             this.btnClose.TabIndex = 11;
             this.btnClose.Text = "Zatvori";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -158,9 +159,9 @@
             // 
             // FrmKalkulator
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(428, 215);
+            this.ClientSize = new System.Drawing.Size(482, 269);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnCalculate);
             this.Controls.Add(this.cmbMake);
@@ -173,9 +174,10 @@
             this.Controls.Add(this.lblPrice);
             this.Controls.Add(this.lblModel);
             this.Controls.Add(this.lblMake);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmKalkulator";
             this.Text = "Kalkulator vrijednosti automobila";
+            this.Load += new System.EventHandler(this.FrmKalkulator_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

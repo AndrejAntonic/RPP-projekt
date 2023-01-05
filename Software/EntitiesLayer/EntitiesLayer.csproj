@@ -46,7 +46,9 @@
     <Compile Include="Entities\Iznajmljeno.cs" />
     <Compile Include="Entities\Korisnik.cs" />
     <Compile Include="Entities\Kreirao_aukcije_korisnik.cs" />
+    <Compile Include="Entities\Marka.code.cs" />
     <Compile Include="Entities\Marka.cs" />
+    <Compile Include="Entities\Model.code.cs" />
     <Compile Include="Entities\Model.cs" />
     <Compile Include="Entities\Motor.cs" />
     <Compile Include="Entities\Ogla.cs" />
