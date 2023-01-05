@@ -144,6 +144,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FrmIndex";
             this.Text = "Auto Prime";
+            this.Load += new System.EventHandler(this.FrmIndex_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvNajtrazeniji)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

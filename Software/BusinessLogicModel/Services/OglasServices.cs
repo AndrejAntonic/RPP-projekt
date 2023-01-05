@@ -30,6 +30,16 @@ namespace BusinessLogicModel.Services
             }
         }
 
+        public List<Ogla> GetMostWantedOglas()
+        {
+            using (var repo = new OglasRepository())
+            {
+                List<Ogla> oglasi = repo.GetMostWantedOglas().ToList();
+
+                return oglasi;
+            }
+        }
+
         public bool AddOglas(Ogla oglas)
         {
             bool isSuccesful = false;

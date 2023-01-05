@@ -35,6 +35,15 @@ namespace DataAccessLayer.Repositories
             return query;
         }
 
+        public IQueryable<Ogla> GetMostWantedOglas()
+        {
+            var query = from e in Entities
+                        orderby e.broj_pregleda descending
+                        select e;
+
+            return query.Take(5);
+        }
+
         public override int Add(Ogla entity, bool saveChanges = true)
         {
             var markaa = Context.Markas.SingleOrDefault(m => m.Id_marka == entity.Marka.Id_marka);
