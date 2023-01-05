@@ -246,10 +246,11 @@
             // 
             this.btnDodajOstecenja.Location = new System.Drawing.Point(187, 591);
             this.btnDodajOstecenja.Name = "btnDodajOstecenja";
-            this.btnDodajOstecenja.Size = new System.Drawing.Size(114, 29);
+            this.btnDodajOstecenja.Size = new System.Drawing.Size(126, 29);
             this.btnDodajOstecenja.TabIndex = 25;
             this.btnDodajOstecenja.Text = "Dodaj ostecenja";
             this.btnDodajOstecenja.UseVisualStyleBackColor = true;
+            this.btnDodajOstecenja.Click += new System.EventHandler(this.btnDodajOstecenja_Click);
             // 
             // btnDodajSliku
             // 
@@ -259,6 +260,7 @@
             this.btnDodajSliku.TabIndex = 24;
             this.btnDodajSliku.Text = "Dodaj sliku";
             this.btnDodajSliku.UseVisualStyleBackColor = true;
+            this.btnDodajSliku.Click += new System.EventHandler(this.btnDodajSliku_Click);
             // 
             // FrmCreateAds
             // 

@@ -1,4 +1,5 @@
 ﻿using BusinessLogicModel.Services;
+using DataAccessLayer;
 using EntitiesLayer.Entities;
 using System;
 using System.Collections.Generic;
@@ -99,5 +100,73 @@ namespace AutoPrime.Forms
             zeljeno = odabrano.Id_marka;
             cmbModelVozila.DataSource = modelServis.GetCertainModels(zeljeno);
         }
+
+        private void btnDodajSliku_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                // kreiranje objekta OpenFileDialog za pretragu slike
+
+                OpenFileDialog open = new OpenFileDialog();
+
+                // filtriranje dialogboxa kako bi korisnik mogao izabrati samo određene vrste slike
+
+                open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
+
+                //ako je korisnik odabrao neku sliku radi sljedece
+
+                if (open.ShowDialog() == DialogResult.OK)
+                {
+                    //kreiraj objekt Image klase i pridruzi ime slike, dodaj sliku u bazu pomocu funkcije
+
+                    Image img = new Bitmap(open.FileName);
+                    //ImageToByteArray(img);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Can not upload image");
+            }
+        }
+
+        private void btnDodajOstecenja_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                // kreiranje objekta OpenFileDialog za pretragu slike
+
+                OpenFileDialog open = new OpenFileDialog();
+
+                // filtriranje dialogboxa kako bi korisnik mogao izabrati samo određene vrste slike
+
+                open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
+
+                //ako je korisnik odabrao neku sliku radi sljedece
+
+                if (open.ShowDialog() == DialogResult.OK)
+                {
+                    //kreiraj objekt Image klase i pridruzi ime slike, dodaj sliku u bazu pomocu funkcije
+
+                    Image img = new Bitmap(open.FileName);
+                    //ImageToByteArray(img);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Can not upload image");
+            }
+        }
+
+        //umjesto ovog myb napravit u repozitoriju za slike da spremi sliku, isto tak i za ostecenja (mozd vec i ima pogledam kasnije)
+        /*public byte[] ImageToByteArray(System.Drawing.Image imageIn)
+        {
+            using (var repo = new AutoPrimeModel())
+            {
+                imageIn.Save(repo, imageIn.RawFormat);
+                return repo;
+            }
+        }*/
     }
 }
