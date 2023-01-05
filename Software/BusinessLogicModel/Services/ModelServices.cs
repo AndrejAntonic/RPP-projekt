@@ -30,6 +30,16 @@ namespace BusinessLogicModel.Services
             }
         }
 
+        public List<double> GetModelPrice(int id)
+        {
+            using (var repo = new ModelRepository())
+            {
+                List<double> price =  repo.GetModelPrice(id).ToList();
+
+                return price;
+            }
+        }
+
         public bool AddModel(Model model)
         {
             bool isSuccesful = false;

@@ -31,6 +31,15 @@ namespace DataAccessLayer.Repositories
             return query;
         }
 
+        public IQueryable<double> GetModelPrice(int model)
+        {
+            var query = from e in Entities
+                        where e.Id_model == model
+                        select e.cijena;
+
+            return query;
+        }
+
         public override int Add(Model entity, bool saveChanges = true)
         {
             return base.Add(entity, saveChanges);

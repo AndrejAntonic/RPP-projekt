@@ -25,6 +25,8 @@ namespace EntitiesLayer.Entities
 
         public int? marka_id { get; set; }
 
+        public double cijena { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Aukcije> Aukcijes { get; set; }
 
