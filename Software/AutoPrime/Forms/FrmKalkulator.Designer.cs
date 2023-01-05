@@ -206,6 +206,7 @@
             this.chbxChoice.TabIndex = 16;
             this.chbxChoice.Text = "Želim sam unijeti vrijednost automobila.";
             this.chbxChoice.UseVisualStyleBackColor = true;
+            this.chbxChoice.Click += new System.EventHandler(this.chbxChoice_Click);
             // 
             // FrmKalkulator
             // 

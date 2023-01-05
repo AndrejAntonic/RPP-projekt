@@ -16,6 +16,7 @@ namespace AutoPrime
     {
         MarkaServices markaService = new MarkaServices();
         ModelServices modelService = new ModelServices();
+        bool isChecked = false;
         public FrmKalkulator()
         {
             InitializeComponent();
@@ -29,8 +30,8 @@ namespace AutoPrime
         private void FrmKalkulator_Load(object sender, EventArgs e)
         {
             LoadCarMake();
-            LoadCarModel(1);
-            LoadCarPrice(1);
+            LoadCarModel();
+            LoadCarPrice();
         }
 
         private void LoadCarMake()
@@ -42,12 +43,12 @@ namespace AutoPrime
 
         private void cmbMake_SelectedIndexChanged(object sender, EventArgs e)
         {
-            LoadCarModel(SelectedCarMake());
+            LoadCarModel();
         }
 
-        private void LoadCarModel(int carMake)
+        private void LoadCarModel()
         {
-            cmbModel.DataSource = modelService.GetCertainModels(carMake);
+            cmbModel.DataSource = modelService.GetCertainModels(SelectedCarMake());
             cmbModel.DisplayMember = "naziv";
             cmbModel.ValueMember = "Id_model";
         }
@@ -61,19 +62,35 @@ namespace AutoPrime
 
         private void btnCalculate_Click(object sender, EventArgs e)
         {
-            var year = Int32.Parse(txtYear.Text);
-            var mileage = double.Parse(txtMileage.Text);
+            if (string.IsNullOrEmpty(txtYear.Text) || string.IsNullOrEmpty(txtMileage.Text) || (isChecked == true && string.IsNullOrEmpty(txtInsertedPrice.Text)))
+                MessageBox.Show("Molimo popunite sve potrebne podatke!", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
+            {
+                var year = Int32.Parse(txtYear.Text.ToString());
+                var mileage = double.Parse(txtMileage.Text.ToString());
+                double insertedPrice = 0;
+                if (!isChecked)
+                    insertedPrice = GetDatabasePrice(SelectedCarModel());
+                else
+                    insertedPrice = double.Parse(txtInsertedPrice.Text.ToString());
+                
+            }
         }
 
         private void cmbModel_SelectedIndexChanged(object sender, EventArgs e)
         {
-            LoadCarPrice(SelectedCarModel());
+            LoadCarPrice();
         }
 
-        private void LoadCarPrice(int model_id)
+        private double GetDatabasePrice(int model_id)
         {
-            List<double> modeli = modelService.GetModelPrice(model_id);
-            txtEstimatedPrice.Text = modeli[0].ToString() + "€";
+            List<double> price = modelService.GetModelPrice(model_id);
+            return price[0];
+        }
+
+        private void LoadCarPrice()
+        {
+            txtEstimatedPrice.Text = GetDatabasePrice(SelectedCarModel()) + "€";
         }
 
         private int SelectedCarModel()
@@ -81,6 +98,12 @@ namespace AutoPrime
             int id;
             bool result = int.TryParse(cmbModel.SelectedValue.ToString(), out id);
             return id;
+        }
+
+        private void chbxChoice_Click(object sender, EventArgs e)
+        {
+            isChecked = !isChecked;
+            txtInsertedPrice.Enabled = isChecked;
         }
     }
 }
