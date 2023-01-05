@@ -30,12 +30,10 @@
         {
             this.lblMake = new System.Windows.Forms.Label();
             this.lblModel = new System.Windows.Forms.Label();
-            this.lblPrice = new System.Windows.Forms.Label();
             this.lblMileage = new System.Windows.Forms.Label();
             this.lblYear = new System.Windows.Forms.Label();
             this.txtMileage = new System.Windows.Forms.TextBox();
             this.txtYear = new System.Windows.Forms.TextBox();
-            this.txtPrice = new System.Windows.Forms.TextBox();
             this.cmbModel = new System.Windows.Forms.ComboBox();
             this.cmbMake = new System.Windows.Forms.ComboBox();
             this.btnCalculate = new System.Windows.Forms.Button();
@@ -66,16 +64,6 @@
             this.lblModel.Size = new System.Drawing.Size(138, 20);
             this.lblModel.TabIndex = 1;
             this.lblModel.Text = "Model automobila:";
-            // 
-            // lblPrice
-            // 
-            this.lblPrice.AutoSize = true;
-            this.lblPrice.Location = new System.Drawing.Point(18, 361);
-            this.lblPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(167, 20);
-            this.lblPrice.TabIndex = 2;
-            this.lblPrice.Text = "Procjenjena vrijednost:";
             // 
             // lblMileage
             // 
@@ -112,15 +100,6 @@
             this.txtYear.Name = "txtYear";
             this.txtYear.Size = new System.Drawing.Size(180, 26);
             this.txtYear.TabIndex = 6;
-            // 
-            // txtPrice
-            // 
-            this.txtPrice.Enabled = false;
-            this.txtPrice.Location = new System.Drawing.Point(201, 358);
-            this.txtPrice.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(147, 26);
-            this.txtPrice.TabIndex = 7;
             // 
             // cmbModel
             // 
@@ -212,7 +191,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(482, 396);
+            this.ClientSize = new System.Drawing.Size(482, 334);
             this.Controls.Add(this.chbxChoice);
             this.Controls.Add(this.txtInsertedPrice);
             this.Controls.Add(this.txtEstimatedPrice);
@@ -222,12 +201,10 @@
             this.Controls.Add(this.btnCalculate);
             this.Controls.Add(this.cmbMake);
             this.Controls.Add(this.cmbModel);
-            this.Controls.Add(this.txtPrice);
             this.Controls.Add(this.txtYear);
             this.Controls.Add(this.txtMileage);
             this.Controls.Add(this.lblYear);
             this.Controls.Add(this.lblMileage);
-            this.Controls.Add(this.lblPrice);
             this.Controls.Add(this.lblModel);
             this.Controls.Add(this.lblMake);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -243,12 +220,10 @@
 
         private System.Windows.Forms.Label lblMake;
         private System.Windows.Forms.Label lblModel;
-        private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.Label lblMileage;
         private System.Windows.Forms.Label lblYear;
         private System.Windows.Forms.TextBox txtMileage;
         private System.Windows.Forms.TextBox txtYear;
-        private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.ComboBox cmbModel;
         private System.Windows.Forms.ComboBox cmbMake;
         private System.Windows.Forms.Button btnCalculate;

@@ -1,4 +1,5 @@
-﻿using BusinessLogicModel.Services;
+﻿using AutoPrime.Forms;
+using BusinessLogicModel.Services;
 using EntitiesLayer.Entities;
 using System;
 using System.Collections.Generic;
@@ -73,7 +74,8 @@ namespace AutoPrime
                     insertedPrice = GetDatabasePrice(SelectedCarModel());
                 else
                     insertedPrice = double.Parse(txtInsertedPrice.Text.ToString());
-                
+                FrmKalkulatorDetails frmKalkulatorDetails = new FrmKalkulatorDetails(year, insertedPrice, mileage);
+                frmKalkulatorDetails.ShowDialog();
             }
         }
 

@@ -107,6 +107,12 @@
     <Compile Include="Forms\FrmKalkulator.Designer.cs">
       <DependentUpon>FrmKalkulator.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FrmKalkulatorDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmKalkulatorDetails.Designer.cs">
+      <DependentUpon>FrmKalkulatorDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FrmLeasing.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,6 +186,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmKalkulator.resx">
       <DependentUpon>FrmKalkulator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmKalkulatorDetails.resx">
+      <DependentUpon>FrmKalkulatorDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmLeasing.resx">
       <DependentUpon>FrmLeasing.cs</DependentUpon>
