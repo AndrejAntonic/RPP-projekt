@@ -105,23 +105,22 @@ namespace AutoPrime.Forms
         {
             try
             {
-
-                // kreiranje objekta OpenFileDialog za pretragu slike
-
                 OpenFileDialog open = new OpenFileDialog();
-
-                // filtriranje dialogboxa kako bi korisnik mogao izabrati samo određene vrste slike
-
                 open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
-
-                //ako je korisnik odabrao neku sliku radi sljedece
-
                 if (open.ShowDialog() == DialogResult.OK)
                 {
-                    //kreiraj objekt Image klase i pridruzi ime slike, dodaj sliku u bazu pomocu funkcije
-
                     Image img = new Bitmap(open.FileName);
-                    //ImageToByteArray(img);
+                    byte slikica = converterDemo(img);
+
+                    var sliketina = new Slika
+                    {
+                        Id_slike = 1,
+                        oglas_id = 1,
+                        slika1 = slikica,
+                        ostecenje_id = 1
+                    };
+
+                    slikaServis.AddSlika(sliketina);
                 }
             }
             catch
@@ -150,7 +149,7 @@ namespace AutoPrime.Forms
                     //kreiraj objekt Image klase i pridruzi ime slike, dodaj sliku u bazu pomocu funkcije
 
                     Image img = new Bitmap(open.FileName);
-                    //ImageToByteArray(img);
+                    //converterDemo(img);
                 }
             }
             catch
@@ -160,13 +159,12 @@ namespace AutoPrime.Forms
         }
 
         //umjesto ovog myb napravit u repozitoriju za slike da spremi sliku, isto tak i za ostecenja (mozd vec i ima pogledam kasnije)
-        /*public byte[] ImageToByteArray(System.Drawing.Image imageIn)
+        public static byte converterDemo(Image x)
         {
-            using (var repo = new AutoPrimeModel())
-            {
-                imageIn.Save(repo, imageIn.RawFormat);
-                return repo;
-            }
-        }*/
+            ImageConverter _imageConverter = new ImageConverter();
+            byte xByte = (byte)_imageConverter.ConvertTo(x, typeof(byte));
+            return xByte;
+        }
+
     }
 }
