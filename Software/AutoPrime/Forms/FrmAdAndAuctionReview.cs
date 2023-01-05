@@ -16,6 +16,9 @@ namespace AutoPrime.Forms
     {
         private OglasServices oglasServices = new OglasServices();
         private AukcijeServices aukcijeServices = new AukcijeServices();
+        private MarkaServices MarkaServices = new MarkaServices();
+        private ModelServices modelServices = new ModelServices();
+
         public FrmAdAndAuctionReview()
         {
             InitializeComponent();
@@ -30,16 +33,38 @@ namespace AutoPrime.Forms
         {
             PrikaziOglase();
             PrikaziAukcije();
+            FillMarka();
+        }
+
+        private void FillModel(string marka)
+        {
+            cmbModel.DataSource = modelServices.GetCertainModels(marka);
+        }
+
+        private void FillMarka()
+        {
+            cmbMarka.DataSource = MarkaServices.GetMarkas();
         }
 
         private void PrikaziAukcije()
         {
             dgvAukcije.DataSource = aukcijeServices.GetAukcije();
+            dgvAukcije.Columns["Ponudas"].Visible = false;
+            dgvOglasi.Columns["korisnik_id"].Visible = false;
+            dgvOglasi.Columns["marka_id"].Visible = false;
+            dgvOglasi.Columns["model_id"].Visible = false;
+            dgvOglasi.Columns["motor_id"].Visible = false;
         }
 
         private void PrikaziOglase()
         {
             dgvOglasi.DataSource = oglasServices.GetOglas();
+            dgvOglasi.Columns["korisnik_id"].Visible = false;
+            dgvOglasi.Columns["marka_id"].Visible = false;
+            dgvOglasi.Columns["model_id"].Visible = false;
+            dgvOglasi.Columns["motor_id"].Visible = false;
+            dgvOglasi.Columns["Korisniks"].Visible = false;
+            dgvOglasi.Columns["Slikas"].Visible = false;
         }
 
         private void btnPregledOglasa_Click(object sender, EventArgs e)
@@ -54,6 +79,12 @@ namespace AutoPrime.Forms
             FrmDetailAdAndAuctionReview otvori = new FrmDetailAdAndAuctionReview(odabrani);
             otvori.ShowDialog();
             Close();
+        }
+
+        private void cmbMarka_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var odabrana = cmbMarka.SelectedItem.ToString();
+            FillModel(odabrana);
         }
     }
 }

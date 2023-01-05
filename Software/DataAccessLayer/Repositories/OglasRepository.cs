@@ -16,6 +16,11 @@ namespace DataAccessLayer.Repositories
         public override IQueryable<Ogla> GetAll()
         {
             var query = from e in Entities
+                        .Include("Iznajmljeno")
+                        .Include("Motor")
+                        .Include("Korisnik")
+                        .Include("Marka")
+                        .Include("Model")
                         select e;
 
             return query;

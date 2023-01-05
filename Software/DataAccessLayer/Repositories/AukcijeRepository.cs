@@ -17,6 +17,9 @@ namespace DataAccessLayer.Repositories
         public override IQueryable<Aukcije> GetAll()
         {
             var query = from e in Entities
+                        .Include("Motor")
+                        .Include("Marka")
+                        .Include("Model")
                         select e;
 
             return query;

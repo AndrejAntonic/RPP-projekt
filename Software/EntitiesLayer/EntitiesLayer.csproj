@@ -44,7 +44,9 @@
   <ItemGroup>
     <Compile Include="Entities\Aukcije.cs" />
     <Compile Include="Entities\Iznajmljeno.cs" />
+    <Compile Include="Entities\Iznajmljeno.ext.cs" />
     <Compile Include="Entities\Korisnik.cs" />
+    <Compile Include="Entities\Korisnik.ext.cs" />
     <Compile Include="Entities\Kreirao_aukcije_korisnik.cs" />
     <Compile Include="Entities\Marka.cs" />
     <Compile Include="Entities\Marka.ext.cs" />

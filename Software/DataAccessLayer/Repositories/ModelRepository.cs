@@ -25,7 +25,7 @@ namespace DataAccessLayer.Repositories
         public IQueryable<Model> GetCertainModel(string phrase)
         {
             var query = from e in Entities
-                        where e.naziv.Contains(phrase)
+                        where e.Marka.Naziv.Contains(phrase)
                         select e;
 
             return query;
