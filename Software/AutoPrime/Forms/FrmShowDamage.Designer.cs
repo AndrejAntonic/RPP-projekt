@@ -32,6 +32,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnZatvori = new System.Windows.Forms.Button();
             this.pbOstecenja = new System.Windows.Forms.PictureBox();
+            this.btnPrikazi = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbOstecenja)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,11 +70,22 @@
             this.pbOstecenja.TabIndex = 4;
             this.pbOstecenja.TabStop = false;
             // 
+            // btnPrikazi
+            // 
+            this.btnPrikazi.Location = new System.Drawing.Point(590, 595);
+            this.btnPrikazi.Name = "btnPrikazi";
+            this.btnPrikazi.Size = new System.Drawing.Size(96, 29);
+            this.btnPrikazi.TabIndex = 5;
+            this.btnPrikazi.Text = "Prikaži";
+            this.btnPrikazi.UseVisualStyleBackColor = true;
+            this.btnPrikazi.Click += new System.EventHandler(this.btnPrikazi_Click);
+            // 
             // FrmShowDamage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 636);
+            this.Controls.Add(this.btnPrikazi);
             this.Controls.Add(this.pbOstecenja);
             this.Controls.Add(this.btnZatvori);
             this.Controls.Add(this.label1);
@@ -91,5 +103,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnZatvori;
         private System.Windows.Forms.PictureBox pbOstecenja;
+        private System.Windows.Forms.Button btnPrikazi;
     }
 }

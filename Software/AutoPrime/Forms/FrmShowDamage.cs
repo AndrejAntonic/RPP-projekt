@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessLogicModel.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace AutoPrime.Forms
 {
     public partial class FrmShowDamage : Form
     {
+        private SlikaServices slikaServis = new SlikaServices();
         public FrmShowDamage()
         {
             InitializeComponent();
@@ -20,6 +22,11 @@ namespace AutoPrime.Forms
         private void btnZatvori_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btnPrikazi_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
