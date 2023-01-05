@@ -56,7 +56,7 @@
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(690, 409);
+            this.btnBack.Location = new System.Drawing.Point(690, 632);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(46, 29);
             this.btnBack.TabIndex = 2;
@@ -66,7 +66,7 @@
             // 
             // btnAhead
             // 
-            this.btnAhead.Location = new System.Drawing.Point(742, 409);
+            this.btnAhead.Location = new System.Drawing.Point(742, 632);
             this.btnAhead.Name = "btnAhead";
             this.btnAhead.Size = new System.Drawing.Size(46, 29);
             this.btnAhead.TabIndex = 3;
@@ -78,7 +78,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 673);
             this.Controls.Add(this.btnAhead);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.lblDescription);
