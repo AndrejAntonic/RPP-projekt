@@ -50,6 +50,8 @@
             this.btnOdustani = new System.Windows.Forms.Button();
             this.dtpDatum = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
+            this.btnDodajOstecenja = new System.Windows.Forms.Button();
+            this.btnDodajSliku = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -240,11 +242,31 @@
             this.label9.TabIndex = 23;
             this.label9.Text = "Datum:";
             // 
+            // btnDodajOstecenja
+            // 
+            this.btnDodajOstecenja.Location = new System.Drawing.Point(187, 591);
+            this.btnDodajOstecenja.Name = "btnDodajOstecenja";
+            this.btnDodajOstecenja.Size = new System.Drawing.Size(114, 29);
+            this.btnDodajOstecenja.TabIndex = 25;
+            this.btnDodajOstecenja.Text = "Dodaj ostecenja";
+            this.btnDodajOstecenja.UseVisualStyleBackColor = true;
+            // 
+            // btnDodajSliku
+            // 
+            this.btnDodajSliku.Location = new System.Drawing.Point(67, 591);
+            this.btnDodajSliku.Name = "btnDodajSliku";
+            this.btnDodajSliku.Size = new System.Drawing.Size(114, 29);
+            this.btnDodajSliku.TabIndex = 24;
+            this.btnDodajSliku.Text = "Dodaj sliku";
+            this.btnDodajSliku.UseVisualStyleBackColor = true;
+            // 
             // FrmCreateAds
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(548, 672);
+            this.Controls.Add(this.btnDodajOstecenja);
+            this.Controls.Add(this.btnDodajSliku);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.dtpDatum);
             this.Controls.Add(this.btnOdustani);
@@ -299,5 +321,7 @@
         private System.Windows.Forms.Button btnOdustani;
         private System.Windows.Forms.DateTimePicker dtpDatum;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btnDodajOstecenja;
+        private System.Windows.Forms.Button btnDodajSliku;
     }
 }

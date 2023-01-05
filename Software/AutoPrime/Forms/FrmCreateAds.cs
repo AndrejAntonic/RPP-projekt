@@ -18,6 +18,8 @@ namespace AutoPrime.Forms
         private ModelServices modelServis = new ModelServices();
         private MotorServices motorServis = new MotorServices();
         private MarkaServices markaServices = new MarkaServices();
+        private OstecenjaServices ostecenjaServis = new OstecenjaServices();
+        private SlikaServices slikaServis = new SlikaServices();
         public FrmCreateAds()
         {
             InitializeComponent();
@@ -47,7 +49,20 @@ namespace AutoPrime.Forms
                 leasing = (byte)cbLeasing.CheckState,
                 datum = dtpDatum.Value
             };
+
+            var ostecenja = new Oštećenja
+            {
+
+            };
+
+            var slika = new Slika
+            {
+
+            };
+
             oglasServis.AddOglas(oglas);
+            ostecenjaServis.AddOstecenja(ostecenja);
+            slikaServis.AddSlika(slika);
             Close();
         }
 
