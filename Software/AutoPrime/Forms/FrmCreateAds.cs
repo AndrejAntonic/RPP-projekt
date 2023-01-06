@@ -71,6 +71,7 @@ namespace AutoPrime.Forms
         {
             LoadAllMarke();
             LoadAllMotori();
+            LoadAllModeli();
         }
 
         private void LoadAllModeli()
@@ -110,15 +111,22 @@ namespace AutoPrime.Forms
                 if (open.ShowDialog() == DialogResult.OK)
                 {
                     Image img = new Bitmap(open.FileName);
-                    byte slikica = converterDemo(img);
+                    //byte slikica = converterDemo(img);
+
+                    Byte result = (Byte)new ImageConverter().ConvertTo(img, typeof(Byte));
 
                     var sliketina = new Slika
                     {
                         Id_slike = 1,
                         oglas_id = 1,
-                        slika1 = slikica,
+                        slika1 = result,
                         ostecenje_id = 1
                     };
+
+                    /*using (var repo = new AutoPrimeModel())
+                    {
+                        Image.Save(repo, sliketina);
+                    }*/
 
                     slikaServis.AddSlika(sliketina);
                 }
@@ -165,6 +173,5 @@ namespace AutoPrime.Forms
             byte xByte = (byte)_imageConverter.ConvertTo(x, typeof(byte));
             return xByte;
         }
-
     }
 }

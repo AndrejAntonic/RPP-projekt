@@ -52,6 +52,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.btnDodajOstecenja = new System.Windows.Forms.Button();
             this.btnDodajSliku = new System.Windows.Forms.Button();
+            this.btnTestSave = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -262,11 +263,21 @@
             this.btnDodajSliku.UseVisualStyleBackColor = true;
             this.btnDodajSliku.Click += new System.EventHandler(this.btnDodajSliku_Click);
             // 
+            // btnTestSave
+            // 
+            this.btnTestSave.Location = new System.Drawing.Point(380, 560);
+            this.btnTestSave.Name = "btnTestSave";
+            this.btnTestSave.Size = new System.Drawing.Size(126, 29);
+            this.btnTestSave.TabIndex = 26;
+            this.btnTestSave.Text = "TestSave";
+            this.btnTestSave.UseVisualStyleBackColor = true;
+            // 
             // FrmCreateAds
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(548, 672);
+            this.Controls.Add(this.btnTestSave);
             this.Controls.Add(this.btnDodajOstecenja);
             this.Controls.Add(this.btnDodajSliku);
             this.Controls.Add(this.label9);
@@ -325,5 +336,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnDodajOstecenja;
         private System.Windows.Forms.Button btnDodajSliku;
+        private System.Windows.Forms.Button btnTestSave;
     }
 }
