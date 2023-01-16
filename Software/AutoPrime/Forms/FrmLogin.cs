@@ -1,5 +1,4 @@
 ﻿using BusinessLogicModel.Services;
-using DataAccessLayer.Repositories;
 using EntitiesLayer.Entities;
 using System;
 using System.Collections.Generic;
@@ -30,11 +29,13 @@ namespace AutoPrime.Forms
         {
             string korisnickoIme = txtKorime.Text;
             string lozinka = txtLozinka.Text;
-            Korisnik novi = new Korisnik();
+            List<Korisnik> novi = new List<Korisnik>();
+            Korisnik prijavljeni = new Korisnik();
             KorisnikServices a = new KorisnikServices();
             novi = a.Prijava(korisnickoIme, lozinka);
+            prijavljeni = novi[0];
 
-            if(novi == null)
+            if(prijavljeni == null)
             {
                 MessageBox.Show("ERROR");
             }
