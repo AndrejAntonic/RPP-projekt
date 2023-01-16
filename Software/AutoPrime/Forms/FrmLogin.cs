@@ -25,12 +25,13 @@ namespace AutoPrime.Forms
 
         private void btnPrijava_Click(object sender, EventArgs e)
         {
-
+            string korisnickoIme = txtKorime.Text;
+            string lozinka = txtLozinka.Text;
         }
 
         private void btnRegistracija_Click(object sender, EventArgs e)
         {
-            FrmRegistration registracija = new FrmRegistration();
+            FrmRegistration registracija = new FrmRegistration();            
             registracija.Show();
         }
     }
