@@ -30,6 +30,16 @@ namespace BusinessLogicModel.Services
             }
         }
 
+        public Korisnik Prijava(string ime, string loz)
+        {
+            using (var repo = new KorisnikRepository())
+            {
+                Korisnik korisnik = repo.PrijaviKorisnika(ime, loz) as Korisnik;
+
+                return korisnik;
+            }
+        }
+
         public bool AddKorisniks(Korisnik korisnik)
         {
             bool isSuccesful = false;

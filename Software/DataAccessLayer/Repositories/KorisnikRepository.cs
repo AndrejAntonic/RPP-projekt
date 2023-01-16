@@ -31,11 +31,19 @@ namespace DataAccessLayer.Repositories
             return query;
         }
 
+        public IQueryable<Korisnik> PrijaviKorisnika(string korisnickoIme, string lozinka)
+        {
+            var query = from e in Entities
+                        where e.Lozinka == lozinka && e.Korimme == korisnickoIme
+                        select e;
+
+            return query;
+        }
+
         public override int Add(Korisnik entity, bool saveChanges = true)
         {
             var korisnikk = new Korisnik
             {
-                Id_korisnika = entity.Id_korisnika,
                 Ime = entity.Ime,
                 Prezime = entity.Prezime,
                 Korimme = entity.Korimme,

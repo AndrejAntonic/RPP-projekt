@@ -61,6 +61,7 @@
             this.txtKorime.Name = "txtKorime";
             this.txtKorime.Size = new System.Drawing.Size(192, 22);
             this.txtKorime.TabIndex = 2;
+            this.txtKorime.TextChanged += new System.EventHandler(this.txtKorime_TextChanged);
             // 
             // txtLozinka
             // 
@@ -68,6 +69,7 @@
             this.txtLozinka.Name = "txtLozinka";
             this.txtLozinka.Size = new System.Drawing.Size(192, 22);
             this.txtLozinka.TabIndex = 3;
+            this.txtLozinka.TextChanged += new System.EventHandler(this.txtLozinka_TextChanged);
             // 
             // btnPrijava
             // 

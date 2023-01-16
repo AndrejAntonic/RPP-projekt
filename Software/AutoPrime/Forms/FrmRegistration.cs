@@ -1,4 +1,5 @@
-﻿using DataAccessLayer.Repositories;
+﻿using BusinessLogicModel.Services;
+using DataAccessLayer.Repositories;
 using EntitiesLayer.Entities;
 using System;
 using System.Collections.Generic;
@@ -40,17 +41,17 @@ namespace AutoPrime.Forms
             string telefon = txtTelefon.Text;
             string korime = txtKorime.Text;
             Korisnik noviKorisnik = new Korisnik { 
-                Broj_telefona = telefon,
-                Grad = grad,
                 Ime = ime,
                 Prezime = prezime,
+                Korimme = korime,
                 Lozinka = lozinka,
-                Korimme = korime
+                Broj_telefona = telefon,
+                Grad = grad
             };
             if (lozinka == lozinka2 && lozinka != "" && lozinka != null && korime != "")
             {
-                KorisnikRepository dodaj = new KorisnikRepository();
-                dodaj.Add(noviKorisnik);
+                KorisnikServices servis = new KorisnikServices();
+                servis.AddKorisniks(noviKorisnik);
             }
             this.Close();
         }
