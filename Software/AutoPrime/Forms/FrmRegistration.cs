@@ -49,10 +49,14 @@ namespace AutoPrime.Forms
                 Broj_telefona = telefon,
                 Grad = grad
             };
-            if (lozinka == lozinka2 && lozinka != "" && lozinka != null && korime != "")
+            if (lozinka == lozinka2 && lozinka != "" && lozinka != null && korime != "" && telefon != "" && ime != "" && prezime != "")
             {
                 KorisnikServices servis = new KorisnikServices();
                 servis.AddKorisniks(noviKorisnik);
+            }
+            else
+            {
+                MessageBox.Show("Nisu uneseni točni podaci!", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             this.Close();
         }
