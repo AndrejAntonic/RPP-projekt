@@ -37,7 +37,7 @@ namespace AutoPrime.Forms
 
             if(prijavljeni == null)
             {
-                MessageBox.Show("ERROR");
+                MessageBox.Show("Krivo uneseni podaci!", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
