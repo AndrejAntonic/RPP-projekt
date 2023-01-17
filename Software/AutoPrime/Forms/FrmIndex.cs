@@ -1,4 +1,5 @@
 ﻿using AutoPrime.Forms;
+using DataAccessLayer.Repositories;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -38,6 +39,8 @@ namespace AutoPrime
 
         private void btnKalkulator_Click(object sender, EventArgs e)
         {
+            PrijavljeniKorisnik dude = new PrijavljeniKorisnik();
+            var a = dude.VratiPrijavljenog();
             FrmKalkulator kalkulatorForma = new FrmKalkulator();
             kalkulatorForma.ShowDialog();
         }

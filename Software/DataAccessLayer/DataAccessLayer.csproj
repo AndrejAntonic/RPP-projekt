@@ -62,6 +62,7 @@
     <Compile Include="Repositories\OglasRepository.cs" />
     <Compile Include="Repositories\OstecenjaRepository.cs" />
     <Compile Include="Repositories\PonudaRepository.cs" />
+    <Compile Include="Repositories\PrijavljeniKorisnik.cs" />
     <Compile Include="Repositories\RecenzijaRepository.cs" />
     <Compile Include="Repositories\Repository.cs" />
     <Compile Include="Repositories\SlikaRepository.cs" />

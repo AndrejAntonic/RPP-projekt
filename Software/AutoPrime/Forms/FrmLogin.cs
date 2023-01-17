@@ -1,4 +1,5 @@
 ﻿using BusinessLogicModel.Services;
+using DataAccessLayer.Repositories;
 using EntitiesLayer.Entities;
 using System;
 using System.Collections.Generic;
@@ -40,6 +41,8 @@ namespace AutoPrime.Forms
             }
             else
             {
+                PrijavljeniKorisnik novi = new PrijavljeniKorisnik();
+                novi.NamjestiKorisnika(prijavljeni);
                 FrmIndex pocetna = new FrmIndex();
                 pocetna.Show();
             }
