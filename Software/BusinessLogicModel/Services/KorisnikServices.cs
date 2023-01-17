@@ -30,13 +30,13 @@ namespace BusinessLogicModel.Services
             }
         }
 
-        public List<Korisnik> Prijava(string ime, string loz)
+        public Korisnik Prijava(string ime, string loz)
         {
             using (var repo = new KorisnikRepository())
             {
                 List<Korisnik> korisnici = repo.PrijaviKorisnika(ime, loz).ToList();
 
-                return korisnici;
+                return korisnici[0];
             }
         }
 

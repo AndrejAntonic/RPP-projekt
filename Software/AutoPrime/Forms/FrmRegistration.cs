@@ -29,6 +29,7 @@ namespace AutoPrime.Forms
         {
             FrmLogin logiranje = new FrmLogin();
             logiranje.Show();
+            this.Close();
         }
 
         private void btnRegistriraj_Click(object sender, EventArgs e)

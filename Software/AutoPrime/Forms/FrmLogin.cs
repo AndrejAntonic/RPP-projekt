@@ -29,11 +29,10 @@ namespace AutoPrime.Forms
         {
             string korisnickoIme = txtKorime.Text;
             string lozinka = txtLozinka.Text;
-            List<Korisnik> novi = new List<Korisnik>();
             Korisnik prijavljeni = new Korisnik();
-            KorisnikServices a = new KorisnikServices();
-            novi = a.Prijava(korisnickoIme, lozinka);
-            prijavljeni = novi[0];
+            KorisnikServices servis = new KorisnikServices();
+            prijavljeni = servis.Prijava(korisnickoIme, lozinka);
+            
 
             if(prijavljeni == null)
             {
@@ -44,6 +43,7 @@ namespace AutoPrime.Forms
                 FrmIndex pocetna = new FrmIndex();
                 pocetna.Show();
             }
+            this.Hide();
 
         }
 
