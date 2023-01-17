@@ -40,6 +40,15 @@ namespace DataAccessLayer.Repositories
             return query;
         }
 
+        public IQueryable<Korisnik> MijenjajLozinku(string korime, string telefon, string ime,string prezime)
+        {
+            var query = from e in Entities
+                        where e.Korimme == korime && e.Broj_telefona == telefon && e.Ime == ime && e.Prezime == prezime
+                        select e;
+
+            return query;
+        }
+
         public override int Add(Korisnik entity, bool saveChanges = true)
         {
             var korisnikk = new Korisnik

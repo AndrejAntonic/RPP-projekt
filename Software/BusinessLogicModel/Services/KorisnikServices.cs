@@ -40,6 +40,20 @@ namespace BusinessLogicModel.Services
             }
         }
 
+        public Korisnik ChangePassword(string korime, string telefon, string ime, string prezime)
+        {
+            using (var repo = new KorisnikRepository())
+            {
+                List<Korisnik> korisnici = repo.MijenjajLozinku(korime, telefon, ime, prezime).ToList();
+
+                if (korisnici.Count > 0)
+                {
+                    return korisnici[0];
+                }
+                return null;
+            }
+        }
+
         public bool AddKorisniks(Korisnik korisnik)
         {
             bool isSuccesful = false;
