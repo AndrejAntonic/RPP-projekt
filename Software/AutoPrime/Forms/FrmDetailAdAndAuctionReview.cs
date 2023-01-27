@@ -54,5 +54,11 @@ namespace AutoPrime.Forms
             txtKilometraza.Text = oglas.kilometraza;
             //txtMotor.Text = oglas.Motor.vrsta;
         }
+
+        private void btnKorime_Click(object sender, EventArgs e)
+        {
+            FrmShowProfile profil = new FrmShowProfile();
+            profil.Show();
+        }
     }
 }
