@@ -17,6 +17,7 @@ namespace AutoPrime
     {
         Korisnik korisnik = new Korisnik();
         RecenzijaServices recenzijaService = new RecenzijaServices();
+        OglasServices oglasService = new OglasServices();
         public FrmShowProfile(Korisnik korisnik = null)
         {
             InitializeComponent();
@@ -37,6 +38,16 @@ namespace AutoPrime
         private void FrmShowProfile_Load(object sender, EventArgs e)
         {
             LoadKorisnikData();
+            LoadAllKorisnikPostings();
+        }
+
+        private void LoadAllKorisnikPostings()
+        {
+            dgvUserAdvertisement.DataSource = oglasService.GetOglasByKorisnikId(korisnik.Id_korisnika);
+            dgvUserAdvertisement.Columns.OfType<DataGridViewColumn>().ToList().ForEach(col => col.Visible = false);
+            dgvUserAdvertisement.Columns["Id_oglas"].Visible = true;
+            dgvUserAdvertisement.Columns["naziv"].Visible = true;
+            dgvUserAdvertisement.Columns["datum"].Visible = true;
         }
 
         private void LoadKorisnikData()
