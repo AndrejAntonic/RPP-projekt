@@ -1,4 +1,5 @@
-﻿using BusinessLogicModel.Services;
+﻿using AutoPrime.Forms;
+using BusinessLogicModel.Services;
 using EntitiesLayer.Entities;
 using System;
 using System.Collections.Generic;
@@ -35,6 +36,22 @@ namespace AutoPrime
         private void LoadAllComments()
         {
             dgvAllComments.DataSource = recenzijaService.GetRecenzijasForUser(korisnik);
+            dgvAllComments.Columns.OfType<DataGridViewColumn>().ToList().ForEach(col => col.Visible = false);
+            dgvAllComments.Columns["Id_recenzije"].Visible = true;
+            dgvAllComments.Columns["Komentar"].Visible = true;
+            dgvAllComments.Columns["Datum"].Visible = true;
+        }
+
+        private void btnShowComment_Click(object sender, EventArgs e)
+        {
+            Recenzija recenzija = GetSelectedRecenzija();
+            FrmShowDetailReview form = new FrmShowDetailReview(recenzija);
+            form.ShowDialog();
+        }
+
+        private Recenzija GetSelectedRecenzija()
+        {
+            return dgvAllComments.CurrentRow.DataBoundItem as Recenzija;
         }
     }
 }

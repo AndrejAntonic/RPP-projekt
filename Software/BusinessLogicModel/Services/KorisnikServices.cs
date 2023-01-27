@@ -20,6 +20,16 @@ namespace BusinessLogicModel.Services
             }
         }
 
+        public Korisnik GetKorisnikById(int id)
+        {
+            using(var repo = new KorisnikRepository())
+            {
+                List<Korisnik> korisnik = repo.GetKorisnikById(id).ToList();
+
+                return korisnik[0];
+            }
+        }
+
         public List<Korisnik> GetCertainKorisniks(string phrase)
         {
             using (var repo = new KorisnikRepository())

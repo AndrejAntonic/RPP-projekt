@@ -40,21 +40,22 @@
             this.dgvAllComments.Location = new System.Drawing.Point(12, 12);
             this.dgvAllComments.Name = "dgvAllComments";
             this.dgvAllComments.RowHeadersWidth = 51;
-            this.dgvAllComments.Size = new System.Drawing.Size(573, 250);
+            this.dgvAllComments.Size = new System.Drawing.Size(433, 250);
             this.dgvAllComments.TabIndex = 0;
             // 
             // btnShowComment
             // 
-            this.btnShowComment.Location = new System.Drawing.Point(421, 268);
+            this.btnShowComment.Location = new System.Drawing.Point(281, 268);
             this.btnShowComment.Name = "btnShowComment";
             this.btnShowComment.Size = new System.Drawing.Size(79, 35);
             this.btnShowComment.TabIndex = 1;
             this.btnShowComment.Text = "Prikaži komentar";
             this.btnShowComment.UseVisualStyleBackColor = true;
+            this.btnShowComment.Click += new System.EventHandler(this.btnShowComment_Click);
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(506, 268);
+            this.btnClose.Location = new System.Drawing.Point(366, 268);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(79, 35);
             this.btnClose.TabIndex = 2;
@@ -66,7 +67,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(594, 311);
+            this.ClientSize = new System.Drawing.Size(457, 311);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnShowComment);
             this.Controls.Add(this.dgvAllComments);

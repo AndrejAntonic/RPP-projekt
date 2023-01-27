@@ -31,7 +31,7 @@ namespace AutoPrime
         private void btnShowAllComments_Click(object sender, EventArgs e)
         {
             FrmShowAllComments sviKomentari = new FrmShowAllComments(korisnik);
-            sviKomentari.Show();
+            sviKomentari.ShowDialog();
         }
 
         private void FrmShowProfile_Load(object sender, EventArgs e)
