@@ -1,6 +1,7 @@
 ﻿using BusinessLogicModel.Services;
 using EntitiesLayer.Entities;
 using System;
+using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -29,7 +30,7 @@ namespace AutoPrime
 
         private void btnShowAllComments_Click(object sender, EventArgs e)
         {
-            FrmShowAllComments sviKomentari = new FrmShowAllComments();
+            FrmShowAllComments sviKomentari = new FrmShowAllComments(korisnik);
             sviKomentari.Show();
         }
 
@@ -50,19 +51,23 @@ namespace AutoPrime
 
         private string GetLastComment()
         {
-            string comment;
-            List<Recenzija> recenzijas = recenzijaService.GetRecenzijas();
-            for(int i = 0; i < recenzijas.Count; i++)
+            string comment = "Ne postoje recenzije";
+            List<Recenzija> recenzijas = recenzijaService.GetRecenzijasForUser(korisnik);
+            DateTime datum = recenzijas.Max(r => r.Datum);
+            foreach (var item in recenzijas)
             {
-
+                if (item.Datum == datum) {
+                    comment = item.Komentar;
+                    break;
+                }
             }
-            return "temp";
+            return comment;
         }
 
         private string GetAverageRating()
         {
             double averageRating = 0, numberOfRatings = 0;
-            List<Recenzija> recenzijas = recenzijaService.GetRecenzijas();
+            List<Recenzija> recenzijas = recenzijaService.GetRecenzijasForUser(korisnik);
             for(int i = 0; i < recenzijas.Count; i++)
             {
                 if (recenzijas[i].Za_korisnik_id == korisnik.Id_korisnika)

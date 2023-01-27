@@ -21,6 +21,15 @@ namespace DataAccessLayer.Repositories
 
             return query;
         }
+        public IQueryable<Recenzija> GetAllForUser(Korisnik korisnik)
+        {
+            var query = from e in Entities
+                        where e.Za_korisnik_id == korisnik.Id_korisnika
+                        select e;
+
+            return query;
+        }
+
 
         public IQueryable<Recenzija> GetCertainRecenzija(string phrase)
         {

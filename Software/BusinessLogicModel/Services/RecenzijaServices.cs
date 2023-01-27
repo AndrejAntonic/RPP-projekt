@@ -20,6 +20,16 @@ namespace BusinessLogicModel.Services
             }
         }
 
+        public List<Recenzija> GetRecenzijasForUser(Korisnik korisnik)
+        {
+            using(var repo = new RecenzijaRepository())
+            {
+                List<Recenzija> recenzije = repo.GetAllForUser(korisnik).ToList();
+
+                return recenzije;
+            }
+        }
+
         public List<Recenzija> GetCertainRecenzijas(string phrase)
         {
             using (var repo = new RecenzijaRepository())
