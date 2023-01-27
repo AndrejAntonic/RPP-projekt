@@ -22,7 +22,7 @@ namespace DataAccessLayer.Repositories
             return query;
         }
 
-        public IQueryable<Model> GetCertainModel(string phrase)
+        public IQueryable<Model> GetCertainModelsByName(string phrase)
         {
             var query = from e in Entities
                         where e.Marka.Naziv.Contains(phrase)

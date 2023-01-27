@@ -20,11 +20,11 @@ namespace BusinessLogicModel.Services
             }
         }
 
-        public List<Model> GetCertainModels(string phrase)
+        public List<Model> GetCertainModelsByName(string phrase)
         {
             using (var repo = new ModelRepository())
             {
-                List<Model> modeli = repo.GetCertainModel(phrase).ToList();
+                List<Model> modeli = repo.GetCertainModelsByName(phrase).ToList();
 
                 return modeli;
             }

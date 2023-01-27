@@ -38,7 +38,7 @@ namespace AutoPrime.Forms
 
         private void FillModel(string marka)
         {
-            cmbModel.DataSource = modelServices.GetCertainModels(marka);
+            cmbModel.DataSource = modelServices.GetCertainModelsByName(marka);
         }
 
         private void FillMarka()
