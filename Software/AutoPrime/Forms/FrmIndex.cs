@@ -1,4 +1,5 @@
 ﻿using AutoPrime.Forms;
+using BusinessLogicModel.Services;
 using DataAccessLayer.Repositories;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,7 @@ namespace AutoPrime
 {
     public partial class FrmIndex : Form
     {
+        private OglasServices oglasServices = new OglasServices();
         public FrmIndex()
         {
             InitializeComponent();
@@ -53,7 +55,13 @@ namespace AutoPrime
 
         private void btnPregledOglasaAukcija_Click(object sender, EventArgs e)
         {
+            FrmAdAndAuctionReview frmAdAndAuctionReview = new FrmAdAndAuctionReview();
+            frmAdAndAuctionReview.ShowDialog();
+        }
 
+        private void FrmIndex_Load(object sender, EventArgs e)
+        {
+            dgvNajtrazeniji.DataSource = oglasServices.GetMostWantedOglas();
         }
     }
 }

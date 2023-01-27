@@ -36,12 +36,12 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtMarka = new System.Windows.Forms.TextBox();
+            this.txtModel = new System.Windows.Forms.TextBox();
+            this.txtGodina = new System.Windows.Forms.TextBox();
+            this.txtKilometraza = new System.Windows.Forms.TextBox();
+            this.txtCijena = new System.Windows.Forms.TextBox();
+            this.txtMotor = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.pbSlika = new System.Windows.Forms.PictureBox();
             this.btnPrethodna = new System.Windows.Forms.Button();
@@ -125,47 +125,47 @@
             this.label6.TabIndex = 7;
             this.label6.Text = "Motor: ";
             // 
-            // textBox1
+            // txtMarka
             // 
-            this.textBox1.Location = new System.Drawing.Point(91, 309);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 8;
+            this.txtMarka.Location = new System.Drawing.Point(91, 309);
+            this.txtMarka.Name = "txtMarka";
+            this.txtMarka.Size = new System.Drawing.Size(100, 22);
+            this.txtMarka.TabIndex = 8;
             // 
-            // textBox2
+            // txtModel
             // 
-            this.textBox2.Location = new System.Drawing.Point(91, 351);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 22);
-            this.textBox2.TabIndex = 9;
+            this.txtModel.Location = new System.Drawing.Point(91, 351);
+            this.txtModel.Name = "txtModel";
+            this.txtModel.Size = new System.Drawing.Size(100, 22);
+            this.txtModel.TabIndex = 9;
             // 
-            // textBox3
+            // txtGodina
             // 
-            this.textBox3.Location = new System.Drawing.Point(91, 395);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 22);
-            this.textBox3.TabIndex = 10;
+            this.txtGodina.Location = new System.Drawing.Point(91, 395);
+            this.txtGodina.Name = "txtGodina";
+            this.txtGodina.Size = new System.Drawing.Size(100, 22);
+            this.txtGodina.TabIndex = 10;
             // 
-            // textBox4
+            // txtKilometraza
             // 
-            this.textBox4.Location = new System.Drawing.Point(91, 440);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 22);
-            this.textBox4.TabIndex = 11;
+            this.txtKilometraza.Location = new System.Drawing.Point(91, 440);
+            this.txtKilometraza.Name = "txtKilometraza";
+            this.txtKilometraza.Size = new System.Drawing.Size(100, 22);
+            this.txtKilometraza.TabIndex = 11;
             // 
-            // textBox5
+            // txtCijena
             // 
-            this.textBox5.Location = new System.Drawing.Point(91, 480);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 22);
-            this.textBox5.TabIndex = 12;
+            this.txtCijena.Location = new System.Drawing.Point(91, 480);
+            this.txtCijena.Name = "txtCijena";
+            this.txtCijena.Size = new System.Drawing.Size(100, 22);
+            this.txtCijena.TabIndex = 12;
             // 
-            // textBox6
+            // txtMotor
             // 
-            this.textBox6.Location = new System.Drawing.Point(91, 525);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 22);
-            this.textBox6.TabIndex = 13;
+            this.txtMotor.Location = new System.Drawing.Point(91, 525);
+            this.txtMotor.Name = "txtMotor";
+            this.txtMotor.Size = new System.Drawing.Size(100, 22);
+            this.txtMotor.TabIndex = 13;
             // 
             // textBox7
             // 
@@ -273,12 +273,12 @@
             this.Controls.Add(this.btnPrethodna);
             this.Controls.Add(this.pbSlika);
             this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtMotor);
+            this.Controls.Add(this.txtCijena);
+            this.Controls.Add(this.txtKilometraza);
+            this.Controls.Add(this.txtGodina);
+            this.Controls.Add(this.txtModel);
+            this.Controls.Add(this.txtMarka);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -289,6 +289,7 @@
             this.Controls.Add(this.txtNazivOglasa);
             this.Name = "FrmDetailAdAndAuctionReview";
             this.Text = "FrmDetailAdAndAuctionReview";
+            this.Load += new System.EventHandler(this.FrmDetailAdAndAuctionReview_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbSlika)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -305,12 +306,12 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtMarka;
+        private System.Windows.Forms.TextBox txtModel;
+        private System.Windows.Forms.TextBox txtGodina;
+        private System.Windows.Forms.TextBox txtKilometraza;
+        private System.Windows.Forms.TextBox txtCijena;
+        private System.Windows.Forms.TextBox txtMotor;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.PictureBox pbSlika;
         private System.Windows.Forms.Button btnPrethodna;

@@ -16,6 +16,11 @@ namespace DataAccessLayer.Repositories
         public override IQueryable<Ogla> GetAll()
         {
             var query = from e in Entities
+                        .Include("Iznajmljeno")
+                        .Include("Motor")
+                        .Include("Korisnik")
+                        .Include("Marka")
+                        .Include("Model")
                         select e;
 
             return query;
@@ -28,6 +33,15 @@ namespace DataAccessLayer.Repositories
                         select e;
 
             return query;
+        }
+
+        public IQueryable<Ogla> GetMostWantedOglas()
+        {
+            var query = from e in Entities
+                        orderby e.broj_pregleda descending
+                        select e;
+
+            return query.Take(5);
         }
 
         public override int Add(Ogla entity, bool saveChanges = true)
