@@ -14,11 +14,12 @@ namespace AutoPrime
 {
     public partial class FrmShowProfile : Form
     {
-        Korisnik korisnik;
+        Korisnik korisnik = new Korisnik();
         RecenzijaServices recenzijaService = new RecenzijaServices();
-        public FrmShowProfile()
+        public FrmShowProfile(Korisnik korisnik = null)
         {
             InitializeComponent();
+            this.korisnik = korisnik;
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -39,12 +40,12 @@ namespace AutoPrime
 
         private void LoadKorisnikData()
         {
-            /*
+            
             txtUsername.Text = korisnik.Korimme;
             txtPhoneNumber.Text = korisnik.Broj_telefona;
             txtAverageRating.Text = GetAverageRating();
             txtLastComment.Text = GetLastComment();
-            */
+            
         }
 
         private string GetLastComment()
@@ -60,7 +61,7 @@ namespace AutoPrime
 
         private string GetAverageRating()
         {
-            int averageRating = 0, numberOfRatings = 0;
+            double averageRating = 0, numberOfRatings = 0;
             List<Recenzija> recenzijas = recenzijaService.GetRecenzijas();
             for(int i = 0; i < recenzijas.Count; i++)
             {

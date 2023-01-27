@@ -21,6 +21,8 @@ namespace EntitiesLayer.Entities
 
         public int Za_korisnik_id { get; set; }
 
+        public DateTime Datum { get; set; }
+
         public virtual Korisnik Korisnik { get; set; }
 
         public virtual Korisnik Korisnik1 { get; set; }

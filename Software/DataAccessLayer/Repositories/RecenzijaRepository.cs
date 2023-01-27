@@ -41,7 +41,8 @@ namespace DataAccessLayer.Repositories
                 Ocjena = entity.Ocjena,
                 Komentar = entity.Komentar,
                 Za_korisnik_id = entity.Za_korisnik_id,
-                Od_korisnik_id = entity.Od_korisnik_id
+                Od_korisnik_id = entity.Od_korisnik_id,
+                Datum = DateTime.Now
             };
 
             Entities.Add(recenzije);

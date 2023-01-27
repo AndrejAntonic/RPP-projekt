@@ -43,7 +43,7 @@ namespace AutoPrime.Forms
             {
                 PrijavljeniKorisnik novi = new PrijavljeniKorisnik();
                 novi.NamjestiKorisnika(prijavljeni);
-                FrmIndex pocetna = new FrmIndex();
+                FrmIndex pocetna = new FrmIndex(prijavljeni);
                 pocetna.Show();
             }
             this.Hide();

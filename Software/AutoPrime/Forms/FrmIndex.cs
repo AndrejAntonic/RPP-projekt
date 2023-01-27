@@ -1,6 +1,7 @@
 ﻿using AutoPrime.Forms;
 using BusinessLogicModel.Services;
 using DataAccessLayer.Repositories;
+using EntitiesLayer.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,9 +17,11 @@ namespace AutoPrime
     public partial class FrmIndex : Form
     {
         private OglasServices oglasServices = new OglasServices();
-        public FrmIndex()
+        Korisnik prijavljeniKorisnik = new Korisnik();
+        public FrmIndex(Korisnik prijavljeniKorisnik)
         {
             InitializeComponent();
+            this.prijavljeniKorisnik = prijavljeniKorisnik;
         }
 
         private void btnKreirajOglas_Click(object sender, EventArgs e)
@@ -49,7 +52,7 @@ namespace AutoPrime
 
         private void btnProfil_Click(object sender, EventArgs e)
         {
-            FrmShowProfile profil = new FrmShowProfile();
+            FrmShowProfile profil = new FrmShowProfile(prijavljeniKorisnik);
             profil.ShowDialog();
         }
 
