@@ -39,10 +39,12 @@ namespace AutoPrime
 
         private void LoadKorisnikData()
         {
+            /*
             txtUsername.Text = korisnik.Korimme;
             txtPhoneNumber.Text = korisnik.Broj_telefona;
             txtAverageRating.Text = GetAverageRating();
             txtLastComment.Text = GetLastComment();
+            */
         }
 
         private string GetLastComment()

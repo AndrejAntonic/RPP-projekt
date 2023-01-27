@@ -33,7 +33,7 @@ namespace DataAccessLayer.Repositories
 
         public override int Add(Recenzija entity, bool saveChanges = true)
         {
-            var korisnikk = Context.Korisniks.SingleOrDefault(k => k.Id == entity.Korisnik.Id_korisnika);
+            var korisnikk = Context.Korisniks.SingleOrDefault(k => k.Id_korisnika == entity.Korisnik.Id_korisnika);
             var recenzije = new Recenzija
             {
                 Id_recenzije = entity.Id_recenzije,
