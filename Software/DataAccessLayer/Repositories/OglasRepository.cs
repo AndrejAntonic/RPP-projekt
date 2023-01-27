@@ -90,8 +90,8 @@ namespace DataAccessLayer.Repositories
 
             var oglass = Entities.SingleOrDefault(o => o.Id_oglas == entity.Id_oglas);
 
-            oglass.Id_oglas = entity.Id_oglas;
-            oglass.korisnik_id = entity.korisnik_id;
+            //oglass.Id_oglas = entity.Id_oglas;
+            //oglass.korisnik_id = entity.korisnik_id;
             oglass.naziv = entity.naziv;
             oglass.Marka = markaa;
             oglass.Model = modell;

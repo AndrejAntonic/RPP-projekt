@@ -42,7 +42,7 @@
             this.txtKilometraza = new System.Windows.Forms.TextBox();
             this.txtCijena = new System.Windows.Forms.TextBox();
             this.txtMotor = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txtLokacija = new System.Windows.Forms.TextBox();
             this.pbSlika = new System.Windows.Forms.PictureBox();
             this.btnPrethodna = new System.Windows.Forms.Button();
             this.btnSljedeca = new System.Windows.Forms.Button();
@@ -59,7 +59,7 @@
             // 
             this.txtNazivOglasa.Location = new System.Drawing.Point(13, 13);
             this.txtNazivOglasa.Name = "txtNazivOglasa";
-            this.txtNazivOglasa.Size = new System.Drawing.Size(100, 22);
+            this.txtNazivOglasa.Size = new System.Drawing.Size(330, 22);
             this.txtNazivOglasa.TabIndex = 0;
             // 
             // Marka
@@ -167,12 +167,12 @@
             this.txtMotor.Size = new System.Drawing.Size(100, 22);
             this.txtMotor.TabIndex = 13;
             // 
-            // textBox7
+            // txtLokacija
             // 
-            this.textBox7.Location = new System.Drawing.Point(360, 687);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 22);
-            this.textBox7.TabIndex = 14;
+            this.txtLokacija.Location = new System.Drawing.Point(360, 687);
+            this.txtLokacija.Name = "txtLokacija";
+            this.txtLokacija.Size = new System.Drawing.Size(100, 22);
+            this.txtLokacija.TabIndex = 14;
             // 
             // pbSlika
             // 
@@ -243,7 +243,7 @@
             // 
             this.btnKorime.Location = new System.Drawing.Point(349, 769);
             this.btnKorime.Name = "btnKorime";
-            this.btnKorime.Size = new System.Drawing.Size(96, 23);
+            this.btnKorime.Size = new System.Drawing.Size(120, 41);
             this.btnKorime.TabIndex = 23;
             this.btnKorime.Text = "Korime";
             this.btnKorime.UseVisualStyleBackColor = true;
@@ -272,7 +272,7 @@
             this.Controls.Add(this.btnSljedeca);
             this.Controls.Add(this.btnPrethodna);
             this.Controls.Add(this.pbSlika);
-            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.txtLokacija);
             this.Controls.Add(this.txtMotor);
             this.Controls.Add(this.txtCijena);
             this.Controls.Add(this.txtKilometraza);
@@ -312,7 +312,7 @@
         private System.Windows.Forms.TextBox txtKilometraza;
         private System.Windows.Forms.TextBox txtCijena;
         private System.Windows.Forms.TextBox txtMotor;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtLokacija;
         private System.Windows.Forms.PictureBox pbSlika;
         private System.Windows.Forms.Button btnPrethodna;
         private System.Windows.Forms.Button btnSljedeca;

@@ -65,20 +65,28 @@ namespace AutoPrime.Forms
             dgvOglasi.Columns["motor_id"].Visible = false;
             dgvOglasi.Columns["Korisniks"].Visible = false;
             dgvOglasi.Columns["Slikas"].Visible = false;
+            dgvOglasi.Columns["id_oglas"].Visible = false;
+            dgvOglasi.Columns["ostecenje"].Visible = false;
+            dgvOglasi.Columns["leasing"].Visible = false;
+            dgvOglasi.Columns["iznajmljeno_id"].Visible = false;
+            dgvOglasi.Columns["prodano_korisnik_id"].Visible = false;
+            dgvOglasi.Columns["Korisnik1"].Visible = false;
         }
 
         private void btnPregledOglasa_Click(object sender, EventArgs e)
         {
-            Ogla odabrani = dgvOglasi.CurrentRow.DataBoundItem as Ogla;/*
-            odabrani = new Ogla
+            Ogla odabrani = dgvOglasi.CurrentRow.DataBoundItem as Ogla;
+            /*
+            if (odabrani != null)
             {
-                broj_pregleda = odabrani.broj_pregleda + 1
-            };
-            oglasServices.UpdateOglas(odabrani);*/
+                odabrani.broj_pregleda = odabrani.broj_pregleda + 1;
+                MessageBox.Show(odabrani.broj_pregleda.ToString());
+
+                oglasServices.UpdateOglas(odabrani);
+            }*/
 
             FrmDetailAdAndAuctionReview otvori = new FrmDetailAdAndAuctionReview(odabrani);
             otvori.ShowDialog();
-            Close();
         }
 
         private void cmbMarka_SelectedIndexChanged(object sender, EventArgs e)

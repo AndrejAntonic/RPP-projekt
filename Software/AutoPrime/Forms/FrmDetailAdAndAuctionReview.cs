@@ -1,4 +1,5 @@
-﻿using EntitiesLayer.Entities;
+﻿using DataAccessLayer.Repositories;
+using EntitiesLayer.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,7 +14,7 @@ namespace AutoPrime.Forms
 {
     public partial class FrmDetailAdAndAuctionReview : Form
     {
-        private Ogla oglas = new Ogla(); 
+        private Ogla oglas = new Ogla();
         public FrmDetailAdAndAuctionReview(Ogla odabrani)
         {
             InitializeComponent();
@@ -41,18 +42,22 @@ namespace AutoPrime.Forms
 
         private void FrmDetailAdAndAuctionReview_Load(object sender, EventArgs e)
         {
+            FrmAdAndAuctionReview frm = new FrmAdAndAuctionReview();
+            frm.Close();
             FillDetail();
+            btnKorime.Text = oglas.Korisnik.Korimme;
         }
 
         private void FillDetail()
         {
             txtNazivOglasa.Text = oglas.naziv;
-            //txtMarka.Text = oglas.Marka.Naziv;
-            //txtModel.Text = oglas.Model.ToString();
+            txtMarka.Text = oglas.Marka.Naziv;
+            txtModel.Text = oglas.Model.naziv;
             txtGodina.Text = oglas.godina.ToString();
             txtCijena.Text = oglas.cijena;
             txtKilometraza.Text = oglas.kilometraza;
-            //txtMotor.Text = oglas.Motor.vrsta;
+            txtMotor.Text = oglas.Motor.vrsta;
+            txtLokacija.Text = oglas.lokacija_vozila;
         }
     }
 }
