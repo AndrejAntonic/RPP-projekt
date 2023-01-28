@@ -27,6 +27,9 @@ namespace AutoPrime.Forms
         {
             OglasServices servis = new OglasServices();
             dgvOglasi.DataSource = servis.GetLeasingOglas();
+            dgvOglasi.Columns["slikas"].Visible = false;
+            dgvOglasi.Columns["korisniks"].Visible = false;
+           
         }
     }
 }
