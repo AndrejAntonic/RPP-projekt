@@ -41,70 +41,66 @@
             // lblRating
             // 
             this.lblRating.AutoSize = true;
-            this.lblRating.Location = new System.Drawing.Point(16, 22);
-            this.lblRating.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblRating.Location = new System.Drawing.Point(12, 18);
             this.lblRating.Name = "lblRating";
-            this.lblRating.Size = new System.Drawing.Size(53, 16);
+            this.lblRating.Size = new System.Drawing.Size(44, 13);
             this.lblRating.TabIndex = 0;
             this.lblRating.Text = "Ocjena:";
             // 
             // lblStars
             // 
             this.lblStars.AutoSize = true;
-            this.lblStars.Location = new System.Drawing.Point(229, 22);
-            this.lblStars.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblStars.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.lblStars.Location = new System.Drawing.Point(172, 6);
             this.lblStars.Name = "lblStars";
-            this.lblStars.Size = new System.Drawing.Size(10, 16);
+            this.lblStars.Size = new System.Drawing.Size(17, 25);
             this.lblStars.TabIndex = 1;
             this.lblStars.Text = ".";
             // 
             // lblComment
             // 
             this.lblComment.AutoSize = true;
-            this.lblComment.Location = new System.Drawing.Point(16, 54);
-            this.lblComment.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblComment.Location = new System.Drawing.Point(12, 44);
             this.lblComment.Name = "lblComment";
-            this.lblComment.Size = new System.Drawing.Size(67, 16);
+            this.lblComment.Size = new System.Drawing.Size(55, 13);
             this.lblComment.TabIndex = 2;
             this.lblComment.Text = "Komentar:";
             // 
             // txtComment
             // 
-            this.txtComment.Location = new System.Drawing.Point(20, 74);
-            this.txtComment.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtComment.Location = new System.Drawing.Point(15, 60);
             this.txtComment.Multiline = true;
             this.txtComment.Name = "txtComment";
-            this.txtComment.Size = new System.Drawing.Size(500, 192);
+            this.txtComment.Size = new System.Drawing.Size(376, 157);
             this.txtComment.TabIndex = 3;
             // 
             // tcbRating
             // 
-            this.tcbRating.Location = new System.Drawing.Point(83, 15);
-            this.tcbRating.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tcbRating.Location = new System.Drawing.Point(62, 12);
             this.tcbRating.Maximum = 5;
             this.tcbRating.Minimum = 1;
             this.tcbRating.Name = "tcbRating";
-            this.tcbRating.Size = new System.Drawing.Size(139, 56);
+            this.tcbRating.Size = new System.Drawing.Size(104, 45);
             this.tcbRating.TabIndex = 4;
             this.tcbRating.TickStyle = System.Windows.Forms.TickStyle.None;
             this.tcbRating.Value = 1;
+            this.tcbRating.ValueChanged += new System.EventHandler(this.tcbRating_ValueChanged);
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(313, 274);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAdd.Location = new System.Drawing.Point(235, 223);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(100, 28);
+            this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 5;
             this.btnAdd.Text = "Dodaj";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(421, 274);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnClose.Location = new System.Drawing.Point(316, 223);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(100, 28);
+            this.btnClose.Size = new System.Drawing.Size(75, 23);
             this.btnClose.TabIndex = 6;
             this.btnClose.Text = "Zatvori";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -112,9 +108,9 @@
             // 
             // FrmReview
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(536, 314);
+            this.ClientSize = new System.Drawing.Size(402, 255);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.tcbRating);
@@ -122,7 +118,6 @@
             this.Controls.Add(this.lblComment);
             this.Controls.Add(this.lblStars);
             this.Controls.Add(this.lblRating);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmReview";
             this.Text = "Recenzija prodavatelja";
             ((System.ComponentModel.ISupportInitialize)(this.tcbRating)).EndInit();

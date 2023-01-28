@@ -18,6 +18,7 @@ namespace AutoPrime
     public partial class FrmShowProfile : Form
     {
         Korisnik korisnik = new Korisnik();
+        Korisnik loggedKorisnik = PrijavljeniKorisnik.prijavljeniKorisnik;
         RecenzijaServices recenzijaService = new RecenzijaServices();
         OglasServices oglasService = new OglasServices();
         bool loggedInKorisnik = false;
@@ -25,8 +26,7 @@ namespace AutoPrime
         {
             InitializeComponent();
             this.korisnik = korisnik;
-            Korisnik temp = PrijavljeniKorisnik.prijavljeniKorisnik;
-            if (this.korisnik.Id_korisnika == temp.Id_korisnika)
+            if (this.korisnik.Id_korisnika == loggedKorisnik.Id_korisnika)
                 loggedInKorisnik = true;
         }
 
@@ -109,7 +109,32 @@ namespace AutoPrime
 
         private void btnLeaveRating_Click(object sender, EventArgs e)
         {
+            bool korisnikBought = determineIfBought();
+            if(korisnikBought)
+            {
+                FrmReview form = new FrmReview(korisnik);
+                form.ShowDialog();
 
+                LoadKorisnikData();
+            }
+            else
+                MessageBox.Show("Pogreška", "Ne možete ostaviti recenziju korisniku od kojeg niste ništa kupili", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private bool determineIfBought()
+        {
+            List<Ogla> korisnikOglas = oglasService.GetOglasByKorisnikId(korisnik.Id_korisnika);
+            bool korisnikBought = false;
+            foreach (var item in korisnikOglas)
+            {
+                if (item.prodano_korisnik_id == loggedKorisnik.Id_korisnika)
+                {
+                    korisnikBought = true;
+                    break;
+                }
+            }
+
+            return korisnikBought;
         }
     }
 }

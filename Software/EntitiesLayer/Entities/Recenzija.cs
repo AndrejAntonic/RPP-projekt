@@ -9,7 +9,7 @@ namespace EntitiesLayer.Entities
     public partial class Recenzija
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id_recenzije { get; set; }
 
         public int Od_korisnik_id { get; set; }
