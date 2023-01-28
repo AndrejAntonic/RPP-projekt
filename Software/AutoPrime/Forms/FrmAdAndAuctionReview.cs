@@ -39,11 +39,13 @@ namespace AutoPrime.Forms
         private void FillModel(string marka)
         {
             cmbModel.DataSource = modelServices.GetCertainModelsByName(marka);
+            cmbModel.SelectedItem = null;
         }
 
         private void FillMarka()
         {
             cmbMarka.DataSource = MarkaServices.GetMarkas();
+            cmbMarka.SelectedItem = null;
         }
 
         private void PrikaziAukcije()
@@ -59,6 +61,11 @@ namespace AutoPrime.Forms
         private void PrikaziOglase()
         {
             dgvOglasi.DataSource = oglasServices.GetOglas();
+            HideOglasAtributes();
+        }
+
+        private void HideOglasAtributes()
+        {
             dgvOglasi.Columns["korisnik_id"].Visible = false;
             dgvOglasi.Columns["marka_id"].Visible = false;
             dgvOglasi.Columns["model_id"].Visible = false;
@@ -91,8 +98,60 @@ namespace AutoPrime.Forms
 
         private void cmbMarka_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var odabrana = cmbMarka.SelectedItem.ToString();
-            FillModel(odabrana);
+            if (cmbMarka.SelectedItem!=null)
+            {
+                var odabrana = cmbMarka.SelectedItem.ToString();
+                FillModel(odabrana);
+            }
+
+        }
+
+        private void btnFiltriraj_Click(object sender, EventArgs e)
+        {
+            var marka ="";
+            if (cmbMarka.SelectedItem!=null)
+            {
+                marka = cmbMarka.SelectedItem.ToString();
+            }
+            var model ="";
+            if (cmbModel.SelectedItem!=null)
+            {
+                model = cmbModel.SelectedItem.ToString();
+            }
+            var godina="";
+            if (cmbGodina.SelectedItem != null)
+            {
+                godina = cmbGodina.SelectedItem.ToString();
+            }
+            var kilometraza="";
+            if (cmbKilometraza.SelectedItem!=null)
+            {
+                kilometraza = cmbKilometraza.SelectedItem.ToString();
+            }
+            var cijena ="";
+            if (cmbCijena.SelectedItem!= null)
+            {
+                cijena = cmbCijena.SelectedItem.ToString();
+            }
+
+            dgvOglasi.DataSource = oglasServices.FilterOglas(marka, model, godina, kilometraza, cijena);
+            HideOglasAtributes();
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            PrikaziOglase();
+            PrikaziAukcije();
+            cmbGodina.SelectedItem = null;
+            cmbModel.SelectedItem = null;
+            cmbMarka.SelectedItem = null;
+            cmbKilometraza.SelectedItem = null;
+            cmbCijena.SelectedItem = null;
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            dgvOglasi.DataSource = oglasServices.GetCertainOglass(txtSearch.Text);
         }
     }
 }

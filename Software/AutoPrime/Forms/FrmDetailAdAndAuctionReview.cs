@@ -36,8 +36,16 @@ namespace AutoPrime.Forms
 
         private void btnOstecenja_Click(object sender, EventArgs e)
         {
-            FrmShowDamage ostecenja = new FrmShowDamage();
-            ostecenja.Show();
+            if (oglas.ostecenje==1)
+            {
+                FrmShowDamage ostecenja = new FrmShowDamage();
+                ostecenja.Show();
+            }
+            else
+            {
+                MessageBox.Show("Ne može se otvoriti prikaz oštećenja jer ih nema!");
+            }
+
         }
 
         private void FrmDetailAdAndAuctionReview_Load(object sender, EventArgs e)
@@ -50,6 +58,11 @@ namespace AutoPrime.Forms
 
         private void FillDetail()
         {
+            var provjeraOstecenja = oglas.ostecenje;
+            if (provjeraOstecenja==1)
+            {
+                checkBoxOstecenja.Checked = true;
+            }
             txtNazivOglasa.Text = oglas.naziv;
             txtMarka.Text = oglas.Marka.Naziv;
             txtModel.Text = oglas.Model.naziv;
