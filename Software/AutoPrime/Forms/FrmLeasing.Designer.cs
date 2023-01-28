@@ -62,6 +62,7 @@
             this.btnDetaljno.TabIndex = 2;
             this.btnDetaljno.Text = "Detaljan prikaz";
             this.btnDetaljno.UseVisualStyleBackColor = true;
+            this.btnDetaljno.Click += new System.EventHandler(this.btnDetaljno_Click);
             // 
             // FrmLeasing
             // 

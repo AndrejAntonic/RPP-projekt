@@ -1,4 +1,5 @@
 ﻿using BusinessLogicModel.Services;
+using EntitiesLayer.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,6 +31,15 @@ namespace AutoPrime.Forms
             dgvOglasi.Columns["slikas"].Visible = false;
             dgvOglasi.Columns["korisniks"].Visible = false;
            
+        }
+
+        private void btnDetaljno_Click(object sender, EventArgs e)
+        {
+            Ogla odabrani = new Ogla();
+            odabrani = dgvOglasi.CurrentRow.DataBoundItem as Ogla;
+            FrmDetailAdAndAuctionReview detaljnaForma = new FrmDetailAdAndAuctionReview(odabrani);
+            detaljnaForma.Show();
+
         }
     }
 }
