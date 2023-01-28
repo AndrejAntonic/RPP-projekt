@@ -45,6 +45,7 @@
             this.btnShowAdvertisement = new System.Windows.Forms.Button();
             this.btnShowAllComments = new System.Windows.Forms.Button();
             this.btnLeaveRating = new System.Windows.Forms.Button();
+            this.btnShowInteresting = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUserAdvertisement)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUserFavourite)).BeginInit();
             this.SuspendLayout();
@@ -181,6 +182,7 @@
             this.btnShowAdvertisement.TabIndex = 14;
             this.btnShowAdvertisement.Text = "Prikaži oglas";
             this.btnShowAdvertisement.UseVisualStyleBackColor = true;
+            this.btnShowAdvertisement.Click += new System.EventHandler(this.btnShowAdvertisement_Click);
             // 
             // btnShowAllComments
             // 
@@ -203,11 +205,22 @@
             this.btnLeaveRating.Visible = false;
             this.btnLeaveRating.Click += new System.EventHandler(this.btnLeaveRating_Click);
             // 
+            // btnShowInteresting
+            // 
+            this.btnShowInteresting.Location = new System.Drawing.Point(438, 412);
+            this.btnShowInteresting.Name = "btnShowInteresting";
+            this.btnShowInteresting.Size = new System.Drawing.Size(75, 47);
+            this.btnShowInteresting.TabIndex = 17;
+            this.btnShowInteresting.Text = "Prikaži zanimljivi oglas";
+            this.btnShowInteresting.UseVisualStyleBackColor = true;
+            this.btnShowInteresting.Click += new System.EventHandler(this.btnShowInteresting_Click);
+            // 
             // FrmShowProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(521, 632);
+            this.Controls.Add(this.btnShowInteresting);
             this.Controls.Add(this.btnLeaveRating);
             this.Controls.Add(this.btnShowAllComments);
             this.Controls.Add(this.btnShowAdvertisement);
@@ -254,5 +267,6 @@
         private System.Windows.Forms.Button btnShowAdvertisement;
         private System.Windows.Forms.Button btnShowAllComments;
         private System.Windows.Forms.Button btnLeaveRating;
+        private System.Windows.Forms.Button btnShowInteresting;
     }
 }

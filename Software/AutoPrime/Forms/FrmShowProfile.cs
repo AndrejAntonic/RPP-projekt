@@ -156,5 +156,45 @@ namespace AutoPrime
 
             return korisnikBought;
         }
+
+        private void btnShowInteresting_Click(object sender, EventArgs e)
+        {
+            Ogla ogla = getSelectedInterestingOglas();
+
+            if (ogla != null)
+            {
+                FrmDetailAdAndAuctionReview form = new FrmDetailAdAndAuctionReview(ogla);
+                form.ShowDialog();
+            }
+        }
+
+        private Ogla getSelectedInterestingOglas()
+        {
+            if(dgvUserFavourite.SelectedCells.Count > 0)
+                return dgvUserFavourite.CurrentRow.DataBoundItem as Ogla;
+            else
+                MessageBox.Show("Odaberite jedan oglas!", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return null;
+        }
+
+        private void btnShowAdvertisement_Click(object sender, EventArgs e)
+        {
+            Ogla ogla = getSelectedAdvertisement();
+
+            if (ogla != null)
+            {
+                FrmDetailAdAndAuctionReview form = new FrmDetailAdAndAuctionReview(ogla);
+                form.ShowDialog();
+            }
+        }
+
+        private Ogla getSelectedAdvertisement()
+        {
+            if (dgvUserAdvertisement.SelectedCells.Count > 0)
+                return dgvUserAdvertisement.CurrentRow.DataBoundItem as Ogla;
+            else
+                MessageBox.Show("Odaberite jedan oglas!", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return null;
+        }
     }
 }

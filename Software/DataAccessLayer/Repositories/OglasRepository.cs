@@ -43,6 +43,11 @@ namespace DataAccessLayer.Repositories
         public IQueryable<Ogla> GetOglasByKorisnikId(int id)
         {
             var query = from e in Entities
+                        .Include("Iznajmljeno")
+                        .Include("Motor")
+                        .Include("Korisnik")
+                        .Include("Marka")
+                        .Include("Model")
                         where e.korisnik_id == id
                         select e;
 
@@ -52,6 +57,11 @@ namespace DataAccessLayer.Repositories
         public IQueryable<Ogla> GetOneOglasByOglasId(int id)
         {
             var query = from e in Entities
+                        .Include("Iznajmljeno")
+                        .Include("Motor")
+                        .Include("Korisnik")
+                        .Include("Marka")
+                        .Include("Model")
                         where e.Id_oglas == id
                         select e;
 
