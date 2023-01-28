@@ -114,6 +114,8 @@ namespace AutoPrime
             {
                 FrmReview form = new FrmReview(korisnik);
                 form.ShowDialog();
+
+                LoadKorisnikData();
             }
             else
                 MessageBox.Show("Pogreška", "Ne možete ostaviti recenziju korisniku od kojeg niste ništa kupili", MessageBoxButtons.OK, MessageBoxIcon.Error);
