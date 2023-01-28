@@ -46,6 +46,7 @@
             this.btnShowAllComments = new System.Windows.Forms.Button();
             this.btnLeaveRating = new System.Windows.Forms.Button();
             this.btnShowInteresting = new System.Windows.Forms.Button();
+            this.btnDeleteInteresting = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUserAdvertisement)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUserFavourite)).BeginInit();
             this.SuspendLayout();
@@ -173,6 +174,7 @@
             this.btnDeleteAdvertisement.TabIndex = 13;
             this.btnDeleteAdvertisement.Text = "Obriši oglas";
             this.btnDeleteAdvertisement.UseVisualStyleBackColor = true;
+            this.btnDeleteAdvertisement.Click += new System.EventHandler(this.btnDeleteAdvertisement_Click);
             // 
             // btnShowAdvertisement
             // 
@@ -207,7 +209,7 @@
             // 
             // btnShowInteresting
             // 
-            this.btnShowInteresting.Location = new System.Drawing.Point(438, 412);
+            this.btnShowInteresting.Location = new System.Drawing.Point(438, 548);
             this.btnShowInteresting.Name = "btnShowInteresting";
             this.btnShowInteresting.Size = new System.Drawing.Size(75, 47);
             this.btnShowInteresting.TabIndex = 17;
@@ -215,11 +217,22 @@
             this.btnShowInteresting.UseVisualStyleBackColor = true;
             this.btnShowInteresting.Click += new System.EventHandler(this.btnShowInteresting_Click);
             // 
+            // btnDeleteInteresting
+            // 
+            this.btnDeleteInteresting.Location = new System.Drawing.Point(438, 495);
+            this.btnDeleteInteresting.Name = "btnDeleteInteresting";
+            this.btnDeleteInteresting.Size = new System.Drawing.Size(75, 47);
+            this.btnDeleteInteresting.TabIndex = 18;
+            this.btnDeleteInteresting.Text = "Obriši zanimljivi oglas";
+            this.btnDeleteInteresting.UseVisualStyleBackColor = true;
+            this.btnDeleteInteresting.Click += new System.EventHandler(this.btnDeleteInteresting_Click);
+            // 
             // FrmShowProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(521, 632);
+            this.Controls.Add(this.btnDeleteInteresting);
             this.Controls.Add(this.btnShowInteresting);
             this.Controls.Add(this.btnLeaveRating);
             this.Controls.Add(this.btnShowAllComments);
@@ -268,5 +281,6 @@
         private System.Windows.Forms.Button btnShowAllComments;
         private System.Windows.Forms.Button btnLeaveRating;
         private System.Windows.Forms.Button btnShowInteresting;
+        private System.Windows.Forms.Button btnDeleteInteresting;
     }
 }

@@ -53,7 +53,7 @@ namespace AutoPrime
 
         private void LoadInterestingAds()
         {
-            List<Zanimljivi_oglasi> zanimljiviOglasi = zanimljiviOglasiService.GetZanimljiviOglasiById(korisnik.Id_korisnika);
+            List<Zanimljivi_oglasi> zanimljiviOglasi = zanimljiviOglasiService.GetZanimljiviOglasiByUserId(korisnik.Id_korisnika);
             List<Ogla> oglasi = new List<Ogla>();
             if(zanimljiviOglasi != null)
             {
@@ -64,6 +64,7 @@ namespace AutoPrime
             }
             dgvUserFavourite.DataSource = oglasi;
             dgvUserFavourite.Columns.OfType<DataGridViewColumn>().ToList().ForEach(col => col.Visible = false);
+            dgvUserFavourite.Rows[0].Selected = false;
             dgvUserFavourite.Columns["Id_oglas"].Visible = true;
             dgvUserFavourite.Columns["naziv"].Visible = true;
             dgvUserFavourite.Columns["datum"].Visible = true;
@@ -75,6 +76,8 @@ namespace AutoPrime
             lblUserFavourite.Visible = false;
             btnDeleteAdvertisement.Visible = false;
             btnLeaveRating.Visible = true;
+            btnShowInteresting.Visible = false;
+            btnDeleteInteresting.Visible = false;
         }
 
         private void LoadAllKorisnikPostings()
@@ -170,7 +173,7 @@ namespace AutoPrime
 
         private Ogla getSelectedInterestingOglas()
         {
-            if(dgvUserFavourite.SelectedCells.Count > 0)
+            if(dgvUserFavourite.SelectedCells.Count > 0 || dgvUserFavourite.SelectedRows.Count > 0)
                 return dgvUserFavourite.CurrentRow.DataBoundItem as Ogla;
             else
                 MessageBox.Show("Odaberite jedan oglas!", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -190,11 +193,44 @@ namespace AutoPrime
 
         private Ogla getSelectedAdvertisement()
         {
-            if (dgvUserAdvertisement.SelectedCells.Count > 0)
+            if (dgvUserAdvertisement.SelectedRows.Count > 0 || dgvUserAdvertisement.SelectedCells.Count > 0)
                 return dgvUserAdvertisement.CurrentRow.DataBoundItem as Ogla;
             else
                 MessageBox.Show("Odaberite jedan oglas!", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return null;
+        }
+
+        private void btnDeleteAdvertisement_Click(object sender, EventArgs e)
+        {
+            Ogla ogla = getSelectedAdvertisement();
+
+            if (ogla != null)
+            {
+                DialogResult message = MessageBox.Show("Jeste li sigurni da želite obrisati oglas?", "Upozorenje", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if(message == DialogResult.Yes)
+                {
+                    List<Zanimljivi_oglasi> zanimljivi_Oglasi = zanimljiviOglasiService.GetZanimljiviOglasiByOglasId(ogla.Id_oglas);
+                    if (zanimljivi_Oglasi != null)
+                    {
+                        foreach (var item in zanimljivi_Oglasi)
+                        {
+                            zanimljiviOglasiService.RemoveZanimljiviOglas(item);
+                        }
+                    }
+                    oglasService.RemoveOglas(ogla);
+                    LoadAllKorisnikPostings();
+                }
+            }
+        }
+
+        private void btnDeleteInteresting_Click(object sender, EventArgs e)
+        {
+            Ogla ogla = getSelectedInterestingOglas();
+
+            Zanimljivi_oglasi zanimljivi_Oglas = zanimljiviOglasiService.GetZanimljiviOglasiByOglasUserId(ogla.Id_oglas, ogla.korisnik_id);
+            zanimljiviOglasiService.RemoveZanimljiviOglas(zanimljivi_Oglas);
+
+            LoadInterestingAds();
         }
     }
 }
