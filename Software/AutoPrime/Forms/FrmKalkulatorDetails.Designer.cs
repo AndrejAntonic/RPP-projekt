@@ -38,7 +38,8 @@
             // 
             this.lblMethod.AutoSize = true;
             this.lblMethod.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.lblMethod.Location = new System.Drawing.Point(12, 9);
+            this.lblMethod.Location = new System.Drawing.Point(8, 6);
+            this.lblMethod.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMethod.Name = "lblMethod";
             this.lblMethod.Size = new System.Drawing.Size(17, 17);
             this.lblMethod.TabIndex = 0;
@@ -48,7 +49,8 @@
             // 
             this.lblDescription.AutoSize = true;
             this.lblDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.lblDescription.Location = new System.Drawing.Point(13, 42);
+            this.lblDescription.Location = new System.Drawing.Point(9, 27);
+            this.lblDescription.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new System.Drawing.Size(35, 13);
             this.lblDescription.TabIndex = 1;
@@ -56,9 +58,10 @@
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(690, 632);
+            this.btnBack.Location = new System.Drawing.Point(456, 4);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(46, 29);
+            this.btnBack.Size = new System.Drawing.Size(31, 19);
             this.btnBack.TabIndex = 2;
             this.btnBack.Text = "<";
             this.btnBack.UseVisualStyleBackColor = true;
@@ -66,9 +69,10 @@
             // 
             // btnAhead
             // 
-            this.btnAhead.Location = new System.Drawing.Point(742, 632);
+            this.btnAhead.Location = new System.Drawing.Point(491, 4);
+            this.btnAhead.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAhead.Name = "btnAhead";
-            this.btnAhead.Size = new System.Drawing.Size(46, 29);
+            this.btnAhead.Size = new System.Drawing.Size(31, 19);
             this.btnAhead.TabIndex = 3;
             this.btnAhead.Text = ">";
             this.btnAhead.UseVisualStyleBackColor = true;
@@ -76,13 +80,14 @@
             // 
             // FrmKalkulatorDetails
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 673);
+            this.ClientSize = new System.Drawing.Size(533, 437);
             this.Controls.Add(this.btnAhead);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.lblDescription);
             this.Controls.Add(this.lblMethod);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmKalkulatorDetails";
             this.Text = "Detaljni opis kalkulacija";
             this.Load += new System.EventHandler(this.FrmKalkulatorDetails_Load);
