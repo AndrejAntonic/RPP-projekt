@@ -21,7 +21,7 @@ namespace AutoPrime
         Korisnik loggedKorisnik = PrijavljeniKorisnik.prijavljeniKorisnik;
         RecenzijaServices recenzijaService = new RecenzijaServices();
         OglasServices oglasService = new OglasServices();
-        ZanimljiviOglasiServices zanimljivi = new ZanimljiviOglasiServices();
+        ZanimljiviOglasiServices zanimljiviOglasiService = new ZanimljiviOglasiServices();
         bool loggedInKorisnik = false;
         public FrmShowProfile(Korisnik korisnik = null)
         {
@@ -53,7 +53,20 @@ namespace AutoPrime
 
         private void LoadInterestingAds()
         {
-            dgvUserFavourite.DataSource = zanimljivi.GetZanimljiviOglasi();
+            List<Zanimljivi_oglasi> zanimljiviOglasi = zanimljiviOglasiService.GetZanimljiviOglasiById(korisnik.Id_korisnika);
+            List<Ogla> oglasi = new List<Ogla>();
+            if(zanimljiviOglasi != null)
+            {
+                foreach (var item in zanimljiviOglasi)
+                {
+                    oglasi.Add(oglasService.GetOneOglasById(item.Oglas_id));
+                }
+            }
+            dgvUserFavourite.DataSource = oglasi;
+            dgvUserFavourite.Columns.OfType<DataGridViewColumn>().ToList().ForEach(col => col.Visible = false);
+            dgvUserFavourite.Columns["Id_oglas"].Visible = true;
+            dgvUserFavourite.Columns["naziv"].Visible = true;
+            dgvUserFavourite.Columns["datum"].Visible = true;
         }
 
         private void removeZanimljivi()

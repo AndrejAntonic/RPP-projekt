@@ -49,6 +49,15 @@ namespace DataAccessLayer.Repositories
             return query;
         }
 
+        public IQueryable<Ogla> GetOneOglasByOglasId(int id)
+        {
+            var query = from e in Entities
+                        where e.Id_oglas == id
+                        select e;
+
+            return query;
+        }
+
         public IQueryable<Ogla> GetMostWantedOglas()
         {
             var query = from e in Entities

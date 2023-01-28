@@ -19,5 +19,15 @@ namespace BusinessLogicModel.Services
                 return oglasi;
             }
         }
+
+        public List<Zanimljivi_oglasi> GetZanimljiviOglasiById(int id)
+        {
+            using (var repo = new ZanimljiviOglasiRepository())
+            {
+                List<Zanimljivi_oglasi> oglasi = repo.GetForUser(id).ToList();
+
+                return oglasi;
+            }
+        }
     }
 }
