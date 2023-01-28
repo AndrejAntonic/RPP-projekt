@@ -86,8 +86,8 @@ namespace AutoPrime
 
         private double GetDatabasePrice(int model_id)
         {
-            List<double> price = modelService.GetModelPrice(model_id);
-            return price[0];
+            double price = modelService.GetModelPrice(model_id).FirstOrDefault();
+            return price;
         }
 
         private void LoadCarPrice()
