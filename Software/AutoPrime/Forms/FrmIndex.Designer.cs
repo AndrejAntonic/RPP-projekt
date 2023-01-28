@@ -43,36 +43,40 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 28);
+            this.label1.Location = new System.Drawing.Point(10, 23);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(113, 16);
+            this.label1.Size = new System.Drawing.Size(88, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Najtraženiji oglasi";
             // 
             // dgvNajtrazeniji
             // 
             this.dgvNajtrazeniji.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvNajtrazeniji.Location = new System.Drawing.Point(16, 64);
+            this.dgvNajtrazeniji.Location = new System.Drawing.Point(12, 52);
+            this.dgvNajtrazeniji.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvNajtrazeniji.Name = "dgvNajtrazeniji";
             this.dgvNajtrazeniji.RowHeadersWidth = 51;
             this.dgvNajtrazeniji.RowTemplate.Height = 24;
-            this.dgvNajtrazeniji.Size = new System.Drawing.Size(763, 150);
+            this.dgvNajtrazeniji.Size = new System.Drawing.Size(572, 122);
             this.dgvNajtrazeniji.TabIndex = 1;
             // 
             // btnPregledOdabranog
             // 
-            this.btnPregledOdabranog.Location = new System.Drawing.Point(562, 245);
+            this.btnPregledOdabranog.Location = new System.Drawing.Point(422, 199);
+            this.btnPregledOdabranog.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnPregledOdabranog.Name = "btnPregledOdabranog";
-            this.btnPregledOdabranog.Size = new System.Drawing.Size(216, 28);
+            this.btnPregledOdabranog.Size = new System.Drawing.Size(162, 23);
             this.btnPregledOdabranog.TabIndex = 2;
             this.btnPregledOdabranog.Text = "Pregled odabranog oglasa";
             this.btnPregledOdabranog.UseVisualStyleBackColor = true;
             // 
             // btnPregledOglasaAukcija
             // 
-            this.btnPregledOglasaAukcija.Location = new System.Drawing.Point(322, 313);
+            this.btnPregledOglasaAukcija.Location = new System.Drawing.Point(242, 254);
+            this.btnPregledOglasaAukcija.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnPregledOglasaAukcija.Name = "btnPregledOglasaAukcija";
-            this.btnPregledOglasaAukcija.Size = new System.Drawing.Size(209, 29);
+            this.btnPregledOglasaAukcija.Size = new System.Drawing.Size(157, 24);
             this.btnPregledOglasaAukcija.TabIndex = 3;
             this.btnPregledOglasaAukcija.Text = "Pregled oglasa i aukcija";
             this.btnPregledOglasaAukcija.UseVisualStyleBackColor = true;
@@ -80,9 +84,10 @@
             // 
             // btnKreirajOglas
             // 
-            this.btnKreirajOglas.Location = new System.Drawing.Point(322, 371);
+            this.btnKreirajOglas.Location = new System.Drawing.Point(242, 301);
+            this.btnKreirajOglas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnKreirajOglas.Name = "btnKreirajOglas";
-            this.btnKreirajOglas.Size = new System.Drawing.Size(209, 29);
+            this.btnKreirajOglas.Size = new System.Drawing.Size(157, 24);
             this.btnKreirajOglas.TabIndex = 4;
             this.btnKreirajOglas.Text = "Kreiraj oglas";
             this.btnKreirajOglas.UseVisualStyleBackColor = true;
@@ -90,9 +95,10 @@
             // 
             // btnKreirajAukciju
             // 
-            this.btnKreirajAukciju.Location = new System.Drawing.Point(322, 429);
+            this.btnKreirajAukciju.Location = new System.Drawing.Point(242, 349);
+            this.btnKreirajAukciju.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnKreirajAukciju.Name = "btnKreirajAukciju";
-            this.btnKreirajAukciju.Size = new System.Drawing.Size(209, 29);
+            this.btnKreirajAukciju.Size = new System.Drawing.Size(157, 24);
             this.btnKreirajAukciju.TabIndex = 5;
             this.btnKreirajAukciju.Text = "Kreiraj aukciju";
             this.btnKreirajAukciju.UseVisualStyleBackColor = true;
@@ -100,9 +106,10 @@
             // 
             // btnLeasing
             // 
-            this.btnLeasing.Location = new System.Drawing.Point(322, 492);
+            this.btnLeasing.Location = new System.Drawing.Point(242, 400);
+            this.btnLeasing.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnLeasing.Name = "btnLeasing";
-            this.btnLeasing.Size = new System.Drawing.Size(209, 29);
+            this.btnLeasing.Size = new System.Drawing.Size(157, 24);
             this.btnLeasing.TabIndex = 6;
             this.btnLeasing.Text = "Leasing";
             this.btnLeasing.UseVisualStyleBackColor = true;
@@ -110,9 +117,10 @@
             // 
             // btnKalkulator
             // 
-            this.btnKalkulator.Location = new System.Drawing.Point(322, 544);
+            this.btnKalkulator.Location = new System.Drawing.Point(242, 442);
+            this.btnKalkulator.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnKalkulator.Name = "btnKalkulator";
-            this.btnKalkulator.Size = new System.Drawing.Size(209, 29);
+            this.btnKalkulator.Size = new System.Drawing.Size(157, 24);
             this.btnKalkulator.TabIndex = 7;
             this.btnKalkulator.Text = "Kalkulator";
             this.btnKalkulator.UseVisualStyleBackColor = true;
@@ -120,19 +128,20 @@
             // 
             // btnProfil
             // 
-            this.btnProfil.Location = new System.Drawing.Point(322, 601);
+            this.btnProfil.Location = new System.Drawing.Point(242, 488);
+            this.btnProfil.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnProfil.Name = "btnProfil";
-            this.btnProfil.Size = new System.Drawing.Size(209, 29);
+            this.btnProfil.Size = new System.Drawing.Size(157, 24);
             this.btnProfil.TabIndex = 8;
-            this.btnProfil.Text = "Profil";
+            this.btnProfil.Text = "Vlastiti profil";
             this.btnProfil.UseVisualStyleBackColor = true;
             this.btnProfil.Click += new System.EventHandler(this.btnProfil_Click);
             // 
             // FrmIndex
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(807, 642);
+            this.ClientSize = new System.Drawing.Size(605, 522);
             this.Controls.Add(this.btnProfil);
             this.Controls.Add(this.btnKalkulator);
             this.Controls.Add(this.btnLeasing);
@@ -142,6 +151,7 @@
             this.Controls.Add(this.btnPregledOdabranog);
             this.Controls.Add(this.dgvNajtrazeniji);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmIndex";
             this.Text = "Auto Prime";
             this.Load += new System.EventHandler(this.FrmIndex_Load);

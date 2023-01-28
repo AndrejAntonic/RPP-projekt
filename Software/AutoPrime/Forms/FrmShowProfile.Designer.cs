@@ -44,6 +44,7 @@
             this.btnDeleteAdvertisement = new System.Windows.Forms.Button();
             this.btnShowAdvertisement = new System.Windows.Forms.Button();
             this.btnShowAllComments = new System.Windows.Forms.Button();
+            this.btnLeaveRating = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUserAdvertisement)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUserFavourite)).BeginInit();
             this.SuspendLayout();
@@ -191,11 +192,23 @@
             this.btnShowAllComments.UseVisualStyleBackColor = true;
             this.btnShowAllComments.Click += new System.EventHandler(this.btnShowAllComments_Click);
             // 
+            // btnLeaveRating
+            // 
+            this.btnLeaveRating.Location = new System.Drawing.Point(438, 68);
+            this.btnLeaveRating.Name = "btnLeaveRating";
+            this.btnLeaveRating.Size = new System.Drawing.Size(75, 42);
+            this.btnLeaveRating.TabIndex = 16;
+            this.btnLeaveRating.Text = "Napiši recenziju";
+            this.btnLeaveRating.UseVisualStyleBackColor = true;
+            this.btnLeaveRating.Visible = false;
+            this.btnLeaveRating.Click += new System.EventHandler(this.btnLeaveRating_Click);
+            // 
             // FrmShowProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(521, 632);
+            this.Controls.Add(this.btnLeaveRating);
             this.Controls.Add(this.btnShowAllComments);
             this.Controls.Add(this.btnShowAdvertisement);
             this.Controls.Add(this.btnDeleteAdvertisement);
@@ -240,5 +253,6 @@
         private System.Windows.Forms.Button btnDeleteAdvertisement;
         private System.Windows.Forms.Button btnShowAdvertisement;
         private System.Windows.Forms.Button btnShowAllComments;
+        private System.Windows.Forms.Button btnLeaveRating;
     }
 }

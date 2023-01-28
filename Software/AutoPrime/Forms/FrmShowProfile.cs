@@ -1,4 +1,6 @@
-﻿using BusinessLogicModel.Services;
+﻿using AutoPrime.Forms;
+using BusinessLogicModel.Services;
+using DataAccessLayer.Repositories;
 using EntitiesLayer.Entities;
 using System;
 using System.CodeDom.Compiler;
@@ -18,10 +20,14 @@ namespace AutoPrime
         Korisnik korisnik = new Korisnik();
         RecenzijaServices recenzijaService = new RecenzijaServices();
         OglasServices oglasService = new OglasServices();
+        bool loggedInKorisnik = false;
         public FrmShowProfile(Korisnik korisnik = null)
         {
             InitializeComponent();
             this.korisnik = korisnik;
+            Korisnik temp = PrijavljeniKorisnik.prijavljeniKorisnik;
+            if (this.korisnik.Id_korisnika == temp.Id_korisnika)
+                loggedInKorisnik = true;
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -37,8 +43,18 @@ namespace AutoPrime
 
         private void FrmShowProfile_Load(object sender, EventArgs e)
         {
+            if (!loggedInKorisnik)
+                removeZanimljivi();
             LoadKorisnikData();
             LoadAllKorisnikPostings();
+        }
+
+        private void removeZanimljivi()
+        {
+            dgvUserFavourite.Visible = false;
+            lblUserFavourite.Visible = false;
+            btnDeleteAdvertisement.Visible = false;
+            btnLeaveRating.Visible = true;
         }
 
         private void LoadAllKorisnikPostings()
@@ -89,6 +105,11 @@ namespace AutoPrime
             }
             averageRating /= numberOfRatings;
             return averageRating.ToString();
+        }
+
+        private void btnLeaveRating_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
