@@ -61,5 +61,17 @@ namespace BusinessLogicModel.Services
 
             return isSuccesful;
         }
+
+        public bool AddZanimljiviOglas(Zanimljivi_oglasi zanimljivi)
+        {
+            bool isSuccesful = false;
+            using (var repo = new ZanimljiviOglasiRepository())
+            {
+                int affectedRow = repo.Add(zanimljivi);
+                isSuccesful = affectedRow > 0;
+            }
+
+            return isSuccesful;
+        }
     }
 }
