@@ -21,6 +21,7 @@ namespace AutoPrime
         Korisnik loggedKorisnik = PrijavljeniKorisnik.prijavljeniKorisnik;
         RecenzijaServices recenzijaService = new RecenzijaServices();
         OglasServices oglasService = new OglasServices();
+        ZanimljiviOglasiServices zanimljivi = new ZanimljiviOglasiServices();
         bool loggedInKorisnik = false;
         public FrmShowProfile(Korisnik korisnik = null)
         {
@@ -47,6 +48,12 @@ namespace AutoPrime
                 removeZanimljivi();
             LoadKorisnikData();
             LoadAllKorisnikPostings();
+            LoadInterestingAds();
+        }
+
+        private void LoadInterestingAds()
+        {
+            dgvUserFavourite.DataSource = zanimljivi.GetZanimljiviOglasi();
         }
 
         private void removeZanimljivi()
