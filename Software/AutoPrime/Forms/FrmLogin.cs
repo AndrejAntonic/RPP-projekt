@@ -32,7 +32,7 @@ namespace AutoPrime.Forms
             string lozinka = txtLozinka.Text;
             Korisnik prijavljeni = new Korisnik();
             KorisnikServices servis = new KorisnikServices();
-            prijavljeni = servis.Prijava(korisnickoIme, lozinka);
+            prijavljeni = servis.Login(korisnickoIme, lozinka);
             
 
             if(prijavljeni == null)

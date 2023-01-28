@@ -40,7 +40,7 @@ namespace BusinessLogicModel.Services
             }
         }
 
-        public Korisnik Prijava(string ime, string loz)
+        public Korisnik Login(string ime, string loz)
         {
             using (var repo = new KorisnikRepository())
             {
