@@ -1,4 +1,5 @@
-﻿using EntitiesLayer.Entities;
+﻿using BusinessLogicModel.Services;
+using EntitiesLayer.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,7 +14,8 @@ namespace AutoPrime.Forms
 {
     public partial class FrmDetailAdAndAuctionReview : Form
     {
-        private Ogla oglas = new Ogla(); 
+        private Ogla oglas = new Ogla();
+        private KorisnikServices korisnikServices = new KorisnikServices();
         public FrmDetailAdAndAuctionReview(Ogla odabrani)
         {
             InitializeComponent();
@@ -57,7 +59,8 @@ namespace AutoPrime.Forms
 
         private void btnKorime_Click(object sender, EventArgs e)
         {
-            FrmShowProfile profil = new FrmShowProfile();
+            Korisnik korisnik = korisnikServices.GetKorisnikById(oglas.korisnik_id);
+            FrmShowProfile profil = new FrmShowProfile(korisnik);
             profil.Show();
         }
     }
