@@ -49,7 +49,7 @@ namespace AutoPrime.Forms
                 FrmIndex pocetna = new FrmIndex(prijavljeni);
                 pocetna.ShowDialog();
                 Close();
-
+                //end
             }
 
         }
