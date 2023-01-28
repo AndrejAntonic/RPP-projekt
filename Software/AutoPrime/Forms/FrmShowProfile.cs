@@ -118,7 +118,7 @@ namespace AutoPrime
                 LoadKorisnikData();
             }
             else
-                MessageBox.Show("Pogreška", "Ne možete ostaviti recenziju korisniku od kojeg niste ništa kupili", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ne možete ostaviti recenziju korisniku od kojeg niste ništa kupili", "Pogreška", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private bool determineIfBought()
