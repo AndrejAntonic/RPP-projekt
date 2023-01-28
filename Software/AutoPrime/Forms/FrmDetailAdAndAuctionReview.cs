@@ -42,7 +42,7 @@ namespace AutoPrime.Forms
 
         private void btnSlicni_Click(object sender, EventArgs e)
         {
-            FrmShowSimilar slicniOglasi = new FrmShowSimilar();
+            FrmShowSimilar slicniOglasi = new FrmShowSimilar(oglas);
             slicniOglasi.Show();
         }
 

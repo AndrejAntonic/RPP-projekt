@@ -69,6 +69,50 @@ namespace BusinessLogicModel.Services
             }
         }
 
+        public List<Ogla> GetSimilarOglas(Ogla trenutni)
+        {
+            using (var repo = new OglasRepository())
+            {
+                List<Ogla> sviOglasi = repo.GetAll().ToList();
+                List<Ogla> result = new List<Ogla>();
+
+                foreach (var item in sviOglasi)
+                {
+                    int slicnost = 0;
+
+                    int cijena = int.Parse(item.cijena);
+                    int cijena2 = int.Parse(trenutni.cijena);
+                    if (item.leasing == trenutni.leasing)
+                    {
+                        slicnost++;
+                    }
+                    if (Math.Abs(cijena-cijena2) <= 5000 )
+                    {
+                        slicnost++;
+                    }
+                    if (item.godina == trenutni.godina)
+                    {
+                        slicnost++;
+                    }
+                    if (item.motor_id == trenutni.motor_id)
+                    {
+                        slicnost++;
+                    }
+                    if (item.Model == trenutni.Model)
+                    {
+                        slicnost++;
+                    }
+                    if (slicnost >= 2)
+                    {
+                        result.Add(item);
+                    }
+                }
+               
+
+                return result;
+            }
+        }
+
         public List<Ogla> FilterOglas(string marka, string model, string godina, string kilometraza,string cijena)
         {
             using (var repo = new OglasRepository())

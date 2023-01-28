@@ -21,5 +21,10 @@ namespace AutoPrime.Forms
         {
             Close();
         }
+
+        private void btnDodajOglas_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

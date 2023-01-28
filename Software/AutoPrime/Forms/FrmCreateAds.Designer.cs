@@ -209,6 +209,7 @@
             this.btnDodajOglas.TabIndex = 20;
             this.btnDodajOglas.Text = "Dodaj oglas";
             this.btnDodajOglas.UseVisualStyleBackColor = true;
+            this.btnDodajOglas.Click += new System.EventHandler(this.btnDodajOglas_Click);
             // 
             // btnOdustani
             // 
