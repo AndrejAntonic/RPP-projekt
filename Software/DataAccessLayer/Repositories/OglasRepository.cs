@@ -169,8 +169,8 @@ namespace DataAccessLayer.Repositories
 
             var oglass = Entities.SingleOrDefault(o => o.Id_oglas == entity.Id_oglas);
 
-            //oglass.Id_oglas = entity.Id_oglas;
-            //oglass.korisnik_id = entity.korisnik_id;
+            oglass.Id_oglas = entity.Id_oglas;
+            oglass.korisnik_id = entity.korisnik_id;
             oglass.naziv = entity.naziv;
             oglass.Marka = markaa;
             oglass.Model = modell;
@@ -186,6 +186,21 @@ namespace DataAccessLayer.Repositories
             oglass.broj_pregleda = entity.broj_pregleda;
             oglass.prodano = entity.prodano;
             oglass.prodano_korisnik_id = entity.prodano_korisnik_id;
+
+            if (saveChanges)
+            {
+                return SaveChanges();
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
+        public int UpdateViewCount(Ogla entity, bool saveChanges = true)
+        {
+            var oglass = Entities.SingleOrDefault(o => o.Id_oglas == entity.Id_oglas);
+            oglass.broj_pregleda = entity.broj_pregleda;
 
             if (saveChanges)
             {

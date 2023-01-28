@@ -74,6 +74,18 @@ namespace BusinessLogicModel.Services
             return isSuccesful;
         }
 
+        public bool UpdateOglasView(Ogla oglas)
+        {
+            bool isSuccesful = false;
+            using (var repo = new OglasRepository())
+            {
+                int affectedRow = repo.UpdateViewCount(oglas);
+                isSuccesful = affectedRow > 0;
+            }
+
+            return isSuccesful;
+        }
+
         public bool RemoveOglas(Ogla oglas)
         {
             bool isSuccesful = false;

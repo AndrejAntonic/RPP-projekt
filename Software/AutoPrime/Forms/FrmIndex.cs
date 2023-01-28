@@ -62,6 +62,11 @@ namespace AutoPrime
 
         private void FrmIndex_Load(object sender, EventArgs e)
         {
+            ShowAds();
+        }
+
+        private void ShowAds()
+        {
             dgvNajtrazeniji.DataSource = oglasServices.GetMostWantedOglas();
             HideOglasAtributes();
         }
@@ -85,6 +90,14 @@ namespace AutoPrime
         private void btnPregledOdabranog_Click(object sender, EventArgs e)
         {
             Ogla oglas = dgvNajtrazeniji.CurrentRow.DataBoundItem as Ogla;
+
+            if (oglas != null)
+            {
+                oglas.broj_pregleda = oglas.broj_pregleda + 1;
+                oglasServices.UpdateOglasView(oglas);
+            }
+
+            ShowAds();
             FrmDetailAdAndAuctionReview frm = new FrmDetailAdAndAuctionReview(oglas);
             frm.ShowDialog();
         }

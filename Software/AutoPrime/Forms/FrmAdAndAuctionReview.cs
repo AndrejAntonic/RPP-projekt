@@ -83,14 +83,13 @@ namespace AutoPrime.Forms
         private void btnPregledOglasa_Click(object sender, EventArgs e)
         {
             Ogla odabrani = dgvOglasi.CurrentRow.DataBoundItem as Ogla;
-            /*
+            
             if (odabrani != null)
             {
                 odabrani.broj_pregleda = odabrani.broj_pregleda + 1;
-                MessageBox.Show(odabrani.broj_pregleda.ToString());
-
-                oglasServices.UpdateOglas(odabrani);
-            }*/
+                oglasServices.UpdateOglasView(odabrani);
+            }
+            PrikaziOglase();
 
             FrmDetailAdAndAuctionReview otvori = new FrmDetailAdAndAuctionReview(odabrani);
             otvori.ShowDialog();

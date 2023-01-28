@@ -1,4 +1,5 @@
-﻿using DataAccessLayer.Repositories;
+﻿using BusinessLogicModel.Services;
+using DataAccessLayer.Repositories;
 using EntitiesLayer.Entities;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,7 @@ namespace AutoPrime.Forms
     {
         private Ogla oglas = new Ogla();
         private Aukcije Aukcije = new Aukcije();
+        private Kreirao_aukcije_korisnikServices kreirao_ = new Kreirao_aukcije_korisnikServices();
         private int provjera = 0;
         public FrmDetailAdAndAuctionReview(Ogla odabrani)
         {
@@ -60,7 +62,8 @@ namespace AutoPrime.Forms
             if (provjera==1)
             {
                 FillAukcijeDetail();
-                btnKorime.Text = Aukcije.Id_aukcije.ToString();
+                var korisnik = kreirao_.GetKorisnikFromAukcija(Aukcije.Id_aukcije);
+                btnKorime.Text = korisnik.Korimme;
             }
             else
             {

@@ -22,6 +22,17 @@ namespace DataAccessLayer.Repositories
             return query;
         }
 
+        public IQueryable<Korisnik> GetKorisnikFromAukcija(int aukcija_id)
+        {
+            var query = from k in Context.Korisniks
+                        join e in Entities on k.Id_korisnika equals e.Korisnik_id
+                        join a in Context.Aukcijes on e.Aukcija_id equals a.Id_aukcije
+                        where a.Id_aukcije == aukcija_id
+                        select k;
+
+            return query;
+        }
+
         public override int Add(Kreirao_aukcije_korisnik entity, bool saveChanges = true)
         {
             var korisnikkreirao = new Kreirao_aukcije_korisnik
