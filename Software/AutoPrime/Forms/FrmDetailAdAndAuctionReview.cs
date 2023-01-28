@@ -64,7 +64,10 @@ namespace AutoPrime.Forms
             {
                 FillAukcijeDetail();
                 var korisnik = kreirao_.GetKorisnikFromAukcija(Aukcije.Id_aukcije);
-                btnKorime.Text = korisnik.Korimme;
+                if (korisnik!=null)
+                {
+                    btnKorime.Text = korisnik.Korimme;
+                }
             }
             else
             {
