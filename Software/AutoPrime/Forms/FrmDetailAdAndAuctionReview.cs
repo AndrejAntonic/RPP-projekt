@@ -18,6 +18,7 @@ namespace AutoPrime.Forms
         private Ogla oglas = new Ogla();
         private Aukcije Aukcije = new Aukcije();
         private Kreirao_aukcije_korisnikServices kreirao_ = new Kreirao_aukcije_korisnikServices();
+        private KorisnikServices korisnikServices = new KorisnikServices();
         private int provjera = 0;
         public FrmDetailAdAndAuctionReview(Ogla odabrani)
         {
