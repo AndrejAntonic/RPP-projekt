@@ -43,6 +43,11 @@ namespace DataAccessLayer.Repositories
         public IQueryable<Ogla> GetMostWantedOglas()
         {
             var query = from e in Entities
+                        .Include("Iznajmljeno")
+                        .Include("Motor")
+                        .Include("Korisnik")
+                        .Include("Marka")
+                        .Include("Model")
                         orderby e.broj_pregleda descending
                         select e;
 

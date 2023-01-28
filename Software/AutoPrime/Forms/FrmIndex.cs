@@ -1,6 +1,7 @@
 ﻿using AutoPrime.Forms;
 using BusinessLogicModel.Services;
 using DataAccessLayer.Repositories;
+using EntitiesLayer.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -62,6 +63,30 @@ namespace AutoPrime
         private void FrmIndex_Load(object sender, EventArgs e)
         {
             dgvNajtrazeniji.DataSource = oglasServices.GetMostWantedOglas();
+            HideOglasAtributes();
+        }
+
+        private void HideOglasAtributes()
+        {
+            dgvNajtrazeniji.Columns["korisnik_id"].Visible = false;
+            dgvNajtrazeniji.Columns["marka_id"].Visible = false;
+            dgvNajtrazeniji.Columns["model_id"].Visible = false;
+            dgvNajtrazeniji.Columns["motor_id"].Visible = false;
+            dgvNajtrazeniji.Columns["Korisniks"].Visible = false;
+            dgvNajtrazeniji.Columns["Slikas"].Visible = false;
+            dgvNajtrazeniji.Columns["id_oglas"].Visible = false;
+            dgvNajtrazeniji.Columns["ostecenje"].Visible = false;
+            dgvNajtrazeniji.Columns["leasing"].Visible = false;
+            dgvNajtrazeniji.Columns["iznajmljeno_id"].Visible = false;
+            dgvNajtrazeniji.Columns["prodano_korisnik_id"].Visible = false;
+            dgvNajtrazeniji.Columns["Korisnik1"].Visible = false;
+        }
+
+        private void btnPregledOdabranog_Click(object sender, EventArgs e)
+        {
+            Ogla oglas = dgvNajtrazeniji.CurrentRow.DataBoundItem as Ogla;
+            FrmDetailAdAndAuctionReview frm = new FrmDetailAdAndAuctionReview(oglas);
+            frm.ShowDialog();
         }
     }
 }
