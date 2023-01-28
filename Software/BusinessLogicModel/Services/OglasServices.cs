@@ -78,6 +78,7 @@ namespace BusinessLogicModel.Services
 
                 foreach (var item in sviOglasi)
                 {
+                 
                     int slicnost = 0;
 
                     int cijena = int.Parse(item.cijena);
@@ -94,13 +95,21 @@ namespace BusinessLogicModel.Services
                     {
                         slicnost++;
                     }
-                    if (item.motor_id == trenutni.motor_id)
+                    if (item.Motor == trenutni.Motor)
+                    {
+                        slicnost++;
+                    }
+                    if (item.Marka == trenutni.Marka)
                     {
                         slicnost++;
                     }
                     if (item.Model == trenutni.Model)
                     {
                         slicnost++;
+                    }
+                    if (item.Id_oglas == trenutni.Id_oglas)
+                    {
+                        slicnost = 0;
                     }
                     if (slicnost >= 2)
                     {
