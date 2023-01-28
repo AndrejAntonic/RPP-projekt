@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessLogicModel.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,6 +21,12 @@ namespace AutoPrime.Forms
         private void btnZatvori_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void FrmLeasing_Load(object sender, EventArgs e)
+        {
+            OglasServices servis = new OglasServices();
+            dgvOglasi.DataSource = servis.GetLeasingOglas();
         }
     }
 }

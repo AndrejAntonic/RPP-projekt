@@ -73,6 +73,7 @@
             this.Controls.Add(this.btnZatvori);
             this.Name = "FrmLeasing";
             this.Text = "FrmLeasing";
+            this.Load += new System.EventHandler(this.FrmLeasing_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOglasi)).EndInit();
             this.ResumeLayout(false);
 
