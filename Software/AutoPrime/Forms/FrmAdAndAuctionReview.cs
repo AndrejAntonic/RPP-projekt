@@ -52,10 +52,10 @@ namespace AutoPrime.Forms
         {
             dgvAukcije.DataSource = aukcijeServices.GetAukcije();
             dgvAukcije.Columns["Ponudas"].Visible = false;
-            dgvOglasi.Columns["korisnik_id"].Visible = false;
-            dgvOglasi.Columns["marka_id"].Visible = false;
-            dgvOglasi.Columns["model_id"].Visible = false;
-            dgvOglasi.Columns["motor_id"].Visible = false;
+            dgvAukcije.Columns["id_aukcije"].Visible = false;
+            dgvAukcije.Columns["marka_id"].Visible = false;
+            dgvAukcije.Columns["model_id"].Visible = false;
+            dgvAukcije.Columns["motor_id"].Visible = false;
         }
 
         private void PrikaziOglase()
@@ -152,6 +152,14 @@ namespace AutoPrime.Forms
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             dgvOglasi.DataSource = oglasServices.GetCertainOglass(txtSearch.Text);
+            dgvAukcije.DataSource = aukcijeServices.GetCertainAukcije(txtSearch.Text);
+        }
+
+        private void btnPregledAukcije_Click(object sender, EventArgs e)
+        {
+            Aukcije odabrana = dgvAukcije.CurrentRow.DataBoundItem as Aukcije;
+            FrmDetailAdAndAuctionReview frm = new FrmDetailAdAndAuctionReview(odabrana);
+            frm.Show();
         }
     }
 }

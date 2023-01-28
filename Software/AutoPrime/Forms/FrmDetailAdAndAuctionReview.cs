@@ -15,17 +15,24 @@ namespace AutoPrime.Forms
     public partial class FrmDetailAdAndAuctionReview : Form
     {
         private Ogla oglas = new Ogla();
+        private Aukcije Aukcije = new Aukcije();
+        private int provjera = 0;
         public FrmDetailAdAndAuctionReview(Ogla odabrani)
         {
             InitializeComponent();
             this.oglas = odabrani;
         }
 
+        public FrmDetailAdAndAuctionReview(Aukcije aukcije)
+        {
+            InitializeComponent();
+            this.Aukcije = aukcije;
+            this.provjera = 1;
+        }
+
         private void btnClose_Click(object sender, EventArgs e)
         {
             Close();
-            FrmAdAndAuctionReview frm = new FrmAdAndAuctionReview();
-            frm.ShowDialog();
         }
 
         private void btnSlicni_Click(object sender, EventArgs e)
@@ -50,10 +57,30 @@ namespace AutoPrime.Forms
 
         private void FrmDetailAdAndAuctionReview_Load(object sender, EventArgs e)
         {
-            FrmAdAndAuctionReview frm = new FrmAdAndAuctionReview();
-            frm.Close();
-            FillDetail();
-            btnKorime.Text = oglas.Korisnik.Korimme;
+            if (provjera==1)
+            {
+                FillAukcijeDetail();
+                btnKorime.Text = Aukcije.Id_aukcije.ToString();
+            }
+            else
+            {
+                FillDetail();
+                btnKorime.Text = oglas.Korisnik.Korimme;
+            }
+        }
+
+        private void FillAukcijeDetail()
+        {
+            checkBoxOstecenja.Visible = false;
+
+            txtNazivOglasa.Text = Aukcije.naziv;
+            txtMarka.Text = Aukcije.Marka.Naziv;
+            txtModel.Text = Aukcije.Model.naziv;
+            txtGodina.Text = Aukcije.godina.ToString();
+            txtCijena.Text = Aukcije.cijena;
+            txtKilometraza.Text = Aukcije.kilometraza;
+            txtMotor.Text = Aukcije.Motor.vrsta;
+            txtLokacija.Text = Aukcije.lokacija_vozila;
         }
 
         private void FillDetail()

@@ -231,8 +231,9 @@
             this.btnPregledAukcije.Name = "btnPregledAukcije";
             this.btnPregledAukcije.Size = new System.Drawing.Size(207, 28);
             this.btnPregledAukcije.TabIndex = 17;
-            this.btnPregledAukcije.Text = "Pregled odabranog aukcije";
+            this.btnPregledAukcije.Text = "Pregled odabrane aukcije";
             this.btnPregledAukcije.UseVisualStyleBackColor = true;
+            this.btnPregledAukcije.Click += new System.EventHandler(this.btnPregledAukcije_Click);
             // 
             // btnClose
             // 
@@ -246,7 +247,7 @@
             // 
             // btnFiltriraj
             // 
-            this.btnFiltriraj.Location = new System.Drawing.Point(994, 221);
+            this.btnFiltriraj.Location = new System.Drawing.Point(994, 225);
             this.btnFiltriraj.Name = "btnFiltriraj";
             this.btnFiltriraj.Size = new System.Drawing.Size(75, 23);
             this.btnFiltriraj.TabIndex = 19;

@@ -28,6 +28,9 @@ namespace DataAccessLayer.Repositories
         public IQueryable<Aukcije> GetCertainAuction(string phrase)
         {
             var query = from e in Entities
+                        .Include("Motor")
+                        .Include("Marka")
+                        .Include("Model")
                         where e.naziv.Contains(phrase)
                         select e;
 
