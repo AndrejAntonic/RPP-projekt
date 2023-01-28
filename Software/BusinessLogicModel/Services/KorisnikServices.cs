@@ -44,9 +44,9 @@ namespace BusinessLogicModel.Services
         {
             using (var repo = new KorisnikRepository())
             {
-                List<Korisnik> korisnici = repo.PrijaviKorisnika(ime, loz).ToList();
+                Korisnik korisnici = repo.PrijaviKorisnika(ime, loz).FirstOrDefault();
 
-                return korisnici[0];
+                return korisnici;
             }
         }
 

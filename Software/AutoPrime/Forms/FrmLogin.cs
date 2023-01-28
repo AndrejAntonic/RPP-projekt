@@ -38,15 +38,19 @@ namespace AutoPrime.Forms
             if(prijavljeni == null)
             {
                 MessageBox.Show("Krivo uneseni podaci!", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtLozinka.Text = "";
             }
             else
             {
                 PrijavljeniKorisnik novi = new PrijavljeniKorisnik();
                 novi.NamjestiKorisnika(prijavljeni);
+                this.Hide();
+
                 FrmIndex pocetna = new FrmIndex(prijavljeni);
-                pocetna.Show();
+                pocetna.ShowDialog();
+                Close();
+
             }
-            this.Hide();
 
         }
 
