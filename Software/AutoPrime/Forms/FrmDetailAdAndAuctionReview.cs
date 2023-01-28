@@ -109,7 +109,15 @@ namespace AutoPrime.Forms
 
         private void btnKorime_Click(object sender, EventArgs e)
         {
-            Korisnik korisnik = korisnikServices.GetKorisnikById(oglas.korisnik_id);
+            Korisnik korisnik;
+            if (provjera==1)
+            {
+                korisnik = kreirao_.GetKorisnikFromAukcija(Aukcije.Id_aukcije);
+            }
+            else
+            {
+                korisnik = korisnikServices.GetKorisnikById(oglas.korisnik_id);
+            }
             FrmShowProfile profil = new FrmShowProfile(korisnik);
             profil.Show();
         }
