@@ -30,6 +30,25 @@ namespace BusinessLogicModel.Services
             }
         }
 
+        public List<Ogla> GetLeasingOglas()
+        {
+            using (var repo = new OglasRepository())
+            {
+                List<Ogla> oglasi = repo.GetAll().ToList();
+                List<Ogla> result = new List<Ogla>();
+
+                foreach (var item in oglasi)
+                {
+                    if (item.leasing == 1)
+                    {
+                        result.Add(item);
+                    }
+                }
+
+                return result;
+            }
+        }
+
         public List<Ogla> GetMostWantedOglas()
         {
             using (var repo = new OglasRepository())
