@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EntitiesLayer.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,11 @@ namespace AutoPrime
 {
     public partial class FrmReview : Form
     {
-        public FrmReview()
+        Korisnik selectedKorisnik = new Korisnik();
+        public FrmReview(Korisnik korisnik)
         {
             InitializeComponent();
+            selectedKorisnik = korisnik;
         }
 
         private void btnClose_Click(object sender, EventArgs e)
