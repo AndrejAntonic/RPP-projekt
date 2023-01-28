@@ -1,4 +1,5 @@
 ﻿using BusinessLogicModel.Services;
+using DataAccessLayer.Repositories;
 using EntitiesLayer.Entities;
 using System;
 using System.Collections.Generic;
@@ -15,18 +16,25 @@ namespace AutoPrime.Forms
     public partial class FrmDetailAdAndAuctionReview : Form
     {
         private Ogla oglas = new Ogla();
-        private KorisnikServices korisnikServices = new KorisnikServices();
+        private Aukcije Aukcije = new Aukcije();
+        private Kreirao_aukcije_korisnikServices kreirao_ = new Kreirao_aukcije_korisnikServices();
+        private int provjera = 0;
         public FrmDetailAdAndAuctionReview(Ogla odabrani)
         {
             InitializeComponent();
             this.oglas = odabrani;
         }
 
+        public FrmDetailAdAndAuctionReview(Aukcije aukcije)
+        {
+            InitializeComponent();
+            this.Aukcije = aukcije;
+            this.provjera = 1;
+        }
+
         private void btnClose_Click(object sender, EventArgs e)
         {
             Close();
-            FrmAdAndAuctionReview frm = new FrmAdAndAuctionReview();
-            frm.ShowDialog();
         }
 
         private void btnSlicni_Click(object sender, EventArgs e)
@@ -37,24 +45,62 @@ namespace AutoPrime.Forms
 
         private void btnOstecenja_Click(object sender, EventArgs e)
         {
-            FrmShowDamage ostecenja = new FrmShowDamage();
-            ostecenja.Show();
+            if (oglas.ostecenje==1)
+            {
+                FrmShowDamage ostecenja = new FrmShowDamage();
+                ostecenja.Show();
+            }
+            else
+            {
+                MessageBox.Show("Ne može se otvoriti prikaz oštećenja jer ih nema!");
+            }
+
         }
 
         private void FrmDetailAdAndAuctionReview_Load(object sender, EventArgs e)
         {
-            FillDetail();
+            if (provjera==1)
+            {
+                FillAukcijeDetail();
+                var korisnik = kreirao_.GetKorisnikFromAukcija(Aukcije.Id_aukcije);
+                btnKorime.Text = korisnik.Korimme;
+            }
+            else
+            {
+                FillDetail();
+                btnKorime.Text = oglas.Korisnik.Korimme;
+            }
+        }
+
+        private void FillAukcijeDetail()
+        {
+            checkBoxOstecenja.Visible = false;
+
+            txtNazivOglasa.Text = Aukcije.naziv;
+            txtMarka.Text = Aukcije.Marka.Naziv;
+            txtModel.Text = Aukcije.Model.naziv;
+            txtGodina.Text = Aukcije.godina.ToString();
+            txtCijena.Text = Aukcije.cijena;
+            txtKilometraza.Text = Aukcije.kilometraza;
+            txtMotor.Text = Aukcije.Motor.vrsta;
+            txtLokacija.Text = Aukcije.lokacija_vozila;
         }
 
         private void FillDetail()
         {
+            var provjeraOstecenja = oglas.ostecenje;
+            if (provjeraOstecenja==1)
+            {
+                checkBoxOstecenja.Checked = true;
+            }
             txtNazivOglasa.Text = oglas.naziv;
-            //txtMarka.Text = oglas.Marka.Naziv;
-            //txtModel.Text = oglas.Model.ToString();
+            txtMarka.Text = oglas.Marka.Naziv;
+            txtModel.Text = oglas.Model.naziv;
             txtGodina.Text = oglas.godina.ToString();
             txtCijena.Text = oglas.cijena;
             txtKilometraza.Text = oglas.kilometraza;
-            //txtMotor.Text = oglas.Motor.vrsta;
+            txtMotor.Text = oglas.Motor.vrsta;
+            txtLokacija.Text = oglas.lokacija_vozila;
         }
 
         private void btnKorime_Click(object sender, EventArgs e)

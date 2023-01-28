@@ -59,6 +59,16 @@ namespace BusinessLogicModel.Services
             }
         }
 
+        public List<Ogla> FilterOglas(string marka, string model, string godina, string kilometraza,string cijena)
+        {
+            using (var repo = new OglasRepository())
+            {
+                List<Ogla> oglasi = repo.FilterOglas(marka,model,godina,kilometraza,cijena).ToList();
+
+                return oglasi;
+            }
+        }
+
         public List<Ogla> GetMostWantedOglas()
         {
             using (var repo = new OglasRepository())
@@ -87,6 +97,18 @@ namespace BusinessLogicModel.Services
             using (var repo = new OglasRepository())
             {
                 int affectedRow = repo.Update(oglas);
+                isSuccesful = affectedRow > 0;
+            }
+
+            return isSuccesful;
+        }
+
+        public bool UpdateOglasView(Ogla oglas)
+        {
+            bool isSuccesful = false;
+            using (var repo = new OglasRepository())
+            {
+                int affectedRow = repo.UpdateViewCount(oglas);
                 isSuccesful = affectedRow > 0;
             }
 

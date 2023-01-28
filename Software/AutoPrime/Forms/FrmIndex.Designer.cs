@@ -70,6 +70,7 @@
             this.btnPregledOdabranog.TabIndex = 2;
             this.btnPregledOdabranog.Text = "Pregled odabranog oglasa";
             this.btnPregledOdabranog.UseVisualStyleBackColor = true;
+            this.btnPregledOdabranog.Click += new System.EventHandler(this.btnPregledOdabranog_Click);
             // 
             // btnPregledOglasaAukcija
             // 

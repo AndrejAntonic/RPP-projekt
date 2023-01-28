@@ -48,6 +48,7 @@
             this.btnPregledAukcije = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnFiltriraj = new System.Windows.Forms.Button();
+            this.btnReset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOglasi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAukcije)).BeginInit();
             this.SuspendLayout();
@@ -128,8 +129,9 @@
             // 
             this.txtSearch.Location = new System.Drawing.Point(120, 27);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(100, 22);
+            this.txtSearch.Size = new System.Drawing.Size(240, 22);
             this.txtSearch.TabIndex = 8;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // cmbMarka
             // 
@@ -166,6 +168,14 @@
             // cmbKilometraza
             // 
             this.cmbKilometraza.FormattingEnabled = true;
+            this.cmbKilometraza.Items.AddRange(new object[] {
+            "0-50000",
+            "50000-100000",
+            "100000-150000",
+            "150000-200000",
+            "200000-250000",
+            "250000-300000",
+            "300000-350000"});
             this.cmbKilometraza.Location = new System.Drawing.Point(948, 148);
             this.cmbKilometraza.Name = "cmbKilometraza";
             this.cmbKilometraza.Size = new System.Drawing.Size(121, 24);
@@ -174,6 +184,12 @@
             // cmbCijena
             // 
             this.cmbCijena.FormattingEnabled = true;
+            this.cmbCijena.Items.AddRange(new object[] {
+            "0-10000",
+            "10000-20000",
+            "20000-30000",
+            "30000-40000",
+            "40000-50000"});
             this.cmbCijena.Location = new System.Drawing.Point(948, 187);
             this.cmbCijena.Name = "cmbCijena";
             this.cmbCijena.Size = new System.Drawing.Size(121, 24);
@@ -215,8 +231,9 @@
             this.btnPregledAukcije.Name = "btnPregledAukcije";
             this.btnPregledAukcije.Size = new System.Drawing.Size(207, 28);
             this.btnPregledAukcije.TabIndex = 17;
-            this.btnPregledAukcije.Text = "Pregled odabranog aukcije";
+            this.btnPregledAukcije.Text = "Pregled odabrane aukcije";
             this.btnPregledAukcije.UseVisualStyleBackColor = true;
+            this.btnPregledAukcije.Click += new System.EventHandler(this.btnPregledAukcije_Click);
             // 
             // btnClose
             // 
@@ -230,18 +247,30 @@
             // 
             // btnFiltriraj
             // 
-            this.btnFiltriraj.Location = new System.Drawing.Point(994, 221);
+            this.btnFiltriraj.Location = new System.Drawing.Point(994, 225);
             this.btnFiltriraj.Name = "btnFiltriraj";
             this.btnFiltriraj.Size = new System.Drawing.Size(75, 23);
             this.btnFiltriraj.TabIndex = 19;
             this.btnFiltriraj.Text = "Filtriraj";
             this.btnFiltriraj.UseVisualStyleBackColor = true;
+            this.btnFiltriraj.Click += new System.EventHandler(this.btnFiltriraj_Click);
+            // 
+            // btnReset
+            // 
+            this.btnReset.Location = new System.Drawing.Point(831, 225);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(157, 23);
+            this.btnReset.TabIndex = 20;
+            this.btnReset.Text = "Resetiraj filter";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // FrmAdAndAuctionReview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1098, 846);
+            this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnFiltriraj);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnPregledAukcije);
@@ -294,5 +323,6 @@
         private System.Windows.Forms.Button btnPregledAukcije;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnFiltriraj;
+        private System.Windows.Forms.Button btnReset;
     }
 }

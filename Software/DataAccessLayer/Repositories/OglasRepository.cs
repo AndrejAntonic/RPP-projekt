@@ -29,7 +29,12 @@ namespace DataAccessLayer.Repositories
         public IQueryable<Ogla> GetCertainOglas(string phrase)
         {
             var query = from e in Entities
-                        where e.naziv.Contains(phrase)
+                        .Include("Iznajmljeno")
+                        .Include("Motor")
+                        .Include("Korisnik")
+                        .Include("Marka")
+                        .Include("Model")
+                        where e.naziv.Contains(phrase) 
                         select e;
 
             return query;
@@ -47,10 +52,84 @@ namespace DataAccessLayer.Repositories
         public IQueryable<Ogla> GetMostWantedOglas()
         {
             var query = from e in Entities
+                        .Include("Iznajmljeno")
+                        .Include("Motor")
+                        .Include("Korisnik")
+                        .Include("Marka")
+                        .Include("Model")
                         orderby e.broj_pregleda descending
                         select e;
 
             return query.Take(5);
+        }
+
+        public IQueryable<Ogla> FilterOglas(string marka,string model,string godina,string kilometraza,string cijena )
+        {
+            var query = from e in Entities
+                        .Include("Iznajmljeno")
+                        .Include("Motor")
+                        .Include("Korisnik")
+                        .Include("Marka")
+                        .Include("Model")
+                        select e;
+
+            if (!string.IsNullOrEmpty(marka))
+            {
+                query = query.Where(e=>e.Marka.Naziv == marka);
+            }
+            
+            if (!string.IsNullOrEmpty(model))
+            {
+                query = query.Where(e => e.Model.naziv == model);
+            }
+            
+            if (!string.IsNullOrEmpty(godina))
+            {
+                var poljeGodina = godina.Split('-');
+                var prvaGOdina = Int32.Parse(poljeGodina[0]);
+                var drugaGodina = Int32.Parse(poljeGodina[1]);
+                query = query.Where(e => e.godina > prvaGOdina  && e.godina <= drugaGodina);
+            }
+
+            if (!string.IsNullOrEmpty(kilometraza))
+            {
+                var poljeKilometara = kilometraza.Split('-');
+                int kilometri1, kilometri2;
+                if (int.TryParse(poljeKilometara[0], out kilometri1) && int.TryParse(poljeKilometara[1], out kilometri2))
+                {
+                    query = query.Where(FilterByKilometraza(kilometri1, kilometri2)).AsQueryable();
+                }
+            }
+
+            if (!string.IsNullOrEmpty(cijena))
+            {
+                var poljeCijena = cijena.Split('-');
+                int cijena1, cijena2;
+                if (int.TryParse(poljeCijena[0], out cijena1) && int.TryParse(poljeCijena[1], out cijena2))
+                {
+                    query = query.Where(FilterByCijena(cijena1, cijena2)).AsQueryable();
+                }
+            }
+
+            return query;
+        }
+
+        private static Func<Ogla, bool> FilterByKilometraza(int kilometri1, int kilometri2)
+        {
+            return e =>
+            {
+                int km;
+                return int.TryParse(e.kilometraza, out km) && km > kilometri1 && km <= kilometri2;
+            };
+        }
+
+        private static Func<Ogla, bool> FilterByCijena(int cijena1, int cijena2)
+        {
+            return e =>
+            {
+                int cijena;
+                return int.TryParse(e.cijena, out cijena) && cijena > cijena1 && cijena <= cijena2;
+            };
         }
 
         public override int Add(Ogla entity, bool saveChanges = true)
@@ -116,6 +195,21 @@ namespace DataAccessLayer.Repositories
             oglass.broj_pregleda = entity.broj_pregleda;
             oglass.prodano = entity.prodano;
             oglass.prodano_korisnik_id = entity.prodano_korisnik_id;
+
+            if (saveChanges)
+            {
+                return SaveChanges();
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
+        public int UpdateViewCount(Ogla entity, bool saveChanges = true)
+        {
+            var oglass = Entities.SingleOrDefault(o => o.Id_oglas == entity.Id_oglas);
+            oglass.broj_pregleda = entity.broj_pregleda;
 
             if (saveChanges)
             {

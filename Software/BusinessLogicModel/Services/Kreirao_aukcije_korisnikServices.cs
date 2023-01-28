@@ -20,6 +20,15 @@ namespace BusinessLogicModel.Services
             }
         }
 
+        public Korisnik GetKorisnikFromAukcija(int aukcija_id)
+        {
+            using (var repo = new Kreirao_aukcije_korisnikRepository())
+            {
+                Korisnik korisniks = repo.GetKorisnikFromAukcija(aukcija_id).FirstOrDefault();
+                return korisniks;
+            }
+        }
+
         public bool AddKreiraoAukcijeKorisnik(Kreirao_aukcije_korisnik kreiraoAukcijeKorisnik)
         {
             bool isSuccesful = false;
