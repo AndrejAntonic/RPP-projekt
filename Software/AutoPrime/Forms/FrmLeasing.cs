@@ -39,6 +39,7 @@ namespace AutoPrime.Forms
             odabrani = dgvOglasi.CurrentRow.DataBoundItem as Ogla;
             FrmDetailAdAndAuctionReview detaljnaForma = new FrmDetailAdAndAuctionReview(odabrani);
             detaljnaForma.Show();
+            //end
 
         }
     }
