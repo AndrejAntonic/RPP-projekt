@@ -25,6 +25,7 @@ namespace DataAccessLayer
         public virtual DbSet<Ponuda> Ponudas { get; set; }
         public virtual DbSet<Recenzija> Recenzijas { get; set; }
         public virtual DbSet<Slika> Slikas { get; set; }
+        public virtual DbSet<Zanimljivi_oglasi> Zanimljivi_oglasi { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

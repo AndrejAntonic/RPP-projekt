@@ -59,6 +59,7 @@
     <Compile Include="Entities\Ponuda.cs" />
     <Compile Include="Entities\Recenzija.cs" />
     <Compile Include="Entities\Slika.cs" />
+    <Compile Include="Entities\Zanimljivi_oglasi.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

@@ -54,6 +54,7 @@
     <Compile Include="Services\PonudaServices.cs" />
     <Compile Include="Services\RecenzijaServices.cs" />
     <Compile Include="Services\SlikaServices.cs" />
+    <Compile Include="Services\ZanimljiviOglasiServices.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj">

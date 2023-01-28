@@ -66,6 +66,7 @@
     <Compile Include="Repositories\RecenzijaRepository.cs" />
     <Compile Include="Repositories\Repository.cs" />
     <Compile Include="Repositories\SlikaRepository.cs" />
+    <Compile Include="Repositories\ZanimljiviOglasiRepository.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
