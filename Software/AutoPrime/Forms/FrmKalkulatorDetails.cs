@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessLogicModel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,6 +17,7 @@ namespace AutoPrime.Forms
         int year;
         double price;
         double mileage;
+        KalkulatorLogic kalkulatorLogic = new KalkulatorLogic();
         public FrmKalkulatorDetails(int year, double price, double mileage)
         {
             InitializeComponent();
@@ -46,13 +48,14 @@ namespace AutoPrime.Forms
         {
             btnBack.Enabled = true;
             btnAhead.Enabled = false;
+            double calculaterPrice = kalkulatorLogic.CalculateBasedOnKilometers(price, mileage);
             lblMethod.Text = "Metoda 2: bazirano na cijeni po kilometru";
             lblDescription.Text = "Prosječni godišnji trošak posjedovanja i vožnje automobila u 2021. godini iznosio je 10197.07€ od čega je" +
                 "\r\n37% prepisano amortizaciji (3772.92€). " +
                 "\r\n\r\nProsječna udaljenost prijeđena automobilom na godišnoj razini je 11313km, što stavlja prosječnu" +
                 "\r\namortizaciju po kilometru na 0.33€ (3772,92€ / 11313)." +
                 "\r\n\r\nPočetna cijena vašeg automobila = " + price + "€, prijeđenih kilometara = " + mileage + "." +
-                "\r\n\r\n      " + price + " - (" + mileage + "x0.33) = " + (price - (mileage * 0.33)) + "€";
+                "\r\n\r\n      " + price + " - (" + mileage + "x0.33) = " + calculaterPrice + "€";
             
         }
 
@@ -67,18 +70,13 @@ namespace AutoPrime.Forms
                 "\r\n\r\nKonsenzus je da se novi automobili amortiziraju u prosjeku 24% u prvoj godini i 15% u preostalim godinama." +
                 "\r\n\r\nPočetna cijena vašeg auta = " + price + "€, razdoblje = " + year + " godina.";
             double tempPrice = price;
-            for(int i = 1; i <= year; i++)
+            List<double> listPrices = kalkulatorLogic.CalculateBasedOnAge(price, year);
+            var increment = 1;
+            foreach (var item in listPrices)
             {
-                if (i == 1)
-                {
-                    lblDescription.Text += "\r\n\r\n      Godina " + i + ". završna vrijednost = " + tempPrice + " - (" + tempPrice + "x0.24) = " + (tempPrice - (tempPrice * 0.24)) + "€";
-                    tempPrice = tempPrice - (tempPrice * 0.24);
-                }
-                else
-                {
-                    lblDescription.Text += "\r\n\r\n      Godina " + i + ". završna vrijednost = " + tempPrice + " - (" + tempPrice + "x0.15) = " + (tempPrice - (tempPrice * 0.15)) + "€";
-                    tempPrice = tempPrice - (tempPrice * 0.15);
-                }
+                lblDescription.Text += "\r\n\r\n      Godina " + increment + ". završna vrijednost = " + tempPrice + " - (" + tempPrice + "x0.24) = " + item + "€";
+                tempPrice = item;
+                increment++;
             }
         }
 
