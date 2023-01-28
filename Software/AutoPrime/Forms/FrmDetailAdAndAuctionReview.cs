@@ -19,6 +19,8 @@ namespace AutoPrime.Forms
         private Aukcije Aukcije = new Aukcije();
         private Kreirao_aukcije_korisnikServices kreirao_ = new Kreirao_aukcije_korisnikServices();
         private KorisnikServices korisnikServices = new KorisnikServices();
+        private PrijavljeniKorisnik prijavljeniKorisnik = new PrijavljeniKorisnik();
+        private ZanimljiviOglasiServices zanimljivi = new ZanimljiviOglasiServices();
         private int provjera = 0;
         public FrmDetailAdAndAuctionReview(Ogla odabrani)
         {
@@ -76,6 +78,7 @@ namespace AutoPrime.Forms
         private void FillAukcijeDetail()
         {
             checkBoxOstecenja.Visible = false;
+            btnZanimljivi.Visible = false;
 
             txtNazivOglasa.Text = Aukcije.naziv;
             txtMarka.Text = Aukcije.Marka.Naziv;
@@ -109,6 +112,21 @@ namespace AutoPrime.Forms
             Korisnik korisnik = korisnikServices.GetKorisnikById(oglas.korisnik_id);
             FrmShowProfile profil = new FrmShowProfile(korisnik);
             profil.Show();
+        }
+
+        private void btnZanimljivi_Click(object sender, EventArgs e)
+        {
+            var korisnik = prijavljeniKorisnik.VratiPrijavljenog();
+
+            var noviZanimljivi = new Zanimljivi_oglasi
+            {
+                Oglas_id = oglas.Id_oglas,
+                Korisnik_id = korisnik.Id_korisnika
+            };
+
+            zanimljivi.AddZanimljiviOglas(noviZanimljivi);
+            MessageBox.Show("Dodan oglas: "+oglas.naziv+" u listu zanimljivih oglasa.");
+
         }
     }
 }

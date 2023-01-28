@@ -57,6 +57,7 @@
             // 
             // txtNazivOglasa
             // 
+            this.txtNazivOglasa.Enabled = false;
             this.txtNazivOglasa.Location = new System.Drawing.Point(13, 14);
             this.txtNazivOglasa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNazivOglasa.Name = "txtNazivOglasa";
@@ -128,56 +129,63 @@
             // 
             // txtMarka
             // 
+            this.txtMarka.Enabled = false;
             this.txtMarka.Location = new System.Drawing.Point(91, 312);
-            this.txtMarka.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMarka.Margin = new System.Windows.Forms.Padding(4);
             this.txtMarka.Name = "txtMarka";
             this.txtMarka.Size = new System.Drawing.Size(132, 22);
             this.txtMarka.TabIndex = 8;
             // 
             // txtModel
             // 
+            this.txtModel.Enabled = false;
             this.txtModel.Location = new System.Drawing.Point(91, 354);
-            this.txtModel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtModel.Margin = new System.Windows.Forms.Padding(4);
             this.txtModel.Name = "txtModel";
             this.txtModel.Size = new System.Drawing.Size(132, 22);
             this.txtModel.TabIndex = 9;
             // 
             // txtGodina
             // 
+            this.txtGodina.Enabled = false;
             this.txtGodina.Location = new System.Drawing.Point(91, 395);
-            this.txtGodina.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtGodina.Margin = new System.Windows.Forms.Padding(4);
             this.txtGodina.Name = "txtGodina";
             this.txtGodina.Size = new System.Drawing.Size(132, 22);
             this.txtGodina.TabIndex = 10;
             // 
             // txtKilometraza
             // 
+            this.txtKilometraza.Enabled = false;
             this.txtKilometraza.Location = new System.Drawing.Point(91, 440);
-            this.txtKilometraza.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtKilometraza.Margin = new System.Windows.Forms.Padding(4);
             this.txtKilometraza.Name = "txtKilometraza";
             this.txtKilometraza.Size = new System.Drawing.Size(132, 22);
             this.txtKilometraza.TabIndex = 11;
             // 
             // txtCijena
             // 
+            this.txtCijena.Enabled = false;
             this.txtCijena.Location = new System.Drawing.Point(91, 480);
-            this.txtCijena.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCijena.Margin = new System.Windows.Forms.Padding(4);
             this.txtCijena.Name = "txtCijena";
             this.txtCijena.Size = new System.Drawing.Size(132, 22);
             this.txtCijena.TabIndex = 12;
             // 
             // txtMotor
             // 
+            this.txtMotor.Enabled = false;
             this.txtMotor.Location = new System.Drawing.Point(91, 524);
-            this.txtMotor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMotor.Margin = new System.Windows.Forms.Padding(4);
             this.txtMotor.Name = "txtMotor";
             this.txtMotor.Size = new System.Drawing.Size(132, 22);
             this.txtMotor.TabIndex = 13;
             // 
             // txtLokacija
             // 
+            this.txtLokacija.Enabled = false;
             this.txtLokacija.Location = new System.Drawing.Point(349, 684);
-            this.txtLokacija.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtLokacija.Margin = new System.Windows.Forms.Padding(4);
             this.txtLokacija.Name = "txtLokacija";
             this.txtLokacija.Size = new System.Drawing.Size(132, 22);
             this.txtLokacija.TabIndex = 14;
@@ -214,6 +222,7 @@
             // checkBoxOstecenja
             // 
             this.checkBoxOstecenja.AutoSize = true;
+            this.checkBoxOstecenja.Enabled = false;
             this.checkBoxOstecenja.Location = new System.Drawing.Point(91, 566);
             this.checkBoxOstecenja.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBoxOstecenja.Name = "checkBoxOstecenja";
@@ -242,6 +251,7 @@
             this.btnZanimljivi.TabIndex = 21;
             this.btnZanimljivi.Text = "Dodaj u listu zanimljivih oglasa";
             this.btnZanimljivi.UseVisualStyleBackColor = true;
+            this.btnZanimljivi.Click += new System.EventHandler(this.btnZanimljivi_Click);
             // 
             // btnOstecenja
             // 
