@@ -49,24 +49,27 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(57, 45);
+            this.label1.Location = new System.Drawing.Point(43, 37);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(32, 16);
+            this.label1.Size = new System.Drawing.Size(27, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Ime:";
             // 
             // txtIme
             // 
-            this.txtIme.Location = new System.Drawing.Point(160, 45);
+            this.txtIme.Location = new System.Drawing.Point(120, 37);
+            this.txtIme.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtIme.Name = "txtIme";
-            this.txtIme.Size = new System.Drawing.Size(181, 22);
+            this.txtIme.Size = new System.Drawing.Size(137, 20);
             this.txtIme.TabIndex = 2;
             // 
             // btnRegistriraj
             // 
-            this.btnRegistriraj.Location = new System.Drawing.Point(255, 448);
+            this.btnRegistriraj.Location = new System.Drawing.Point(191, 364);
+            this.btnRegistriraj.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRegistriraj.Name = "btnRegistriraj";
-            this.btnRegistriraj.Size = new System.Drawing.Size(86, 30);
+            this.btnRegistriraj.Size = new System.Drawing.Size(64, 24);
             this.btnRegistriraj.TabIndex = 3;
             this.btnRegistriraj.Text = "Registriraj";
             this.btnRegistriraj.UseVisualStyleBackColor = true;
@@ -74,9 +77,10 @@
             // 
             // btnPrijava
             // 
-            this.btnPrijava.Location = new System.Drawing.Point(60, 448);
+            this.btnPrijava.Location = new System.Drawing.Point(45, 364);
+            this.btnPrijava.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnPrijava.Name = "btnPrijava";
-            this.btnPrijava.Size = new System.Drawing.Size(86, 42);
+            this.btnPrijava.Size = new System.Drawing.Size(64, 34);
             this.btnPrijava.TabIndex = 7;
             this.btnPrijava.Text = "Idi na prijavu";
             this.btnPrijava.UseVisualStyleBackColor = true;
@@ -84,106 +88,120 @@
             // 
             // txtPrezime
             // 
-            this.txtPrezime.Location = new System.Drawing.Point(160, 102);
+            this.txtPrezime.Location = new System.Drawing.Point(120, 83);
+            this.txtPrezime.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtPrezime.Name = "txtPrezime";
-            this.txtPrezime.Size = new System.Drawing.Size(181, 22);
+            this.txtPrezime.Size = new System.Drawing.Size(137, 20);
             this.txtPrezime.TabIndex = 9;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(57, 102);
+            this.label2.Location = new System.Drawing.Point(43, 83);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 16);
+            this.label2.Size = new System.Drawing.Size(47, 13);
             this.label2.TabIndex = 8;
             this.label2.Text = "Prezime:";
             // 
             // txtKorime
             // 
-            this.txtKorime.Location = new System.Drawing.Point(160, 271);
+            this.txtKorime.Location = new System.Drawing.Point(120, 220);
+            this.txtKorime.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtKorime.Name = "txtKorime";
-            this.txtKorime.Size = new System.Drawing.Size(181, 22);
+            this.txtKorime.Size = new System.Drawing.Size(137, 20);
             this.txtKorime.TabIndex = 13;
             this.txtKorime.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // txtLozinka1
             // 
-            this.txtLozinka1.Location = new System.Drawing.Point(160, 331);
+            this.txtLozinka1.Location = new System.Drawing.Point(120, 269);
+            this.txtLozinka1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtLozinka1.Name = "txtLozinka1";
-            this.txtLozinka1.Size = new System.Drawing.Size(181, 22);
+            this.txtLozinka1.PasswordChar = '*';
+            this.txtLozinka1.Size = new System.Drawing.Size(137, 20);
             this.txtLozinka1.TabIndex = 15;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(57, 331);
+            this.label5.Location = new System.Drawing.Point(43, 269);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(56, 16);
+            this.label5.Size = new System.Drawing.Size(47, 13);
             this.label5.TabIndex = 14;
             this.label5.Text = "Lozinka:";
             // 
             // txtLozinka2
             // 
-            this.txtLozinka2.Location = new System.Drawing.Point(160, 386);
+            this.txtLozinka2.Location = new System.Drawing.Point(120, 314);
+            this.txtLozinka2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtLozinka2.Name = "txtLozinka2";
-            this.txtLozinka2.Size = new System.Drawing.Size(181, 22);
+            this.txtLozinka2.PasswordChar = '*';
+            this.txtLozinka2.Size = new System.Drawing.Size(137, 20);
             this.txtLozinka2.TabIndex = 17;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(57, 386);
+            this.label6.Location = new System.Drawing.Point(43, 314);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(96, 16);
+            this.label6.Size = new System.Drawing.Size(79, 13);
             this.label6.TabIndex = 16;
             this.label6.Text = "Ponovi lozinku:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(57, 274);
+            this.label4.Location = new System.Drawing.Point(43, 223);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(97, 16);
+            this.label4.Size = new System.Drawing.Size(78, 13);
             this.label4.TabIndex = 18;
             this.label4.Text = "Korisničko ime:";
             // 
             // txtGrad
             // 
-            this.txtGrad.Location = new System.Drawing.Point(160, 156);
+            this.txtGrad.Location = new System.Drawing.Point(120, 127);
+            this.txtGrad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtGrad.Name = "txtGrad";
-            this.txtGrad.Size = new System.Drawing.Size(181, 22);
+            this.txtGrad.Size = new System.Drawing.Size(137, 20);
             this.txtGrad.TabIndex = 20;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(57, 156);
+            this.label7.Location = new System.Drawing.Point(43, 127);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(40, 16);
+            this.label7.Size = new System.Drawing.Size(33, 13);
             this.label7.TabIndex = 19;
             this.label7.Text = "Grad:";
             // 
             // txtTelefon
             // 
-            this.txtTelefon.Location = new System.Drawing.Point(160, 214);
+            this.txtTelefon.Location = new System.Drawing.Point(120, 174);
+            this.txtTelefon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtTelefon.Name = "txtTelefon";
-            this.txtTelefon.Size = new System.Drawing.Size(181, 22);
+            this.txtTelefon.Size = new System.Drawing.Size(137, 20);
             this.txtTelefon.TabIndex = 22;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(57, 214);
+            this.label8.Location = new System.Drawing.Point(43, 174);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(85, 16);
+            this.label8.Size = new System.Drawing.Size(69, 13);
             this.label8.TabIndex = 21;
             this.label8.Text = "Broj telefona:";
             // 
             // FrmRegistration
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(447, 512);
+            this.ClientSize = new System.Drawing.Size(335, 416);
             this.Controls.Add(this.txtTelefon);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtGrad);
@@ -200,6 +218,7 @@
             this.Controls.Add(this.btnRegistriraj);
             this.Controls.Add(this.txtIme);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmRegistration";
             this.Text = "FrmRegistracija";
             this.ResumeLayout(false);
