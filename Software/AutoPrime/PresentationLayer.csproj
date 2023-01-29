@@ -219,6 +219,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmShowProfile.resx">
       <DependentUpon>FrmShowProfile.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmShowSimilar.resx">
       <DependentUpon>FrmShowSimilar.cs</DependentUpon>
@@ -233,6 +234,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="HelpDocumentation\HelpDocumentationFrmShowProfile.pdf" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -261,6 +263,7 @@
       <Name>EntitiesLayer</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

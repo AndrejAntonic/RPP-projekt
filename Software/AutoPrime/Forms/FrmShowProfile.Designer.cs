@@ -254,6 +254,7 @@
             this.Name = "FrmShowProfile";
             this.Text = "Pregled profila";
             this.Load += new System.EventHandler(this.FrmShowProfile_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.FrmShowProfile_HelpRequested);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUserAdvertisement)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUserFavourite)).EndInit();
             this.ResumeLayout(false);
