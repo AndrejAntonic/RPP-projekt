@@ -32,7 +32,7 @@ namespace AutoPrime.Forms
         private void FrmCreateAds_HelpRequested(object sender, HelpEventArgs hlpevent)
         {
             string presentationLayerRoot = Directory.GetParent(Directory.GetParent(Directory.GetParent(Application.ExecutablePath).FullName).FullName).FullName;
-            string pdfPath = presentationLayerRoot + "\\HelpDocumentation\\HelpDocumentationFrmShowProfile.pdf";
+            string pdfPath = presentationLayerRoot + "\\HelpDocumentation\\HelpDocumentationFrmCreateAds.pdf";
             Process.Start(pdfPath);
         }
 

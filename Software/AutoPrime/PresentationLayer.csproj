@@ -235,7 +235,10 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="HelpDocumentation\HelpDocumentationFrmAdAndAuctionReview.pdf" />
+    <None Include="HelpDocumentation\HelpDocumentationFrmCreateAds.pdf" />
+    <None Include="HelpDocumentation\HelpDocumentationFrmCreateAuction.pdf" />
     <None Include="HelpDocumentation\HelpDocumentationFrmDetailAdAndAuctionReview.pdf" />
+    <None Include="HelpDocumentation\HelpDocumentationFrmEditAds.pdf" />
     <None Include="HelpDocumentation\HelpDocumentationFrmForgotPassword.pdf" />
     <None Include="HelpDocumentation\HelpDocumentationFrmIndex.pdf" />
     <None Include="HelpDocumentation\HelpDocumentationFrmKalkulator.pdf" />
@@ -244,6 +247,7 @@
     <None Include="HelpDocumentation\HelpDocumentationFrmRegistration.pdf" />
     <None Include="HelpDocumentation\HelpDocumentationFrmReview.pdf" />
     <None Include="HelpDocumentation\HelpDocumentationFrmShowAllComments.pdf" />
+    <None Include="HelpDocumentation\HelpDocumentationFrmShowDamage.pdf" />
     <None Include="HelpDocumentation\HelpDocumentationFrmShowDetailReview.pdf" />
     <None Include="HelpDocumentation\HelpDocumentationFrmShowProfile.pdf" />
     <None Include="HelpDocumentation\HelpDocumentationFrmShowSimilar.pdf" />
