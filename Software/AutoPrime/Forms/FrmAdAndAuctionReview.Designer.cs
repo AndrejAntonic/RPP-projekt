@@ -49,6 +49,7 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.btnFiltriraj = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
+            this.btnObrisiAukciju = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOglasi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAukcije)).BeginInit();
             this.SuspendLayout();
@@ -244,7 +245,7 @@
             // 
             // btnPregledAukcije
             // 
-            this.btnPregledAukcije.Location = new System.Drawing.Point(659, 613);
+            this.btnPregledAukcije.Location = new System.Drawing.Point(587, 617);
             this.btnPregledAukcije.Margin = new System.Windows.Forms.Padding(2);
             this.btnPregledAukcije.Name = "btnPregledAukcije";
             this.btnPregledAukcije.Size = new System.Drawing.Size(155, 23);
@@ -286,11 +287,23 @@
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
+            // btnObrisiAukciju
+            // 
+            this.btnObrisiAukciju.Location = new System.Drawing.Point(746, 617);
+            this.btnObrisiAukciju.Margin = new System.Windows.Forms.Padding(2);
+            this.btnObrisiAukciju.Name = "btnObrisiAukciju";
+            this.btnObrisiAukciju.Size = new System.Drawing.Size(56, 23);
+            this.btnObrisiAukciju.TabIndex = 21;
+            this.btnObrisiAukciju.Text = "Obriši";
+            this.btnObrisiAukciju.UseVisualStyleBackColor = true;
+            this.btnObrisiAukciju.Click += new System.EventHandler(this.btnObrisiAukciju_Click);
+            // 
             // FrmAdAndAuctionReview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(824, 687);
+            this.Controls.Add(this.btnObrisiAukciju);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnFiltriraj);
             this.Controls.Add(this.btnClose);
@@ -346,5 +359,6 @@
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnFiltriraj;
         private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.Button btnObrisiAukciju;
     }
 }

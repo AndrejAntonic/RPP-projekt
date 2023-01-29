@@ -162,5 +162,13 @@ namespace AutoPrime.Forms
                 MessageBox.Show("Nije moguce izabrati takvu sliku.");
             }
         }
+
+        //umjesto ovog myb napravit u repozitoriju za slike da spremi sliku, isto tak i za ostecenja (mozd vec i ima pogledam kasnije)
+        public static byte converterDemo(Image x)
+        {
+            ImageConverter _imageConverter = new ImageConverter();
+            byte xByte = (byte)_imageConverter.ConvertTo(x, typeof(byte));
+            return xByte;
+        }
     }
 }

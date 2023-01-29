@@ -25,6 +25,15 @@ namespace DataAccessLayer.Repositories
             return query;
         }
 
+        public IQueryable<Aukcije> GetLast()
+        {
+            var query = from e in Entities
+                        orderby e.Id_aukcije descending
+                        select e;
+
+            return query.Take(1);
+        }
+
         public IQueryable<Aukcije> GetCertainAuction(string phrase)
         {
             var query = from e in Entities
@@ -53,7 +62,8 @@ namespace DataAccessLayer.Repositories
                 cijena = entity.cijena,
                 kilometraza = entity.kilometraza,
                 Motor = motorae,
-                datum_aukcije = entity.datum_aukcije
+                datum_aukcije = entity.datum_aukcije,
+                rok = entity.rok
             };
 
             Entities.Add(aukcije);

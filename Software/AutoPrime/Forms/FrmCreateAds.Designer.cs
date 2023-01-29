@@ -279,9 +279,9 @@
             this.label9.Location = new System.Drawing.Point(51, 407);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(72, 13);
+            this.label9.Size = new System.Drawing.Size(84, 13);
             this.label9.TabIndex = 25;
-            this.label9.Text = "Datum isteka:";
+            this.label9.Text = "Datum kreiranja:";
             // 
             // FrmCreateAds
             // 

@@ -10,6 +10,8 @@ namespace BusinessLogicModel.Services
 {
     public class AukcijeServices
     {
+        Aukcije zadnjaAukcija = new Aukcije();
+
         public List<Aukcije> GetAukcije()
         {
             using(var repo = new AukcijeRepository())
@@ -19,6 +21,17 @@ namespace BusinessLogicModel.Services
                 return aukcijee;
             }
         }
+
+        public Aukcije GetLastAukcije()
+        {
+            using (var repo = new AukcijeRepository())
+            {
+                Aukcije aukcijee = repo.GetLast().FirstOrDefault();
+
+                return aukcijee;
+            }
+        }
+
 
         public List<Aukcije> GetCertainAukcije(string phrase)
         {

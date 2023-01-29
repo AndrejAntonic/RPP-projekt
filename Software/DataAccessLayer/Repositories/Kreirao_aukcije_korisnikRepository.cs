@@ -22,6 +22,8 @@ namespace DataAccessLayer.Repositories
             return query;
         }
 
+
+
         public IQueryable<Korisnik> GetKorisnikFromAukcija(int aukcija_id)
         {
             var query = from k in Context.Korisniks
