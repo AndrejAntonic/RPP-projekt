@@ -93,5 +93,74 @@ namespace AutoPrime.Forms
         {
             LoadWantedModels();
         }
+
+        private void btnDodajSliku_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // kreiranje objekta OpenFileDialog za pretragu slike
+
+                OpenFileDialog open = new OpenFileDialog();
+
+                // filtriranje dialogboxa kako bi korisnik mogao izabrati samo određene vrste slike
+
+                open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
+                if (open.ShowDialog() == DialogResult.OK)
+                {
+                    //kreiraj objekt Image klase i pridruzi ime slike, dodaj sliku u bazu pomocu funkcije
+
+                    Image img = new Bitmap(open.FileName);
+                    //converterDemo(img);
+                }
+
+                /*var sliketina = new Slika
+                {
+                    Id_slike = 1,
+                    oglas_id = 1,
+                    slika1 = result,
+                    ostecenje_id = 1
+                };*/
+
+                /*using (var repo = new AutoPrimeModel())
+                {
+                    Image.Save(repo, sliketina);
+                }*/
+
+                //slikaServis.AddSlika(sliketina);
+            }
+            catch
+            {
+                MessageBox.Show("Nije moguce izabrati takvu sliku.");
+            }
+        }
+
+        private void btnDodajOstecenja_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                // kreiranje objekta OpenFileDialog za pretragu slike
+
+                OpenFileDialog open = new OpenFileDialog();
+
+                // filtriranje dialogboxa kako bi korisnik mogao izabrati samo određene vrste slike
+
+                open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
+
+                //ako je korisnik odabrao neku sliku radi sljedece
+
+                if (open.ShowDialog() == DialogResult.OK)
+                {
+                    //kreiraj objekt Image klase i pridruzi ime slike, dodaj sliku u bazu pomocu funkcije
+
+                    Image img = new Bitmap(open.FileName);
+                    //converterDemo(img);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Nije moguce izabrati takvu sliku.");
+            }
+        }
     }
 }

@@ -254,6 +254,7 @@
             this.btnDodajOstecenja.TabIndex = 43;
             this.btnDodajOstecenja.Text = "Dodaj ostecenja";
             this.btnDodajOstecenja.UseVisualStyleBackColor = true;
+            this.btnDodajOstecenja.Click += new System.EventHandler(this.btnDodajOstecenja_Click);
             // 
             // btnDodajSliku
             // 
@@ -263,6 +264,7 @@
             this.btnDodajSliku.TabIndex = 42;
             this.btnDodajSliku.Text = "Dodaj sliku";
             this.btnDodajSliku.UseVisualStyleBackColor = true;
+            this.btnDodajSliku.Click += new System.EventHandler(this.btnDodajSliku_Click);
             // 
             // dtpDatum
             // 
