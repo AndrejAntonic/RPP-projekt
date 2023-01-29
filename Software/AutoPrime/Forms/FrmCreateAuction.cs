@@ -73,6 +73,7 @@ namespace AutoPrime.Forms
 
         private void btnDodajAukciju_Click(object sender, EventArgs e)
         {
+            try { 
             var aukcija = new Aukcije
             {
                 naziv = txtNaslovOglasa.Text,
@@ -86,32 +87,35 @@ namespace AutoPrime.Forms
                 datum_aukcije = dtpDatum.Value,
                 rok = dtpRok.Value
             };
+                aukcijeServis.AddAuction(aukcija);
 
-            aukcijeServis.AddAuction(aukcija);
+                var prijavljen = prijavljeni.VratiPrijavljeniId();
 
-            var prijavljen = prijavljeni.VratiPrijavljeniId();
+                var zadnja = aukcijeServis.GetLastAukcije();
 
-            var zadnja = aukcijeServis.GetLastAukcije();
+                var aukkor = new Kreirao_aukcije_korisnik
+                {
+                    Aukcija_id = zadnja.Id_aukcije,
+                    Korisnik_id = prijavljen
+                };
 
-            var aukkor = new Kreirao_aukcije_korisnik
+                kreiraj.AddKreiraoAukcijeKorisnik(aukkor);
+
+                var pripremaZaPonude = new Ponuda
+                {
+                    Aukcije_id = zadnja.Id_aukcije,
+                    Korisnik_id = prijavljen,
+                    Ponuda1 = Int32.Parse(txtCijena.Text)
+                };
+
+                ponudaServices.AddPonuda(pripremaZaPonude);
+                this.Close();
+
+            }
+            catch
             {
-                Aukcija_id = zadnja.Id_aukcije,
-                Korisnik_id = prijavljen
-            };
-
-            kreiraj.AddKreiraoAukcijeKorisnik(aukkor);
-
-            var pripremaZaPonude = new Ponuda
-            {
-                Aukcije_id = zadnja.Id_aukcije,
-                Korisnik_id = prijavljen,
-                Ponuda1 = Int32.Parse(txtCijena.Text)
-            };
-
-            ponudaServices.AddPonuda(pripremaZaPonude);
-
-
-            this.Close();
+                MessageBox.Show("Molim popunite sve podatke!");
+            }
         }
 
         private void btnDodajSliku_Click(object sender, EventArgs e)

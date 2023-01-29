@@ -38,36 +38,43 @@ namespace AutoPrime.Forms
 
         private void btnDodajOglas_Click(object sender, EventArgs e)
         {
-            var oglas = new Ogla
+            try
             {
-                korisnik_id = prijavljeni.VratiPrijavljeniId(),
-                naziv = txtNaslovOglasa.Text,
-                Marka = cmbMarkaVozila.SelectedItem as Marka,
-                Model = cmbModelVozila.SelectedItem as Model,
-                lokacija_vozila = txtLokacija.Text,
-                godina = Int32.Parse(txtGodinaProizvodnje.Text),
-                cijena = txtCijena.Text,
-                kilometraza = txtKilometraza.Text,
-                Motor = cmbMotor.SelectedItem as Motor,
-                ostecenje = (byte)cbOstecenja.CheckState,
-                leasing = (byte)cbLeasing.CheckState,
-                datum = dtpDatum.Value
-            };
+                var oglas = new Ogla
+                {
+                    korisnik_id = prijavljeni.VratiPrijavljeniId(),
+                    naziv = txtNaslovOglasa.Text,
+                    Marka = cmbMarkaVozila.SelectedItem as Marka,
+                    Model = cmbModelVozila.SelectedItem as Model,
+                    lokacija_vozila = txtLokacija.Text,
+                    godina = Int32.Parse(txtGodinaProizvodnje.Text),
+                    cijena = txtCijena.Text,
+                    kilometraza = txtKilometraza.Text,
+                    Motor = cmbMotor.SelectedItem as Motor,
+                    ostecenje = (byte)cbOstecenja.CheckState,
+                    leasing = (byte)cbLeasing.CheckState,
+                    datum = dtpDatum.Value
+                };
 
-            /*var ostecenja = new Oštećenja
+                /*var ostecenja = new Oštećenja
+                {
+
+                };
+
+                var slika = new Slika
+                {
+
+                };*/
+
+                oglasServis.AddOglas(oglas);
+                //ostecenjaServis.AddOstecenja(ostecenja);
+                //slikaServis.AddSlika(slika);
+                Close();
+            }
+            catch
             {
-
-            };
-
-            var slika = new Slika
-            {
-
-            };*/
-
-            oglasServis.AddOglas(oglas);
-            //ostecenjaServis.AddOstecenja(ostecenja);
-            //slikaServis.AddSlika(slika);
-            Close();
+                MessageBox.Show("Molim vas popunite sve podatke!");
+            }
         }
 
         private void FrmCreateAds_Load(object sender, EventArgs e)
