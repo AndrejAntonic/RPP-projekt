@@ -4,7 +4,9 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -40,6 +42,13 @@ namespace AutoPrime.Forms
             FrmDetailAdAndAuctionReview detaljnaForma = new FrmDetailAdAndAuctionReview(odabrani);
             detaljnaForma.Show();
 
+        }
+
+        private void FrmLeasing_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            string presentationLayerRoot = Directory.GetParent(Directory.GetParent(Directory.GetParent(Application.ExecutablePath).FullName).FullName).FullName;
+            string pdfPath = presentationLayerRoot + "\\HelpDocumentation\\HelpDocumentationFrmLeasing.pdf";
+            Process.Start(pdfPath);
         }
     }
 }

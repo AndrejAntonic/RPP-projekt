@@ -75,6 +75,7 @@
             this.Name = "FrmLeasing";
             this.Text = "FrmLeasing";
             this.Load += new System.EventHandler(this.FrmLeasing_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.FrmLeasing_HelpRequested);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOglasi)).EndInit();
             this.ResumeLayout(false);
 

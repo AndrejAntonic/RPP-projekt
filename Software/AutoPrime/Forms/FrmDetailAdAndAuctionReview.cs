@@ -5,7 +5,9 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -138,6 +140,13 @@ namespace AutoPrime.Forms
             zanimljivi.AddZanimljiviOglas(noviZanimljivi);
             MessageBox.Show("Dodan oglas: "+oglas.naziv+" u listu zanimljivih oglasa.");
 
+        }
+
+        private void FrmDetailAdAndAuctionReview_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            string presentationLayerRoot = Directory.GetParent(Directory.GetParent(Directory.GetParent(Application.ExecutablePath).FullName).FullName).FullName;
+            string pdfPath = presentationLayerRoot + "\\HelpDocumentation\\HelpDocumentationFrmDetailAdAndAuctionReview.pdf";
+            Process.Start(pdfPath);
         }
     }
 }
