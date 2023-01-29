@@ -14,6 +14,8 @@ namespace DataAccessLayer.Repositories
 
         }
 
+        private Ponuda ponudaa = new Ponuda();
+
         public override IQueryable<Aukcije> GetAll()
         {
             var query = from e in Entities

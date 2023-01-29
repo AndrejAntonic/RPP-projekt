@@ -9,7 +9,7 @@ namespace EntitiesLayer.Entities
     public partial class Ponuda
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id_ponude { get; set; }
 
         [Column("Ponuda")]

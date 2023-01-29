@@ -29,6 +29,26 @@ namespace BusinessLogicModel.Services
                 return ponude;
             }
         }
+        public Ponuda GetHighestPonuda(int aukcija_id)
+        {
+            using (var repo = new PonudaRepository())
+            {
+                Ponuda ponude = repo.GetPonudaFromAuction(aukcija_id).FirstOrDefault();
+
+                return ponude;
+            }
+        }
+
+        public List<Ponuda> GetPonudaAuctionn(int iddaukcije)
+        {
+            using (var repo = new PonudaRepository())
+            {
+                List<Ponuda> ponude = repo.GetPonudaFromAuction(iddaukcije).ToList();
+
+                return ponude;
+            }
+        }
+
 
         public bool AddPonuda(Ponuda ponuda)
         {
