@@ -399,6 +399,7 @@
             this.Name = "FrmDetailAdAndAuctionReview";
             this.Text = "FrmDetailAdAndAuctionReview";
             this.Load += new System.EventHandler(this.FrmDetailAdAndAuctionReview_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.FrmDetailAdAndAuctionReview_HelpRequested);
             ((System.ComponentModel.ISupportInitialize)(this.pbSlika)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

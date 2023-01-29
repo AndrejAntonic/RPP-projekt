@@ -5,7 +5,9 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -169,6 +171,13 @@ namespace AutoPrime.Forms
             ImageConverter _imageConverter = new ImageConverter();
             byte xByte = (byte)_imageConverter.ConvertTo(x, typeof(byte));
             return xByte;
+        }
+
+        private void FrmEditAds_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            string presentationLayerRoot = Directory.GetParent(Directory.GetParent(Directory.GetParent(Application.ExecutablePath).FullName).FullName).FullName;
+            string pdfPath = presentationLayerRoot + "\\HelpDocumentation\\HelpDocumentationFrmEditAds.pdf";
+            Process.Start(pdfPath);
         }
     }
 }

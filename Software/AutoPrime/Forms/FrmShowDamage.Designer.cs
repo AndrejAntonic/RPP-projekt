@@ -37,25 +37,28 @@
             // 
             // txtOpisOstecenja
             // 
-            this.txtOpisOstecenja.Location = new System.Drawing.Point(56, 534);
+            this.txtOpisOstecenja.Location = new System.Drawing.Point(42, 434);
+            this.txtOpisOstecenja.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtOpisOstecenja.Name = "txtOpisOstecenja";
-            this.txtOpisOstecenja.Size = new System.Drawing.Size(732, 22);
+            this.txtOpisOstecenja.Size = new System.Drawing.Size(550, 20);
             this.txtOpisOstecenja.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 537);
+            this.label1.Location = new System.Drawing.Point(9, 436);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 16);
+            this.label1.Size = new System.Drawing.Size(31, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "Opis:";
             // 
             // btnZatvori
             // 
-            this.btnZatvori.Location = new System.Drawing.Point(692, 595);
+            this.btnZatvori.Location = new System.Drawing.Point(519, 483);
+            this.btnZatvori.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnZatvori.Name = "btnZatvori";
-            this.btnZatvori.Size = new System.Drawing.Size(96, 29);
+            this.btnZatvori.Size = new System.Drawing.Size(72, 24);
             this.btnZatvori.TabIndex = 3;
             this.btnZatvori.Text = "Zatvori";
             this.btnZatvori.UseVisualStyleBackColor = true;
@@ -63,23 +66,27 @@
             // 
             // pbOstecenja
             // 
-            this.pbOstecenja.Location = new System.Drawing.Point(12, 12);
+            this.pbOstecenja.Location = new System.Drawing.Point(9, 10);
+            this.pbOstecenja.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pbOstecenja.Name = "pbOstecenja";
-            this.pbOstecenja.Size = new System.Drawing.Size(776, 495);
+            this.pbOstecenja.Size = new System.Drawing.Size(582, 402);
             this.pbOstecenja.TabIndex = 4;
             this.pbOstecenja.TabStop = false;
             // 
             // FrmShowDamage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 636);
+            this.ClientSize = new System.Drawing.Size(600, 517);
             this.Controls.Add(this.pbOstecenja);
             this.Controls.Add(this.btnZatvori);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtOpisOstecenja);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmShowDamage";
             this.Text = "Oštećenja na automobilu";
+            this.Load += new System.EventHandler(this.FrmShowDamage_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.FrmShowDamage_HelpRequested);
             ((System.ComponentModel.ISupportInitialize)(this.pbOstecenja)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

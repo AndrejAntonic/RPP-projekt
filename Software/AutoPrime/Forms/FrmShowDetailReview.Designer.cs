@@ -135,6 +135,7 @@
             this.Name = "FrmShowDetailReview";
             this.Text = "Recenzija";
             this.Load += new System.EventHandler(this.FrmShowDetailReview_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.FrmShowDetailReview_HelpRequested);
             this.ResumeLayout(false);
             this.PerformLayout();
 

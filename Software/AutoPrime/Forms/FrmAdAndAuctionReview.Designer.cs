@@ -329,6 +329,7 @@
             this.Name = "FrmAdAndAuctionReview";
             this.Text = "FrmAdAndAuctionReview";
             this.Load += new System.EventHandler(this.FrmAdAndAuctionReview_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.FrmAdAndAuctionReview_HelpRequested);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOglasi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAukcije)).EndInit();
             this.ResumeLayout(false);

@@ -5,7 +5,9 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -68,6 +70,13 @@ namespace AutoPrime.Forms
         private void txtKorime_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void FrmLogin_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            string presentationLayerRoot = Directory.GetParent(Directory.GetParent(Directory.GetParent(Application.ExecutablePath).FullName).FullName).FullName;
+            string pdfPath = presentationLayerRoot + "\\HelpDocumentation\\HelpDocumentationFrmLogin.pdf";
+            Process.Start(pdfPath);
         }
     }
 }

@@ -7,7 +7,9 @@ using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -66,7 +68,7 @@ namespace AutoPrime
             }
             dgvUserFavourite.DataSource = oglasi;
             dgvUserFavourite.Columns.OfType<DataGridViewColumn>().ToList().ForEach(col => col.Visible = false);
-            dgvUserFavourite.Rows[0].Selected = false;
+            //dgvUserFavourite.Rows[0].Selected = false;
             dgvUserFavourite.Columns["Id_oglas"].Visible = true;
             dgvUserFavourite.Columns["naziv"].Visible = true;
             dgvUserFavourite.Columns["datum"].Visible = true;
@@ -250,6 +252,13 @@ namespace AutoPrime
                     LoadAllKorisnikPostings();
                 }
             }
+        }
+
+        private void FrmShowProfile_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            string presentationLayerRoot = Directory.GetParent(Directory.GetParent(Directory.GetParent(Application.ExecutablePath).FullName).FullName).FullName;
+            string pdfPath = presentationLayerRoot + "\\HelpDocumentation\\HelpDocumentationFrmShowProfile.pdf";
+            Process.Start(pdfPath);
         }
     }
 }

@@ -74,6 +74,7 @@
             this.Name = "FrmShowAllComments";
             this.Text = "Svi komentari za korisnika";
             this.Load += new System.EventHandler(this.FrmShowAllComments_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.FrmShowAllComments_HelpRequested);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAllComments)).EndInit();
             this.ResumeLayout(false);
 

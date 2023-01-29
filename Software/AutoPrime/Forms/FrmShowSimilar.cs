@@ -4,7 +4,9 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -54,6 +56,13 @@ namespace AutoPrime.Forms
             dgvOglasi.Columns["prodano_korisnik_id"].Visible = false;
             dgvOglasi.Columns["motor_id"].Visible = false;
             dgvOglasi.Columns["Korisnik1"].Visible = false;
+        }
+
+        private void FrmShowSimilar_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            string presentationLayerRoot = Directory.GetParent(Directory.GetParent(Directory.GetParent(Application.ExecutablePath).FullName).FullName).FullName;
+            string pdfPath = presentationLayerRoot + "\\HelpDocumentation\\HelpDocumentationFrmShowSimilar.pdf";
+            Process.Start(pdfPath);
         }
     }
 }

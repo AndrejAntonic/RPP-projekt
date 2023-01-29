@@ -87,6 +87,7 @@
             this.Name = "FrmShowSimilar";
             this.Text = "FrmShowSimilar";
             this.Load += new System.EventHandler(this.FrmShowSimilar_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.FrmShowSimilar_HelpRequested);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOglasi)).EndInit();
             this.ResumeLayout(false);
 
