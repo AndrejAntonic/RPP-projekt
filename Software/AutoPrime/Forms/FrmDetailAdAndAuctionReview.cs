@@ -15,6 +15,8 @@ namespace AutoPrime.Forms
 {
     public partial class FrmDetailAdAndAuctionReview : Form
     {
+        //Bruno Pavlović
+        //inicijalizacija potrebnih Entiteta, Servisa i varijabli
         private Ogla oglas = new Ogla();
         private Aukcije Aukcije = new Aukcije();
         private Kreirao_aukcije_korisnikServices kreirao_ = new Kreirao_aukcije_korisnikServices();
@@ -48,6 +50,7 @@ namespace AutoPrime.Forms
 
         private void btnOstecenja_Click(object sender, EventArgs e)
         {
+            //ako postoji ostecenje moguce je otvoriti formu ostecenja
             if (oglas.ostecenje==1)
             {
                 FrmShowDamage ostecenja = new FrmShowDamage();
@@ -62,6 +65,7 @@ namespace AutoPrime.Forms
 
         private void FrmDetailAdAndAuctionReview_Load(object sender, EventArgs e)
         {
+            //ako je provjera == 1 značiti da je forma primila aukciju
             if (provjera==1)
             {
                 FillAukcijeDetail();
@@ -80,6 +84,7 @@ namespace AutoPrime.Forms
 
         private void FillAukcijeDetail()
         {
+            //popunjavanje detalja aukcije
             checkBoxOstecenja.Visible = false;
             btnZanimljivi.Visible = false;
 
@@ -95,6 +100,7 @@ namespace AutoPrime.Forms
 
         private void FillDetail()
         {
+            //popunjavanje detalja oglasa
             var provjeraOstecenja = oglas.ostecenje;
             if (provjeraOstecenja==1)
             {
@@ -112,6 +118,7 @@ namespace AutoPrime.Forms
 
         private void btnKorime_Click(object sender, EventArgs e)
         {
+            //ako je provjera == 1 značiti da je forma primila aukciju
             Korisnik korisnik;
             if (provjera==1)
             {
@@ -121,6 +128,7 @@ namespace AutoPrime.Forms
             {
                 korisnik = korisnikServices.GetKorisnikById(oglas.korisnik_id);
             }
+            //proslijedi korisnika formi profila
             FrmShowProfile profil = new FrmShowProfile(korisnik);
             profil.Show();
         }
@@ -129,12 +137,13 @@ namespace AutoPrime.Forms
         {
             var korisnik = prijavljeniKorisnik.VratiPrijavljenog();
 
+            //napravi novi zanimljivi oglas
             var noviZanimljivi = new Zanimljivi_oglasi
             {
                 Oglas_id = oglas.Id_oglas,
                 Korisnik_id = korisnik.Id_korisnika
             };
-
+            //dodaj novi kreirani zanimljivi oglas
             zanimljivi.AddZanimljiviOglas(noviZanimljivi);
             MessageBox.Show("Dodan oglas: "+oglas.naziv+" u listu zanimljivih oglasa.");
 
