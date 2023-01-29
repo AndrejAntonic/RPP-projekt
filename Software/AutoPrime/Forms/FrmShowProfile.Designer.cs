@@ -47,6 +47,7 @@
             this.btnLeaveRating = new System.Windows.Forms.Button();
             this.btnShowInteresting = new System.Windows.Forms.Button();
             this.btnDeleteInteresting = new System.Windows.Forms.Button();
+            this.btnUrediOglas = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUserAdvertisement)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUserFavourite)).BeginInit();
             this.SuspendLayout();
@@ -227,11 +228,22 @@
             this.btnDeleteInteresting.UseVisualStyleBackColor = true;
             this.btnDeleteInteresting.Click += new System.EventHandler(this.btnDeleteInteresting_Click);
             // 
+            // btnUrediOglas
+            // 
+            this.btnUrediOglas.Location = new System.Drawing.Point(438, 312);
+            this.btnUrediOglas.Name = "btnUrediOglas";
+            this.btnUrediOglas.Size = new System.Drawing.Size(75, 23);
+            this.btnUrediOglas.TabIndex = 19;
+            this.btnUrediOglas.Text = "Uredi oglas";
+            this.btnUrediOglas.UseVisualStyleBackColor = true;
+            this.btnUrediOglas.Click += new System.EventHandler(this.btnUrediOglas_Click);
+            // 
             // FrmShowProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(521, 632);
+            this.Controls.Add(this.btnUrediOglas);
             this.Controls.Add(this.btnDeleteInteresting);
             this.Controls.Add(this.btnShowInteresting);
             this.Controls.Add(this.btnLeaveRating);
@@ -282,5 +294,6 @@
         private System.Windows.Forms.Button btnLeaveRating;
         private System.Windows.Forms.Button btnShowInteresting;
         private System.Windows.Forms.Button btnDeleteInteresting;
+        private System.Windows.Forms.Button btnUrediOglas;
     }
 }

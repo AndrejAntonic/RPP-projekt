@@ -20,6 +20,16 @@ namespace BusinessLogicModel.Services
             }
         }
 
+
+        public Ogla GetOglasiByOglasUserId(int id_oglas, int id_user)
+        {
+            using (var repo = new OglasRepository())
+            {
+                Ogla oglasi = repo.GetForOglasUserr(id_oglas, id_user).FirstOrDefault();
+
+                return oglasi;
+            }
+        }
         public List<Ogla> GetCertainOglass(string phrase)
         {
             using (var repo = new OglasRepository())

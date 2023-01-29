@@ -180,36 +180,5 @@ namespace AutoPrime.Forms
             FrmDetailAdAndAuctionReview frm = new FrmDetailAdAndAuctionReview(odabrana);
             frm.Show();
         }
-
-        private void btnObrisiOglas_Click(object sender, EventArgs e)
-        {
-            var odabrani = dgvOglasi.CurrentRow.DataBoundItem as Ogla;
-            var prijavljeniKorisnik = prijavljeni.VratiPrijavljeniId();
-            if(odabrani.korisnik_id == prijavljeniKorisnik)
-            {
-                oglasServices.RemoveOglas(odabrani);
-                ShowAds();
-            }
-            else
-            {
-                MessageBox.Show("Možete brisati samo oglase koje ste vi kreirali!");
-            }
-            
-        }
-
-        private void btnUrediOglas_Click(object sender, EventArgs e)
-        {
-            var odabrani = dgvOglasi.CurrentRow.DataBoundItem as Ogla;
-            var prijavljeniKorisnik = prijavljeni.VratiPrijavljeniId();
-            if (odabrani.korisnik_id == prijavljeniKorisnik)
-            {
-                FrmEditAds urediOglas = new FrmEditAds();
-                urediOglas.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("Možete urediti samo oglase koje ste vi kreirali!");
-            }
-        }
     }
 }

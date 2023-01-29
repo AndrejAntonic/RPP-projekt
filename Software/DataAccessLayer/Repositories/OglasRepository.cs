@@ -26,6 +26,15 @@ namespace DataAccessLayer.Repositories
             return query;
         }
 
+        public IQueryable<Ogla> GetForOglasUserr(int id_oglas, int id_user)
+        {
+            var query = from e in Entities
+                        where e.Id_oglas == id_oglas && e.korisnik_id == id_user
+                        select e;
+
+            return query;
+        }
+
         public IQueryable<Ogla> GetCertainOglas(string phrase)
         {
             var query = from e in Entities

@@ -156,6 +156,7 @@
             this.cmbMarkaVozila.Name = "cmbMarkaVozila";
             this.cmbMarkaVozila.Size = new System.Drawing.Size(210, 21);
             this.cmbMarkaVozila.TabIndex = 31;
+            this.cmbMarkaVozila.SelectedIndexChanged += new System.EventHandler(this.cmbMarkaVozila_SelectedIndexChanged);
             // 
             // txtNaslovOglasa
             // 
@@ -312,6 +313,7 @@
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmEditAds";
             this.Text = "Uređivanje oglasa";
+            this.Load += new System.EventHandler(this.FrmEditAds_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

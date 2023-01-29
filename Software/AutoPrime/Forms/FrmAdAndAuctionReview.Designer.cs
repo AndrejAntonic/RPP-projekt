@@ -49,8 +49,6 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.btnFiltriraj = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
-            this.btnObrisiOglas = new System.Windows.Forms.Button();
-            this.btnUrediOglas = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOglasi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAukcije)).BeginInit();
             this.SuspendLayout();
@@ -138,7 +136,7 @@
             // txtSearch
             // 
             this.txtSearch.Location = new System.Drawing.Point(90, 22);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(2);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(181, 20);
             this.txtSearch.TabIndex = 8;
@@ -148,7 +146,7 @@
             // 
             this.cmbMarka.FormattingEnabled = true;
             this.cmbMarka.Location = new System.Drawing.Point(711, 26);
-            this.cmbMarka.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbMarka.Margin = new System.Windows.Forms.Padding(2);
             this.cmbMarka.Name = "cmbMarka";
             this.cmbMarka.Size = new System.Drawing.Size(92, 21);
             this.cmbMarka.TabIndex = 9;
@@ -158,7 +156,7 @@
             // 
             this.cmbModel.FormattingEnabled = true;
             this.cmbModel.Location = new System.Drawing.Point(711, 54);
-            this.cmbModel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbModel.Margin = new System.Windows.Forms.Padding(2);
             this.cmbModel.Name = "cmbModel";
             this.cmbModel.Size = new System.Drawing.Size(92, 21);
             this.cmbModel.TabIndex = 10;
@@ -174,7 +172,7 @@
             "2015-2020",
             "2020-2023"});
             this.cmbGodina.Location = new System.Drawing.Point(711, 87);
-            this.cmbGodina.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbGodina.Margin = new System.Windows.Forms.Padding(2);
             this.cmbGodina.Name = "cmbGodina";
             this.cmbGodina.Size = new System.Drawing.Size(92, 21);
             this.cmbGodina.TabIndex = 11;
@@ -191,7 +189,7 @@
             "250000-300000",
             "300000-350000"});
             this.cmbKilometraza.Location = new System.Drawing.Point(711, 120);
-            this.cmbKilometraza.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbKilometraza.Margin = new System.Windows.Forms.Padding(2);
             this.cmbKilometraza.Name = "cmbKilometraza";
             this.cmbKilometraza.Size = new System.Drawing.Size(92, 21);
             this.cmbKilometraza.TabIndex = 12;
@@ -206,7 +204,7 @@
             "30000-40000",
             "40000-50000"});
             this.cmbCijena.Location = new System.Drawing.Point(711, 152);
-            this.cmbCijena.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbCijena.Margin = new System.Windows.Forms.Padding(2);
             this.cmbCijena.Name = "cmbCijena";
             this.cmbCijena.Size = new System.Drawing.Size(92, 21);
             this.cmbCijena.TabIndex = 13;
@@ -215,7 +213,7 @@
             // 
             this.dgvOglasi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOglasi.Location = new System.Drawing.Point(22, 210);
-            this.dgvOglasi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvOglasi.Margin = new System.Windows.Forms.Padding(2);
             this.dgvOglasi.Name = "dgvOglasi";
             this.dgvOglasi.RowHeadersWidth = 51;
             this.dgvOglasi.RowTemplate.Height = 24;
@@ -226,7 +224,7 @@
             // 
             this.dgvAukcije.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAukcije.Location = new System.Drawing.Point(22, 440);
-            this.dgvAukcije.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvAukcije.Margin = new System.Windows.Forms.Padding(2);
             this.dgvAukcije.Name = "dgvAukcije";
             this.dgvAukcije.RowHeadersWidth = 51;
             this.dgvAukcije.RowTemplate.Height = 24;
@@ -235,8 +233,8 @@
             // 
             // btnPregledOglasa
             // 
-            this.btnPregledOglasa.Location = new System.Drawing.Point(528, 383);
-            this.btnPregledOglasa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPregledOglasa.Location = new System.Drawing.Point(647, 383);
+            this.btnPregledOglasa.Margin = new System.Windows.Forms.Padding(2);
             this.btnPregledOglasa.Name = "btnPregledOglasa";
             this.btnPregledOglasa.Size = new System.Drawing.Size(155, 23);
             this.btnPregledOglasa.TabIndex = 16;
@@ -247,7 +245,7 @@
             // btnPregledAukcije
             // 
             this.btnPregledAukcije.Location = new System.Drawing.Point(659, 613);
-            this.btnPregledAukcije.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPregledAukcije.Margin = new System.Windows.Forms.Padding(2);
             this.btnPregledAukcije.Name = "btnPregledAukcije";
             this.btnPregledAukcije.Size = new System.Drawing.Size(155, 23);
             this.btnPregledAukcije.TabIndex = 17;
@@ -258,7 +256,7 @@
             // btnClose
             // 
             this.btnClose.Location = new System.Drawing.Point(737, 655);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(2);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(77, 23);
             this.btnClose.TabIndex = 18;
@@ -269,7 +267,7 @@
             // btnFiltriraj
             // 
             this.btnFiltriraj.Location = new System.Drawing.Point(746, 183);
-            this.btnFiltriraj.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnFiltriraj.Margin = new System.Windows.Forms.Padding(2);
             this.btnFiltriraj.Name = "btnFiltriraj";
             this.btnFiltriraj.Size = new System.Drawing.Size(56, 19);
             this.btnFiltriraj.TabIndex = 19;
@@ -280,7 +278,7 @@
             // btnReset
             // 
             this.btnReset.Location = new System.Drawing.Point(623, 183);
-            this.btnReset.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnReset.Margin = new System.Windows.Forms.Padding(2);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(118, 19);
             this.btnReset.TabIndex = 20;
@@ -288,35 +286,11 @@
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
-            // btnObrisiOglas
-            // 
-            this.btnObrisiOglas.Location = new System.Drawing.Point(747, 385);
-            this.btnObrisiOglas.Margin = new System.Windows.Forms.Padding(2);
-            this.btnObrisiOglas.Name = "btnObrisiOglas";
-            this.btnObrisiOglas.Size = new System.Drawing.Size(56, 19);
-            this.btnObrisiOglas.TabIndex = 21;
-            this.btnObrisiOglas.Text = "Obrisi";
-            this.btnObrisiOglas.UseVisualStyleBackColor = true;
-            this.btnObrisiOglas.Click += new System.EventHandler(this.btnObrisiOglas_Click);
-            // 
-            // btnUrediOglas
-            // 
-            this.btnUrediOglas.Location = new System.Drawing.Point(687, 385);
-            this.btnUrediOglas.Margin = new System.Windows.Forms.Padding(2);
-            this.btnUrediOglas.Name = "btnUrediOglas";
-            this.btnUrediOglas.Size = new System.Drawing.Size(56, 19);
-            this.btnUrediOglas.TabIndex = 22;
-            this.btnUrediOglas.Text = "Uredi";
-            this.btnUrediOglas.UseVisualStyleBackColor = true;
-            this.btnUrediOglas.Click += new System.EventHandler(this.btnUrediOglas_Click);
-            // 
             // FrmAdAndAuctionReview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(824, 687);
-            this.Controls.Add(this.btnUrediOglas);
-            this.Controls.Add(this.btnObrisiOglas);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnFiltriraj);
             this.Controls.Add(this.btnClose);
@@ -338,7 +312,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmAdAndAuctionReview";
             this.Text = "FrmAdAndAuctionReview";
             this.Load += new System.EventHandler(this.FrmAdAndAuctionReview_Load);
@@ -372,7 +346,5 @@
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnFiltriraj;
         private System.Windows.Forms.Button btnReset;
-        private System.Windows.Forms.Button btnObrisiOglas;
-        private System.Windows.Forms.Button btnUrediOglas;
     }
 }

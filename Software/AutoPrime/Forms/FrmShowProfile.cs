@@ -22,6 +22,7 @@ namespace AutoPrime
         RecenzijaServices recenzijaService = new RecenzijaServices();
         OglasServices oglasService = new OglasServices();
         ZanimljiviOglasiServices zanimljiviOglasiService = new ZanimljiviOglasiServices();
+        PrijavljeniKorisnik prijavljeni = new PrijavljeniKorisnik();
         bool loggedInKorisnik = false;
         public FrmShowProfile(Korisnik korisnik = null)
         {
@@ -231,6 +232,22 @@ namespace AutoPrime
             zanimljiviOglasiService.RemoveZanimljiviOglas(zanimljivi_Oglas);
 
             LoadInterestingAds();
+        }
+
+        private void btnUrediOglas_Click(object sender, EventArgs e)
+        {
+            Ogla ogla = getSelectedAdvertisement();
+
+            if (ogla != null)
+            {
+                DialogResult message = MessageBox.Show("Jeste li sigurni da želite urediti oglas?", "Upozorenje", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (message == DialogResult.Yes)
+                {
+                    FrmEditAds urediOglas = new FrmEditAds(ogla);
+                    urediOglas.ShowDialog();
+                    LoadAllKorisnikPostings();
+                }
+            }
         }
     }
 }
