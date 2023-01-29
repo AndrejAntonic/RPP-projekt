@@ -24,9 +24,9 @@ namespace BusinessLogicModel.Services
         {
             using(var repo = new KorisnikRepository())
             {
-                List<Korisnik> korisnik = repo.GetKorisnikById(id).ToList();
+                Korisnik korisnik = repo.GetKorisnikById(id).FirstOrDefault();
 
-                return korisnik[0];
+                return korisnik;
             }
         }
 
@@ -40,13 +40,13 @@ namespace BusinessLogicModel.Services
             }
         }
 
-        public Korisnik Prijava(string ime, string loz)
+        public Korisnik Login(string ime, string loz)
         {
             using (var repo = new KorisnikRepository())
             {
-                List<Korisnik> korisnici = repo.PrijaviKorisnika(ime, loz).ToList();
+                Korisnik korisnici = repo.PrijaviKorisnika(ime, loz).FirstOrDefault();
 
-                return korisnici[0];
+                return korisnici;
             }
         }
 

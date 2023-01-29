@@ -86,6 +86,7 @@
             this.Controls.Add(this.dgvOglasi);
             this.Name = "FrmShowSimilar";
             this.Text = "FrmShowSimilar";
+            this.Load += new System.EventHandler(this.FrmShowSimilar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOglasi)).EndInit();
             this.ResumeLayout(false);
 

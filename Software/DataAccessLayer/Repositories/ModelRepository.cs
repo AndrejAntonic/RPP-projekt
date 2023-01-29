@@ -31,6 +31,7 @@ namespace DataAccessLayer.Repositories
             return query;
         }
 
+
         public IQueryable<Model> GetCertainModel(int phrase)
         {
             var query = from e in Entities

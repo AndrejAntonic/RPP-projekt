@@ -16,6 +16,7 @@ namespace AutoPrime
 {
     public partial class FrmIndex : Form
     {
+        //Bruno Pavlović
         private OglasServices oglasServices = new OglasServices();
         Korisnik prijavljeniKorisnik = new Korisnik();
         public FrmIndex(Korisnik prijavljeniKorisnik)
@@ -55,26 +56,29 @@ namespace AutoPrime
             FrmShowProfile profil = new FrmShowProfile(prijavljeniKorisnik);
             profil.ShowDialog();
         }
-
+        //Bruno Pavlović
+        //otvaranje forme za pregled oglasa i aukcija
         private void btnPregledOglasaAukcija_Click(object sender, EventArgs e)
         {
             FrmAdAndAuctionReview frmAdAndAuctionReview = new FrmAdAndAuctionReview();
             frmAdAndAuctionReview.ShowDialog();
         }
-
+        //Bruno Pavlović
         private void FrmIndex_Load(object sender, EventArgs e)
         {
             ShowAds();
         }
-
+        //Bruno Pavlović
         private void ShowAds()
         {
+            //prikaz najtraženijih oglasa prema broju pregleda
             dgvNajtrazeniji.DataSource = oglasServices.GetMostWantedOglas();
             HideOglasAtributes();
         }
 
         private void HideOglasAtributes()
         {
+            //sakrivanje nepotrebnih stupaca
             dgvNajtrazeniji.Columns["korisnik_id"].Visible = false;
             dgvNajtrazeniji.Columns["marka_id"].Visible = false;
             dgvNajtrazeniji.Columns["model_id"].Visible = false;
@@ -88,9 +92,10 @@ namespace AutoPrime
             dgvNajtrazeniji.Columns["prodano_korisnik_id"].Visible = false;
             dgvNajtrazeniji.Columns["Korisnik1"].Visible = false;
         }
-
+        //Bruno Pavlovic
         private void btnPregledOdabranog_Click(object sender, EventArgs e)
         {
+            //azuriranje broja pregleda oglasa nakon klika te otvaranje forme za detaljni pregled odabranog
             Ogla oglas = dgvNajtrazeniji.CurrentRow.DataBoundItem as Ogla;
 
             if (oglas != null)

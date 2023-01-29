@@ -63,7 +63,8 @@ namespace AutoPrime
 
         private void btnCalculate_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtYear.Text) || string.IsNullOrEmpty(txtMileage.Text) || (isChecked == true && string.IsNullOrEmpty(txtInsertedPrice.Text)))
+            bool correct = CheckInsertedValues();
+            if (correct)
                 MessageBox.Show("Molimo popunite sve potrebne podatke!", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
@@ -79,6 +80,11 @@ namespace AutoPrime
             }
         }
 
+        private bool CheckInsertedValues()
+        {
+            return string.IsNullOrEmpty(txtYear.Text) || string.IsNullOrEmpty(txtMileage.Text) || (isChecked == true && string.IsNullOrEmpty(txtInsertedPrice.Text));
+        }
+
         private void cmbModel_SelectedIndexChanged(object sender, EventArgs e)
         {
             LoadCarPrice();
@@ -86,8 +92,8 @@ namespace AutoPrime
 
         private double GetDatabasePrice(int model_id)
         {
-            List<double> price = modelService.GetModelPrice(model_id);
-            return price[0];
+            double price = modelService.GetModelPrice(model_id).FirstOrDefault();
+            return price;
         }
 
         private void LoadCarPrice()

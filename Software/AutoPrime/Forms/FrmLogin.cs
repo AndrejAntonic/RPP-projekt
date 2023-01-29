@@ -32,21 +32,25 @@ namespace AutoPrime.Forms
             string lozinka = txtLozinka.Text;
             Korisnik prijavljeni = new Korisnik();
             KorisnikServices servis = new KorisnikServices();
-            prijavljeni = servis.Prijava(korisnickoIme, lozinka);
+            prijavljeni = servis.Login(korisnickoIme, lozinka);
             
 
             if(prijavljeni == null)
             {
                 MessageBox.Show("Krivo uneseni podaci!", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtLozinka.Text = "";
             }
             else
             {
                 PrijavljeniKorisnik novi = new PrijavljeniKorisnik();
                 novi.NamjestiKorisnika(prijavljeni);
+                this.Hide();
+
                 FrmIndex pocetna = new FrmIndex(prijavljeni);
-                pocetna.Show();
+                pocetna.ShowDialog();
+                Close();
+                //end
             }
-            this.Hide();
 
         }
 

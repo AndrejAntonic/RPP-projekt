@@ -45,6 +45,9 @@
             this.btnShowAdvertisement = new System.Windows.Forms.Button();
             this.btnShowAllComments = new System.Windows.Forms.Button();
             this.btnLeaveRating = new System.Windows.Forms.Button();
+            this.btnShowInteresting = new System.Windows.Forms.Button();
+            this.btnDeleteInteresting = new System.Windows.Forms.Button();
+            this.btnUrediOglas = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUserAdvertisement)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUserFavourite)).BeginInit();
             this.SuspendLayout();
@@ -172,6 +175,7 @@
             this.btnDeleteAdvertisement.TabIndex = 13;
             this.btnDeleteAdvertisement.Text = "Obriši oglas";
             this.btnDeleteAdvertisement.UseVisualStyleBackColor = true;
+            this.btnDeleteAdvertisement.Click += new System.EventHandler(this.btnDeleteAdvertisement_Click);
             // 
             // btnShowAdvertisement
             // 
@@ -181,6 +185,7 @@
             this.btnShowAdvertisement.TabIndex = 14;
             this.btnShowAdvertisement.Text = "Prikaži oglas";
             this.btnShowAdvertisement.UseVisualStyleBackColor = true;
+            this.btnShowAdvertisement.Click += new System.EventHandler(this.btnShowAdvertisement_Click);
             // 
             // btnShowAllComments
             // 
@@ -203,11 +208,44 @@
             this.btnLeaveRating.Visible = false;
             this.btnLeaveRating.Click += new System.EventHandler(this.btnLeaveRating_Click);
             // 
+            // btnShowInteresting
+            // 
+            this.btnShowInteresting.Location = new System.Drawing.Point(438, 548);
+            this.btnShowInteresting.Name = "btnShowInteresting";
+            this.btnShowInteresting.Size = new System.Drawing.Size(75, 47);
+            this.btnShowInteresting.TabIndex = 17;
+            this.btnShowInteresting.Text = "Prikaži zanimljivi oglas";
+            this.btnShowInteresting.UseVisualStyleBackColor = true;
+            this.btnShowInteresting.Click += new System.EventHandler(this.btnShowInteresting_Click);
+            // 
+            // btnDeleteInteresting
+            // 
+            this.btnDeleteInteresting.Location = new System.Drawing.Point(438, 495);
+            this.btnDeleteInteresting.Name = "btnDeleteInteresting";
+            this.btnDeleteInteresting.Size = new System.Drawing.Size(75, 47);
+            this.btnDeleteInteresting.TabIndex = 18;
+            this.btnDeleteInteresting.Text = "Obriši zanimljivi oglas";
+            this.btnDeleteInteresting.UseVisualStyleBackColor = true;
+            this.btnDeleteInteresting.Click += new System.EventHandler(this.btnDeleteInteresting_Click);
+            // 
+            // btnUrediOglas
+            // 
+            this.btnUrediOglas.Location = new System.Drawing.Point(438, 312);
+            this.btnUrediOglas.Name = "btnUrediOglas";
+            this.btnUrediOglas.Size = new System.Drawing.Size(75, 23);
+            this.btnUrediOglas.TabIndex = 19;
+            this.btnUrediOglas.Text = "Uredi oglas";
+            this.btnUrediOglas.UseVisualStyleBackColor = true;
+            this.btnUrediOglas.Click += new System.EventHandler(this.btnUrediOglas_Click);
+            // 
             // FrmShowProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(521, 632);
+            this.Controls.Add(this.btnUrediOglas);
+            this.Controls.Add(this.btnDeleteInteresting);
+            this.Controls.Add(this.btnShowInteresting);
             this.Controls.Add(this.btnLeaveRating);
             this.Controls.Add(this.btnShowAllComments);
             this.Controls.Add(this.btnShowAdvertisement);
@@ -254,5 +292,8 @@
         private System.Windows.Forms.Button btnShowAdvertisement;
         private System.Windows.Forms.Button btnShowAllComments;
         private System.Windows.Forms.Button btnLeaveRating;
+        private System.Windows.Forms.Button btnShowInteresting;
+        private System.Windows.Forms.Button btnDeleteInteresting;
+        private System.Windows.Forms.Button btnUrediOglas;
     }
 }

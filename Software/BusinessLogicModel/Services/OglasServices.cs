@@ -20,6 +20,16 @@ namespace BusinessLogicModel.Services
             }
         }
 
+
+        public Ogla GetOglasiByOglasUserId(int id_oglas, int id_user)
+        {
+            using (var repo = new OglasRepository())
+            {
+                Ogla oglasi = repo.GetForOglasUserr(id_oglas, id_user).FirstOrDefault();
+
+                return oglasi;
+            }
+        }
         public List<Ogla> GetCertainOglass(string phrase)
         {
             using (var repo = new OglasRepository())
@@ -27,6 +37,16 @@ namespace BusinessLogicModel.Services
                 List<Ogla> oglasi = repo.GetCertainOglas(phrase).ToList();
 
                 return oglasi;
+            }
+        }
+
+        public Ogla GetOneOglasById(int id)
+        {
+            using(var repo = new OglasRepository())
+            {
+                Ogla ogla = repo.GetOneOglasByOglasId(id).FirstOrDefault();
+
+                return ogla;
             }
         }
 
@@ -54,6 +74,59 @@ namespace BusinessLogicModel.Services
                         result.Add(item);
                     }
                 }
+
+                return result;
+            }
+        }
+
+        public List<Ogla> GetSimilarOglas(Ogla trenutni)
+        {
+            using (var repo = new OglasRepository())
+            {
+                List<Ogla> sviOglasi = repo.GetAll().ToList();
+                List<Ogla> result = new List<Ogla>();
+
+                foreach (var item in sviOglasi)
+                {
+                 
+                    int slicnost = 0;
+
+                    int cijena = int.Parse(item.cijena);
+                    int cijena2 = int.Parse(trenutni.cijena);
+                    if (item.leasing == trenutni.leasing)
+                    {
+                        slicnost++;
+                    }
+                    if (Math.Abs(cijena-cijena2) <= 5000 )
+                    {
+                        slicnost++;
+                    }
+                    if (item.godina == trenutni.godina)
+                    {
+                        slicnost++;
+                    }
+                    if (item.Motor == trenutni.Motor)
+                    {
+                        slicnost++;
+                    }
+                    if (item.Marka == trenutni.Marka)
+                    {
+                        slicnost++;
+                    }
+                    if (item.Model == trenutni.Model)
+                    {
+                        slicnost++;
+                    }
+                    if (item.Id_oglas == trenutni.Id_oglas)
+                    {
+                        slicnost = 0;
+                    }
+                    if (slicnost >= 2)
+                    {
+                        result.Add(item);
+                    }
+                }
+               
 
                 return result;
             }

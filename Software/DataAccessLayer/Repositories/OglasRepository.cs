@@ -26,6 +26,15 @@ namespace DataAccessLayer.Repositories
             return query;
         }
 
+        public IQueryable<Ogla> GetForOglasUserr(int id_oglas, int id_user)
+        {
+            var query = from e in Entities
+                        where e.Id_oglas == id_oglas && e.korisnik_id == id_user
+                        select e;
+
+            return query;
+        }
+
         public IQueryable<Ogla> GetCertainOglas(string phrase)
         {
             var query = from e in Entities
@@ -43,7 +52,26 @@ namespace DataAccessLayer.Repositories
         public IQueryable<Ogla> GetOglasByKorisnikId(int id)
         {
             var query = from e in Entities
+                        .Include("Iznajmljeno")
+                        .Include("Motor")
+                        .Include("Korisnik")
+                        .Include("Marka")
+                        .Include("Model")
                         where e.korisnik_id == id
+                        select e;
+
+            return query;
+        }
+
+        public IQueryable<Ogla> GetOneOglasByOglasId(int id)
+        {
+            var query = from e in Entities
+                        .Include("Iznajmljeno")
+                        .Include("Motor")
+                        .Include("Korisnik")
+                        .Include("Marka")
+                        .Include("Model")
+                        where e.Id_oglas == id
                         select e;
 
             return query;
@@ -140,7 +168,6 @@ namespace DataAccessLayer.Repositories
 
             var oglass = new Ogla
             {
-                Id_oglas = entity.Id_oglas,
                 korisnik_id = entity.korisnik_id,
                 naziv = entity.naziv,
                 Marka = markaa,

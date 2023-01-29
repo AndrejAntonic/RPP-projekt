@@ -22,6 +22,33 @@ namespace DataAccessLayer.Repositories
             return query;
         }
 
+        public IQueryable<Zanimljivi_oglasi> GetForUser(int id)
+        {
+            var query = from e in Entities
+                        where e.Korisnik_id == id
+                        select e;
+
+            return query;
+        }
+
+        public IQueryable<Zanimljivi_oglasi> GetForOglas(int id)
+        {
+            var query = from e in Entities
+                        where e.Oglas_id == id
+                        select e;
+
+            return query;
+        }
+
+        public IQueryable<Zanimljivi_oglasi> GetForOglasUser(int id_oglas, int id_user)
+        {
+            var query = from e in Entities
+                        where e.Oglas_id == id_oglas && e.Korisnik_id == id_user
+                        select e;
+
+            return query;
+        }
+
         public override int Add(Zanimljivi_oglasi entity, bool saveChanges = true)
         {
             var zanimiljiviOglas = new Zanimljivi_oglasi
