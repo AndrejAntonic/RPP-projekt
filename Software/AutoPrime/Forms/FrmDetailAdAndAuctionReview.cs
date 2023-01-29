@@ -21,6 +21,7 @@ namespace AutoPrime.Forms
         private Aukcije Aukcije = new Aukcije();
         private Kreirao_aukcije_korisnikServices kreirao_ = new Kreirao_aukcije_korisnikServices();
         private KorisnikServices korisnikServices = new KorisnikServices();
+        private OglasServices oglasServices = new OglasServices();
         private PrijavljeniKorisnik prijavljeniKorisnik = new PrijavljeniKorisnik();
         private ZanimljiviOglasiServices zanimljivi = new ZanimljiviOglasiServices();
         private PonudaServices ponudeServisi = new PonudaServices();
@@ -159,6 +160,29 @@ namespace AutoPrime.Forms
         private void btnZanimljivi_Click(object sender, EventArgs e)
         {
             var korisnik = prijavljeniKorisnik.VratiPrijavljenog();
+
+            //dohvati sve korisnikove oglase i provjeri je li odabrani oglas njegov
+            var korisnikoviOglasi = oglasServices.GetOglasByKorisnikId(korisnik.Id_korisnika);
+
+            foreach (var item in korisnikoviOglasi)
+            {
+                if (item.Id_oglas == oglas.Id_oglas)
+                {
+                    MessageBox.Show("Ne možete dodati vlastiti oglas u listu zanimljivih oglasa!");
+                    return;
+                }
+            }
+
+            //dohvati sve korisnikove zanimljive oglase i provjeri je li odabrani oglas već postoji u listi
+            var zanimljiviOglasiKorisnika = zanimljivi.GetZanimljiviOglasiByUserId(korisnik.Id_korisnika);
+            foreach (var item in zanimljiviOglasiKorisnika)
+            {
+                if (item.Oglas_id == oglas.Id_oglas)
+                {
+                    MessageBox.Show("Ne možete dodati oglas u listu zanimljivih oglasa jer se već nalazi tamo!");
+                    return;
+                }
+            }
 
             //napravi novi zanimljivi oglas
             var noviZanimljivi = new Zanimljivi_oglasi
