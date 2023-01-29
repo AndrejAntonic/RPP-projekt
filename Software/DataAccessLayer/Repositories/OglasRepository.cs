@@ -181,7 +181,7 @@ namespace DataAccessLayer.Repositories
                 datum = entity.datum,
                 leasing = entity.leasing,
                 Iznajmljeno = entity.Iznajmljeno,
-                broj_pregleda = entity.broj_pregleda,
+                broj_pregleda = 0,
                 prodano = entity.prodano,
                 prodano_korisnik_id = entity.korisnik_id
             };

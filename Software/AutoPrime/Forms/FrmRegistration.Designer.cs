@@ -109,7 +109,6 @@
             this.txtKorime.Name = "txtKorime";
             this.txtKorime.Size = new System.Drawing.Size(181, 22);
             this.txtKorime.TabIndex = 13;
-            this.txtKorime.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // txtLozinka1
             // 
@@ -213,7 +212,7 @@
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmRegistration";
-            this.Text = "FrmRegistracija";
+            this.Text = "Registracija";
             this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.FrmRegistration_HelpRequested);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -108,15 +108,20 @@ namespace AutoPrime
         {
             string comment = "Ne postoje recenzije";
             List<Recenzija> recenzijas = recenzijaService.GetRecenzijasForUser(korisnik);
-            DateTime datum = recenzijas.Max(r => r.Datum);
-            foreach (var item in recenzijas)
+            if (recenzijas.Count > 0)
             {
-                if (item.Datum == datum) {
-                    comment = item.Komentar;
-                    break;
+                DateTime datum = recenzijas.Max(r => r.Datum);
+                foreach (var item in recenzijas)
+                {
+                    if (item.Datum == datum)
+                    {
+                        comment = item.Komentar;
+                        break;
+                    }
                 }
             }
             return comment;
+
         }
 
         private string GetAverageRating()
@@ -178,11 +183,23 @@ namespace AutoPrime
 
         private Ogla getSelectedInterestingOglas()
         {
-            if(dgvUserFavourite.SelectedCells.Count > 0 || dgvUserFavourite.SelectedRows.Count > 0)
-                return dgvUserFavourite.CurrentRow.DataBoundItem as Ogla;
-            else
-                MessageBox.Show("Odaberite jedan oglas!", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            return null;
+            try
+            {
+                if (dgvUserFavourite.CurrentRow != null)
+                {
+                    return dgvUserFavourite.CurrentRow.DataBoundItem as Ogla;
+                }
+                else
+                {
+                    MessageBox.Show("Odaberite jedan oglas!", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return null;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Došlo je do pogreške: " + ex.Message, "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
         }
 
         private void btnShowAdvertisement_Click(object sender, EventArgs e)
@@ -232,8 +249,18 @@ namespace AutoPrime
         {
             Ogla ogla = getSelectedInterestingOglas();
 
-            Zanimljivi_oglasi zanimljivi_Oglas = zanimljiviOglasiService.GetZanimljiviOglasiByOglasUserId(ogla.Id_oglas, ogla.korisnik_id);
-            zanimljiviOglasiService.RemoveZanimljiviOglas(zanimljivi_Oglas);
+            if (ogla!=null)
+            {
+                Zanimljivi_oglasi zanimljivi_Oglas = zanimljiviOglasiService.GetZanimljiviOglasiByOglasUserId(ogla.Id_oglas, loggedKorisnik.Id_korisnika);
+                if (zanimljivi_Oglas != null)
+                {
+                    zanimljiviOglasiService.RemoveZanimljiviOglas(zanimljivi_Oglas);
+                }
+                else
+                {
+                    MessageBox.Show("Morate odabrati zanimljivi oglas koji želite obrisati!");
+                }
+            }
 
             LoadInterestingAds();
         }

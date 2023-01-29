@@ -121,7 +121,7 @@
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmLogin";
-            this.Text = "FrmLogin";
+            this.Text = "Prijava";
             this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.FrmLogin_HelpRequested);
             this.ResumeLayout(false);
             this.PerformLayout();

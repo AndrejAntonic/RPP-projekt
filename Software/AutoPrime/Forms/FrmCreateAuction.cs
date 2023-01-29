@@ -186,10 +186,5 @@ namespace AutoPrime.Forms
             string pdfPath = presentationLayerRoot + "\\HelpDocumentation\\HelpDocumentationFrmCreateAuction.pdf";
             Process.Start(pdfPath);
         }
-
-        private void FrmCreateAuction_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

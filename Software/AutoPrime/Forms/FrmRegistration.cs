@@ -22,11 +22,6 @@ namespace AutoPrime.Forms
             InitializeComponent();
         }
 
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnPrijava_Click(object sender, EventArgs e)
         {
             FrmLogin logiranje = new FrmLogin();
@@ -55,12 +50,12 @@ namespace AutoPrime.Forms
             {
                 KorisnikServices servis = new KorisnikServices();
                 servis.AddKorisniks(noviKorisnik);
+                this.Close();
             }
             else
             {
                 MessageBox.Show("Nisu uneseni točni podaci!", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            this.Close();
         }
 
         private void FrmRegistration_HelpRequested(object sender, HelpEventArgs hlpevent)

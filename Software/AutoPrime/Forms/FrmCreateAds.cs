@@ -175,10 +175,5 @@ namespace AutoPrime.Forms
             string pdfPath = presentationLayerRoot + "\\HelpDocumentation\\HelpDocumentationFrmCreateAds.pdf";
             Process.Start(pdfPath);
         }
-
-        private void FrmCreateAds_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
