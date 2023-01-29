@@ -68,16 +68,15 @@
     <Compile Include="Repositories\SlikaRepository.cs" />
     <Compile Include="Repositories\ZanimljiviOglasiRepository.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\EntitiesLayer\EntitiesLayer.csproj">
+      <Project>{440df7d7-3cef-49d4-9a9a-b3caf38cd28c}</Project>
+      <Name>EntitiesLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\EntitiesLayer\EntitiesLayer.csproj">
-      <Project>{440DF7D7-3CEF-49D4-9A9A-B3CAF38CD28C}</Project>
-      <Name>EntitiesLayer</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

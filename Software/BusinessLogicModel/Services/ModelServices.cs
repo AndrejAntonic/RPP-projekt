@@ -40,6 +40,7 @@ namespace BusinessLogicModel.Services
             }
         }
 
+
         public List<double> GetModelPrice(int id)
         {
             using (var repo = new ModelRepository())

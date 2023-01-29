@@ -159,7 +159,6 @@ namespace DataAccessLayer.Repositories
 
             var oglass = new Ogla
             {
-                Id_oglas = entity.Id_oglas,
                 korisnik_id = entity.korisnik_id,
                 naziv = entity.naziv,
                 Marka = markaa,

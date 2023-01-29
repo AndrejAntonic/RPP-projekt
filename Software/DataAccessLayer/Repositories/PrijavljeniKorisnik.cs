@@ -20,6 +20,11 @@ namespace DataAccessLayer.Repositories
         {
             return prijavljeniKorisnik;
         }
-        
+
+        public int VratiPrijavljeniId()
+        {
+            return prijavljeniKorisnik.Id_korisnika;
+        }
+
     }
 }

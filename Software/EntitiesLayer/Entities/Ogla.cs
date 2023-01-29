@@ -15,7 +15,7 @@ namespace EntitiesLayer.Entities
         }
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id_oglas { get; set; }
 
         public int korisnik_id { get; set; }
