@@ -120,6 +120,7 @@
             this.Controls.Add(this.lblRating);
             this.Name = "FrmReview";
             this.Text = "Recenzija prodavatelja";
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.FrmReview_HelpRequested);
             ((System.ComponentModel.ISupportInitialize)(this.tcbRating)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
