@@ -97,6 +97,7 @@ namespace AutoPrime.Forms
 
             var najvecaPonuda = ponudeServisi.GetHighestPonuda(ponuda.Aukcije_id);
 
+
             txtNazivOglasa.Text = Aukcije.naziv;
             txtMarka.Text = Aukcije.Marka.Naziv;
             txtModel.Text = Aukcije.Model.naziv;
@@ -106,6 +107,9 @@ namespace AutoPrime.Forms
             txtMotor.Text = Aukcije.Motor.vrsta;
             txtLokacija.Text = Aukcije.lokacija_vozila;
             txtNajvecaPonuda.Text = najvecaPonuda.ToString();
+
+            var korisnikPobjeda = korisnikServices.GetKorisnikById(najvecaPonuda.Korisnik_id);
+            txtPobjednikPonude.Text = korisnikPobjeda.Korimme;
         }
 
         private void FillDetail()
@@ -120,6 +124,9 @@ namespace AutoPrime.Forms
             txtPonudaBid.Visible = false;
             label7.Visible = false;
             label8.Visible = false;
+            label9.Visible = false;
+            txtPobjednikPonude.Visible = false;
+            
 
             txtNazivOglasa.Text = oglas.naziv;
             txtMarka.Text = oglas.Marka.Naziv;
