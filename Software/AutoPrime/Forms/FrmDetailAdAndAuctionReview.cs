@@ -23,6 +23,10 @@ namespace AutoPrime.Forms
         private KorisnikServices korisnikServices = new KorisnikServices();
         private PrijavljeniKorisnik prijavljeniKorisnik = new PrijavljeniKorisnik();
         private ZanimljiviOglasiServices zanimljivi = new ZanimljiviOglasiServices();
+        private PonudaServices ponudeServisi = new PonudaServices();
+        private AukcijeServices aukcijeServisi = new AukcijeServices();
+        private Ponuda ponuda = new Ponuda();
+
         private int provjera = 0;
         public FrmDetailAdAndAuctionReview(Ogla odabrani)
         {
@@ -88,6 +92,12 @@ namespace AutoPrime.Forms
             checkBoxOstecenja.Visible = false;
             btnZanimljivi.Visible = false;
 
+
+            ponuda.Aukcije_id = Aukcije.Id_aukcije;
+
+            var najvecaPonuda = ponudeServisi.GetHighestPonuda(ponuda.Aukcije_id);
+
+
             txtNazivOglasa.Text = Aukcije.naziv;
             txtMarka.Text = Aukcije.Marka.Naziv;
             txtModel.Text = Aukcije.Model.naziv;
@@ -96,6 +106,10 @@ namespace AutoPrime.Forms
             txtKilometraza.Text = Aukcije.kilometraza;
             txtMotor.Text = Aukcije.Motor.vrsta;
             txtLokacija.Text = Aukcije.lokacija_vozila;
+            txtNajvecaPonuda.Text = najvecaPonuda.ToString();
+
+            var korisnikPobjeda = korisnikServices.GetKorisnikById(najvecaPonuda.Korisnik_id);
+            txtPobjednikPonude.Text = korisnikPobjeda.Korimme;
         }
 
         private void FillDetail()
@@ -106,6 +120,14 @@ namespace AutoPrime.Forms
             {
                 checkBoxOstecenja.Checked = true;
             }
+            txtNajvecaPonuda.Visible = false;
+            txtPonudaBid.Visible = false;
+            label7.Visible = false;
+            label8.Visible = false;
+            label9.Visible = false;
+            txtPobjednikPonude.Visible = false;
+            
+
             txtNazivOglasa.Text = oglas.naziv;
             txtMarka.Text = oglas.Marka.Naziv;
             txtModel.Text = oglas.Model.naziv;
@@ -147,6 +169,39 @@ namespace AutoPrime.Forms
             zanimljivi.AddZanimljiviOglas(noviZanimljivi);
             MessageBox.Show("Dodan oglas: "+oglas.naziv+" u listu zanimljivih oglasa.");
 
+        }
+
+        private void btnPonudi_Click(object sender, EventArgs e)
+        {
+            var najvecaPonuda = ponudeServisi.GetHighestPonuda(ponuda.Aukcije_id);
+
+            var prijavljen = prijavljeniKorisnik.VratiPrijavljeniId();
+
+            var brojcina = Int32.Parse(txtPonudaBid.Text);
+
+            if(brojcina < najvecaPonuda.Ponuda1)
+            {
+                MessageBox.Show("Morate ponuditi veću ponudu od trenutne najveće ponude.");
+            }
+            else
+            {
+                if(Aukcije.rok >= DateTime.Now) {
+
+                Ponuda novaNajvecaPonuda = new Ponuda
+                {
+                    Aukcije_id = Aukcije.Id_aukcije,
+                    Korisnik_id = prijavljen,
+                    Ponuda1 = brojcina
+                };
+
+                ponudeServisi.AddPonuda(novaNajvecaPonuda);
+                FillAukcijeDetail();
+                }
+                else
+                {
+                    MessageBox.Show("Ova aukcija je istekla.");
+                }
+            }
         }
     }
 }

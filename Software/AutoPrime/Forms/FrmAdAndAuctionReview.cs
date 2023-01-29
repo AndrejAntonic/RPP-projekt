@@ -22,6 +22,7 @@ namespace AutoPrime.Forms
         private MarkaServices MarkaServices = new MarkaServices();
         private ModelServices modelServices = new ModelServices();
         private PrijavljeniKorisnik prijavljeni = new PrijavljeniKorisnik();
+        private Kreirao_aukcije_korisnikServices kreiraokorisnik = new Kreirao_aukcije_korisnikServices();
 
         public FrmAdAndAuctionReview()
         {
@@ -179,6 +180,27 @@ namespace AutoPrime.Forms
             Aukcije odabrana = dgvAukcije.CurrentRow.DataBoundItem as Aukcije;
             FrmDetailAdAndAuctionReview frm = new FrmDetailAdAndAuctionReview(odabrana);
             frm.Show();
+        }
+
+        private void btnObrisiAukciju_Click(object sender, EventArgs e)
+        {
+            var odabranaAukcija = dgvAukcije.CurrentRow.DataBoundItem as Aukcije;
+            var uzmiIdKorisnikaAukcije = kreiraokorisnik.GetKorisnikFromAukcija(odabranaAukcija.Id_aukcije);
+            var prijavljen = prijavljeni.VratiPrijavljenog();
+            
+            if (uzmiIdKorisnikaAukcije.Id_korisnika != prijavljen.Id_korisnika)
+            {
+                MessageBox.Show("Mozete brisati samo aukcije koje ste vi kreirari!");
+            }
+            else {
+                DialogResult message = MessageBox.Show("Jeste li sigurni da želite obrisati oglas?", "Upozorenje", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (message == DialogResult.Yes)
+                {
+                    aukcijeServices.RemoveAuction(odabranaAukcija);
+                }
+            }
+            ShowAds();
+            ShowAuctions();
         }
     }
 }

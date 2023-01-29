@@ -14,6 +14,8 @@ namespace DataAccessLayer.Repositories
 
         }
 
+        private PrijavljeniKorisnik prijavljeni = new PrijavljeniKorisnik();
+
         public override IQueryable<Ponuda> GetAll()
         {
             var query = from e in Entities
@@ -31,13 +33,34 @@ namespace DataAccessLayer.Repositories
             return query;
         }
 
+
+        public IQueryable<Ponuda> GetPonudaAukcije(int id_aukcije)
+        {
+            var query = from e in Entities
+                        where e.Id_ponude == id_aukcije
+                        select e;
+
+            return query;
+        }
+
+        public IQueryable<Ponuda> GetPonudaFromAuction(int aukcija_id)
+        {
+            var query = from k in Context.Ponudas
+                        join a in Context.Aukcijes on k.Aukcije_id equals a.Id_aukcije
+                        where a.Id_aukcije == aukcija_id
+                        orderby k.Ponuda1 descending
+                        select k;
+
+          return query.Take(1);
+        }
+
+
         public override int Add(Ponuda entity, bool saveChanges = true)
         {
-            var aukcijaa = Context.Aukcijes.SingleOrDefault(a => a.Id_aukcije == entity.Aukcije.Id_aukcije);
             var ponuda = new Ponuda
             {
-                Id_ponude = entity.Id_ponude,
-                Aukcije = aukcijaa,
+                Korisnik_id = entity.Korisnik_id,
+                Aukcije_id = entity.Aukcije_id,
                 Ponuda1 = entity.Ponuda1
             };
 
@@ -54,11 +77,8 @@ namespace DataAccessLayer.Repositories
 
         public override int Update(Ponuda entity, bool saveChanges = true)
         {
-            var aukcijaa = Context.Aukcijes.SingleOrDefault(a => a.Id_aukcije == entity.Aukcije.Id_aukcije);
             var ponuda = Entities.SingleOrDefault(p => p.Id_ponude == entity.Id_ponude);
 
-            ponuda.Id_ponude = entity.Id_ponude;
-            ponuda.Aukcije = aukcijaa;
             ponuda.Ponuda1 = entity.Ponuda1;
 
             if (saveChanges)

@@ -56,6 +56,7 @@
     <Compile Include="Entities\Motor.ext.cs" />
     <Compile Include="Entities\Ogla.cs" />
     <Compile Include="Entities\Oštećenja.cs" />
+    <Compile Include="Entities\Ponuda.code.cs" />
     <Compile Include="Entities\Ponuda.cs" />
     <Compile Include="Entities\Recenzija.cs" />
     <Compile Include="Entities\Slika.cs" />
