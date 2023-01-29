@@ -234,6 +234,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="HelpDocumentation\HelpDocumentationFrmKalkulator.pdf" />
+    <None Include="HelpDocumentation\HelpDocumentationFrmReview.pdf" />
+    <None Include="HelpDocumentation\HelpDocumentationFrmShowAllComments.pdf" />
+    <None Include="HelpDocumentation\HelpDocumentationFrmShowDetailReview.pdf" />
     <None Include="HelpDocumentation\HelpDocumentationFrmShowProfile.pdf" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
