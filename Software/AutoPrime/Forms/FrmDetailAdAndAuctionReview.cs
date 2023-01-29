@@ -174,10 +174,12 @@ namespace AutoPrime.Forms
 
             if(brojcina < najvecaPonuda.Ponuda1)
             {
-                MessageBox.Show("Morate ponuditi veću ponudu od trenutne najveće ponude!");
+                MessageBox.Show("Morate ponuditi veću ponudu od trenutne najveće ponude.");
             }
             else
             {
+                if(Aukcije.rok >= DateTime.Now) {
+
                 Ponuda novaNajvecaPonuda = new Ponuda
                 {
                     Aukcije_id = Aukcije.Id_aukcije,
@@ -187,6 +189,11 @@ namespace AutoPrime.Forms
 
                 ponudeServisi.AddPonuda(novaNajvecaPonuda);
                 FillAukcijeDetail();
+                }
+                else
+                {
+                    MessageBox.Show("Ova aukcija je istekla.");
+                }
             }
         }
     }

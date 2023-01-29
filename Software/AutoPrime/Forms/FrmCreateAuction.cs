@@ -21,6 +21,7 @@ namespace AutoPrime.Forms
         private AukcijeServices aukcijeServis = new AukcijeServices();
         private PrijavljeniKorisnik prijavljeni = new PrijavljeniKorisnik();
         private Kreirao_aukcije_korisnikServices kreiraj = new Kreirao_aukcije_korisnikServices();
+        private PonudaServices ponudaServices = new PonudaServices();
         public FrmCreateAuction()
         {
             InitializeComponent();
@@ -97,6 +98,17 @@ namespace AutoPrime.Forms
             };
 
             kreiraj.AddKreiraoAukcijeKorisnik(aukkor);
+
+            var pripremaZaPonude = new Ponuda
+            {
+                Aukcije_id = zadnja.Id_aukcije,
+                Korisnik_id = prijavljen,
+                Ponuda1 = Int32.Parse(txtCijena.Text)
+            };
+
+            ponudaServices.AddPonuda(pripremaZaPonude);
+
+
             this.Close();
         }
 
