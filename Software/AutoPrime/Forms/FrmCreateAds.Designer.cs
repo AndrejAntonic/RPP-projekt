@@ -51,6 +51,7 @@
             this.btnDodajSliku = new System.Windows.Forms.Button();
             this.btnDodajOstecenja = new System.Windows.Forms.Button();
             this.dtpDatum = new System.Windows.Forms.DateTimePicker();
+            this.label9 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -136,7 +137,7 @@
             // txtNaslovOglasa
             // 
             this.txtNaslovOglasa.Location = new System.Drawing.Point(148, 39);
-            this.txtNaslovOglasa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNaslovOglasa.Margin = new System.Windows.Forms.Padding(2);
             this.txtNaslovOglasa.Name = "txtNaslovOglasa";
             this.txtNaslovOglasa.Size = new System.Drawing.Size(210, 20);
             this.txtNaslovOglasa.TabIndex = 10;
@@ -145,7 +146,7 @@
             // 
             this.cmbMarkaVozila.FormattingEnabled = true;
             this.cmbMarkaVozila.Location = new System.Drawing.Point(148, 74);
-            this.cmbMarkaVozila.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbMarkaVozila.Margin = new System.Windows.Forms.Padding(2);
             this.cmbMarkaVozila.Name = "cmbMarkaVozila";
             this.cmbMarkaVozila.Size = new System.Drawing.Size(210, 21);
             this.cmbMarkaVozila.TabIndex = 11;
@@ -155,7 +156,7 @@
             // 
             this.cmbModelVozila.FormattingEnabled = true;
             this.cmbModelVozila.Location = new System.Drawing.Point(148, 112);
-            this.cmbModelVozila.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbModelVozila.Margin = new System.Windows.Forms.Padding(2);
             this.cmbModelVozila.Name = "cmbModelVozila";
             this.cmbModelVozila.Size = new System.Drawing.Size(210, 21);
             this.cmbModelVozila.TabIndex = 12;
@@ -163,7 +164,7 @@
             // txtLokacija
             // 
             this.txtLokacija.Location = new System.Drawing.Point(148, 152);
-            this.txtLokacija.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtLokacija.Margin = new System.Windows.Forms.Padding(2);
             this.txtLokacija.Name = "txtLokacija";
             this.txtLokacija.Size = new System.Drawing.Size(210, 20);
             this.txtLokacija.TabIndex = 13;
@@ -171,7 +172,7 @@
             // txtGodinaProizvodnje
             // 
             this.txtGodinaProizvodnje.Location = new System.Drawing.Point(148, 190);
-            this.txtGodinaProizvodnje.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtGodinaProizvodnje.Margin = new System.Windows.Forms.Padding(2);
             this.txtGodinaProizvodnje.Name = "txtGodinaProizvodnje";
             this.txtGodinaProizvodnje.Size = new System.Drawing.Size(210, 20);
             this.txtGodinaProizvodnje.TabIndex = 14;
@@ -179,7 +180,7 @@
             // txtKilometraza
             // 
             this.txtKilometraza.Location = new System.Drawing.Point(148, 259);
-            this.txtKilometraza.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtKilometraza.Margin = new System.Windows.Forms.Padding(2);
             this.txtKilometraza.Name = "txtKilometraza";
             this.txtKilometraza.Size = new System.Drawing.Size(210, 20);
             this.txtKilometraza.TabIndex = 16;
@@ -187,7 +188,7 @@
             // txtCijena
             // 
             this.txtCijena.Location = new System.Drawing.Point(148, 224);
-            this.txtCijena.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCijena.Margin = new System.Windows.Forms.Padding(2);
             this.txtCijena.Name = "txtCijena";
             this.txtCijena.Size = new System.Drawing.Size(210, 20);
             this.txtCijena.TabIndex = 15;
@@ -196,7 +197,7 @@
             // 
             this.cmbMotor.FormattingEnabled = true;
             this.cmbMotor.Location = new System.Drawing.Point(148, 294);
-            this.cmbMotor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbMotor.Margin = new System.Windows.Forms.Padding(2);
             this.cmbMotor.Name = "cmbMotor";
             this.cmbMotor.Size = new System.Drawing.Size(210, 21);
             this.cmbMotor.TabIndex = 17;
@@ -205,7 +206,7 @@
             // 
             this.cbOstecenja.AutoSize = true;
             this.cbOstecenja.Location = new System.Drawing.Point(148, 338);
-            this.cbOstecenja.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbOstecenja.Margin = new System.Windows.Forms.Padding(2);
             this.cbOstecenja.Name = "cbOstecenja";
             this.cbOstecenja.Size = new System.Drawing.Size(74, 17);
             this.cbOstecenja.TabIndex = 18;
@@ -216,7 +217,7 @@
             // 
             this.cbLeasing.AutoSize = true;
             this.cbLeasing.Location = new System.Drawing.Point(148, 367);
-            this.cbLeasing.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbLeasing.Margin = new System.Windows.Forms.Padding(2);
             this.cbLeasing.Name = "cbLeasing";
             this.cbLeasing.Size = new System.Drawing.Size(63, 17);
             this.cbLeasing.TabIndex = 19;
@@ -226,7 +227,7 @@
             // btnDodajOglas
             // 
             this.btnDodajOglas.Location = new System.Drawing.Point(203, 534);
-            this.btnDodajOglas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDodajOglas.Margin = new System.Windows.Forms.Padding(2);
             this.btnDodajOglas.Name = "btnDodajOglas";
             this.btnDodajOglas.Size = new System.Drawing.Size(72, 24);
             this.btnDodajOglas.TabIndex = 20;
@@ -237,7 +238,7 @@
             // btnOdustani
             // 
             this.btnOdustani.Location = new System.Drawing.Point(280, 534);
-            this.btnOdustani.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnOdustani.Margin = new System.Windows.Forms.Padding(2);
             this.btnOdustani.Name = "btnOdustani";
             this.btnOdustani.Size = new System.Drawing.Size(72, 24);
             this.btnOdustani.TabIndex = 21;
@@ -267,16 +268,27 @@
             // 
             // dtpDatum
             // 
-            this.dtpDatum.Location = new System.Drawing.Point(157, 401);
+            this.dtpDatum.Location = new System.Drawing.Point(157, 407);
             this.dtpDatum.Name = "dtpDatum";
             this.dtpDatum.Size = new System.Drawing.Size(200, 20);
             this.dtpDatum.TabIndex = 24;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(51, 407);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(72, 13);
+            this.label9.TabIndex = 25;
+            this.label9.Text = "Datum isteka:";
             // 
             // FrmCreateAds
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(411, 580);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.dtpDatum);
             this.Controls.Add(this.btnDodajOstecenja);
             this.Controls.Add(this.btnDodajSliku);
@@ -300,7 +312,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmCreateAds";
             this.Text = "Kreiranje novog oglasa";
             this.Load += new System.EventHandler(this.FrmCreateAds_Load);
@@ -334,5 +346,6 @@
         private System.Windows.Forms.Button btnDodajSliku;
         private System.Windows.Forms.Button btnDodajOstecenja;
         private System.Windows.Forms.DateTimePicker dtpDatum;
+        private System.Windows.Forms.Label label9;
     }
 }

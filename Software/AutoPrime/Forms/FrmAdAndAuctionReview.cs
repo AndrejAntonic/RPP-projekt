@@ -1,4 +1,5 @@
 ﻿using BusinessLogicModel.Services;
+using DataAccessLayer.Repositories;
 using EntitiesLayer.Entities;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,7 @@ namespace AutoPrime.Forms
         private AukcijeServices aukcijeServices = new AukcijeServices();
         private MarkaServices MarkaServices = new MarkaServices();
         private ModelServices modelServices = new ModelServices();
+        private PrijavljeniKorisnik prijavljeni = new PrijavljeniKorisnik();
 
         public FrmAdAndAuctionReview()
         {
@@ -177,6 +179,37 @@ namespace AutoPrime.Forms
             Aukcije odabrana = dgvAukcije.CurrentRow.DataBoundItem as Aukcije;
             FrmDetailAdAndAuctionReview frm = new FrmDetailAdAndAuctionReview(odabrana);
             frm.Show();
+        }
+
+        private void btnObrisiOglas_Click(object sender, EventArgs e)
+        {
+            var odabrani = dgvOglasi.CurrentRow.DataBoundItem as Ogla;
+            var prijavljeniKorisnik = prijavljeni.VratiPrijavljeniId();
+            if(odabrani.korisnik_id == prijavljeniKorisnik)
+            {
+                oglasServices.RemoveOglas(odabrani);
+                ShowAds();
+            }
+            else
+            {
+                MessageBox.Show("Možete brisati samo oglase koje ste vi kreirali!");
+            }
+            
+        }
+
+        private void btnUrediOglas_Click(object sender, EventArgs e)
+        {
+            var odabrani = dgvOglasi.CurrentRow.DataBoundItem as Ogla;
+            var prijavljeniKorisnik = prijavljeni.VratiPrijavljeniId();
+            if (odabrani.korisnik_id == prijavljeniKorisnik)
+            {
+                FrmEditAds urediOglas = new FrmEditAds();
+                urediOglas.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Možete urediti samo oglase koje ste vi kreirali!");
+            }
         }
     }
 }
