@@ -126,6 +126,7 @@ namespace AutoPrime.Forms
             label8.Visible = false;
             label9.Visible = false;
             txtPobjednikPonude.Visible = false;
+            btnPonudi.Visible = false;
             
 
             txtNazivOglasa.Text = oglas.naziv;
