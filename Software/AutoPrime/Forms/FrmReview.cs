@@ -33,18 +33,23 @@ namespace AutoPrime
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            Recenzija recenzija = new Recenzija
+            if (txtComment.Text != "")
             {
-                Ocjena = tcbRating.Value,
-                Komentar = txtComment.Text,
-                Za_korisnik_id = selectedKorisnik.Id_korisnika,
-                Od_korisnik_id = loggedKorisnik.Id_korisnika,
-                Datum = DateTime.Now
-            };
+                Recenzija recenzija = new Recenzija
+                {
+                    Ocjena = tcbRating.Value,
+                    Komentar = txtComment.Text,
+                    Za_korisnik_id = selectedKorisnik.Id_korisnika,
+                    Od_korisnik_id = loggedKorisnik.Id_korisnika,
+                    Datum = DateTime.Now
+                };
 
-            recenzijaServices.AddRecenzija(recenzija);
+                recenzijaServices.AddRecenzija(recenzija);
 
-            Close();
+                Close();
+            }
+            else
+                MessageBox.Show("Unesite komentar za recenziju", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void tcbRating_ValueChanged(object sender, EventArgs e)

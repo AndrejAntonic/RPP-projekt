@@ -47,9 +47,10 @@ namespace AutoPrime
         {
             if (!loggedInKorisnik)
                 removeZanimljivi();
+            else
+                LoadInterestingAds();
             LoadKorisnikData();
             LoadAllKorisnikPostings();
-            LoadInterestingAds();
         }
 
         private void LoadInterestingAds()
@@ -79,6 +80,7 @@ namespace AutoPrime
             btnLeaveRating.Visible = true;
             btnShowInteresting.Visible = false;
             btnDeleteInteresting.Visible = false;
+            btnUrediOglas.Visible = false;
         }
 
         private void LoadAllKorisnikPostings()
