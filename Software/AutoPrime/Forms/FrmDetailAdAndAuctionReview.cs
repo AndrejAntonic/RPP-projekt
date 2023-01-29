@@ -92,6 +92,7 @@ namespace AutoPrime.Forms
             //popunjavanje detalja aukcije
             checkBoxOstecenja.Visible = false;
             btnZanimljivi.Visible = false;
+            btnSlicni.Visible = false;
 
 
             ponuda.Aukcije_id = Aukcije.Id_aukcije;
