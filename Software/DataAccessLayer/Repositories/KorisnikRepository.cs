@@ -40,6 +40,7 @@ namespace DataAccessLayer.Repositories
             return query;
         }
 
+        //Danijel Žebčević
         public IQueryable<Korisnik> PrijaviKorisnika(string korisnickoIme, string lozinka)
         {
             var query = from e in Entities
@@ -48,7 +49,7 @@ namespace DataAccessLayer.Repositories
 
             return query;
         }
-
+        //Danijel Žebčević
         public IQueryable<Korisnik> MijenjajLozinku(string korime, string telefon, string ime,string prezime)
         {
             var query = from e in Entities

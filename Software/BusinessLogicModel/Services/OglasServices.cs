@@ -60,13 +60,16 @@ namespace BusinessLogicModel.Services
             }
         }
 
+        //Danijel Žebčević
         public List<Ogla> GetLeasingOglas()
         {
             using (var repo = new OglasRepository())
             {
+                //dohvaćanje svih oglasa
                 List<Ogla> oglasi = repo.GetAll().ToList();
                 List<Ogla> result = new List<Ogla>();
 
+                //provjera da li je oglas označen za iznajmljivanje
                 foreach (var item in oglasi)
                 {
                     if (item.leasing == 1)
@@ -74,18 +77,21 @@ namespace BusinessLogicModel.Services
                         result.Add(item);
                     }
                 }
-
+                //vraćanje liste oglasa
                 return result;
             }
         }
 
+        //Danijel Žebčević
         public List<Ogla> GetSimilarOglas(Ogla trenutni)
         {
             using (var repo = new OglasRepository())
             {
+                //dohvaćanje svih oglasa
                 List<Ogla> sviOglasi = repo.GetAll().ToList();
                 List<Ogla> result = new List<Ogla>();
 
+                //provjera sličnosti svih dohvaćenih oglasa sa odabranim
                 foreach (var item in sviOglasi)
                 {
                  
@@ -127,7 +133,7 @@ namespace BusinessLogicModel.Services
                     }
                 }
                
-
+                //vraćanje svih oglasa sa barem dvije sličnosti
                 return result;
             }
         }

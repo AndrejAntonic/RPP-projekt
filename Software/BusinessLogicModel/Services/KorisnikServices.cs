@@ -40,22 +40,28 @@ namespace BusinessLogicModel.Services
             }
         }
 
+
+        //Danijel Žebčević
         public Korisnik Login(string ime, string loz)
         {
             using (var repo = new KorisnikRepository())
             {
+                //dohvaćanje prvog(ujedno i posljednjeg) korisnika sa pripadajućim imenom i lozinkom
                 Korisnik korisnici = repo.PrijaviKorisnika(ime, loz).FirstOrDefault();
 
                 return korisnici;
             }
         }
 
+        //Danijel Žebčević
         public Korisnik ChangePassword(string korime, string telefon, string ime, string prezime)
         {
             using (var repo = new KorisnikRepository())
             {
+                //poziv repozitorija za mijenjanje lozinke
                 List<Korisnik> korisnici = repo.MijenjajLozinku(korime, telefon, ime, prezime).ToList();
 
+                //vraćanje rezultata ovisno o uspjehu
                 if (korisnici.Count > 0)
                 {
                     return korisnici[0];
