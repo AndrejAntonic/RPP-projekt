@@ -9,7 +9,8 @@ namespace BusinessLogicModel
 {
     public class KalkulatorLogic
     {
-        public List<double> CalculateBasedOnAge(double price, int year)
+        //Andrej Antonić
+        public List<double> CalculateBasedOnAge(double price, int year) //Računanje vrijednosti automobila na prvi način
         {
             List<double> listValues = new List<double>();
 
@@ -29,7 +30,7 @@ namespace BusinessLogicModel
             return listValues;
         }
 
-        public double CalculateBasedOnKilometers(double price, double mileage)
+        public double CalculateBasedOnKilometers(double price, double mileage) //Računanje vrijednosti automobila na drugi način
         {
             double calculatedPrice = price - (mileage * 0.33);
             if (calculatedPrice > 0)
