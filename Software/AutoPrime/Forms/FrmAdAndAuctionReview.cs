@@ -112,10 +112,10 @@ namespace AutoPrime.Forms
                         oglasServices.UpdateOglasView(odabrani);
                     }
                     ShowAds();
+                    this.Hide();
                     //otvori detaljni pregled odabranog oglasa
                     FrmDetailAdAndAuctionReview otvori = new FrmDetailAdAndAuctionReview(odabrani);
                     otvori.ShowDialog();
-                    this.Close();
                  
                 }
                 else
@@ -203,9 +203,9 @@ namespace AutoPrime.Forms
                     Aukcije odabrana = dgvAukcije.CurrentRow.DataBoundItem as Aukcije;
                     if (odabrana != null)
                     {
+                        this.Hide();
                         FrmDetailAdAndAuctionReview frm = new FrmDetailAdAndAuctionReview(odabrana);
                         frm.Show();
-                        this.Close();
                     }
                 }
                 else

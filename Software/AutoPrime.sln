@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer", "DataAcce
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLogicLayer", "BusinessLogicModel\BusinessLogicLayer.csproj", "{76514051-EB90-4F0C-AB87-6560E364E7F3}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "AutoPrimeInstaller", "AutoPrimeInstaller\AutoPrimeInstaller.vdproj", "{8AF1B6A5-0758-4062-BF33-F22650BD2E61}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,8 @@ Global
 		{76514051-EB90-4F0C-AB87-6560E364E7F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{76514051-EB90-4F0C-AB87-6560E364E7F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{76514051-EB90-4F0C-AB87-6560E364E7F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AF1B6A5-0758-4062-BF33-F22650BD2E61}.Debug|Any CPU.ActiveCfg = Debug
+		{8AF1B6A5-0758-4062-BF33-F22650BD2E61}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
