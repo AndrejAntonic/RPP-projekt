@@ -17,6 +17,7 @@ namespace AutoPrime.Forms
 {
     public partial class FrmCreateAuction : Form
     {
+        //Juraj Gaši
         private ModelServices modelServis = new ModelServices();
         private MotorServices motorServis = new MotorServices();
         private MarkaServices markaServices = new MarkaServices();
@@ -43,6 +44,7 @@ namespace AutoPrime.Forms
 
         private void LoadWantedModels()
         {
+            //ucitavanje modela ovisno o marci vozila (npr. ako je Nissan marka, model ne moze biti Tiguan)
             var odabrano = cmbMarkaVozila.SelectedItem as Marka;
             int zeljeno;
             zeljeno = odabrano.Id_marka;
@@ -51,6 +53,7 @@ namespace AutoPrime.Forms
 
         private void FrmCreateAuction_Load(object sender, EventArgs e)
         {
+            //ucitavanje podataka u comboboxeve
             LoadAllModeli();
             LoadAllMarke();
             LoadAllMotori();
@@ -76,6 +79,7 @@ namespace AutoPrime.Forms
             try { 
             var aukcija = new Aukcije
             {
+                //kreiranje nove aukcije
                 naziv = txtNaslovOglasa.Text,
                 Marka = cmbMarkaVozila.SelectedItem as Marka,
                 Model = cmbModelVozila.SelectedItem as Model,
@@ -93,6 +97,7 @@ namespace AutoPrime.Forms
 
                 var zadnja = aukcijeServis.GetLastAukcije();
 
+                //zapamti koji je korisnik kreirao ovu aukciju
                 var aukkor = new Kreirao_aukcije_korisnik
                 {
                     Aukcija_id = zadnja.Id_aukcije,
@@ -101,6 +106,7 @@ namespace AutoPrime.Forms
 
                 kreiraj.AddKreiraoAukcijeKorisnik(aukkor);
 
+                //pripremiti aukciju za prihvacanje ponuda (pocetnu cijenu zadaje kreator aukcije)
                 var pripremaZaPonude = new Ponuda
                 {
                     Aukcije_id = zadnja.Id_aukcije,
@@ -176,14 +182,16 @@ namespace AutoPrime.Forms
             }
         }
 
-        //umjesto ovog myb napravit u repozitoriju za slike da spremi sliku, isto tak i za ostecenja (mozd vec i ima pogledam kasnije)
+        
         public static byte converterDemo(Image x)
         {
+            //Converter slike sa racunala u oblik byte
             ImageConverter _imageConverter = new ImageConverter();
             byte xByte = (byte)_imageConverter.ConvertTo(x, typeof(byte));
             return xByte;
         }
 
+        //F1 pomoć
         private void FrmCreateAuction_HelpRequested(object sender, HelpEventArgs hlpevent)
         {
             string presentationLayerRoot = Directory.GetParent(Directory.GetParent(Directory.GetParent(Application.ExecutablePath).FullName).FullName).FullName;

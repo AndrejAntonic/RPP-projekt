@@ -14,6 +14,7 @@ namespace AutoPrime.Forms
 {
     public partial class FrmShowDamage : Form
     {
+        //Juraj Gaši
         public FrmShowDamage()
         {
             InitializeComponent();
@@ -24,6 +25,7 @@ namespace AutoPrime.Forms
             Close();
         }
 
+        //F1 pomoć
         private void FrmShowDamage_HelpRequested(object sender, HelpEventArgs hlpevent)
         {
             string presentationLayerRoot = Directory.GetParent(Directory.GetParent(Directory.GetParent(Application.ExecutablePath).FullName).FullName).FullName;

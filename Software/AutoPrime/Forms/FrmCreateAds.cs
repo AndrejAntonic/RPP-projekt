@@ -17,6 +17,7 @@ namespace AutoPrime.Forms
 {
     public partial class FrmCreateAds : Form
     {
+        //Juraj Gaši
         private OglasServices oglasServis = new OglasServices();
         private ModelServices modelServis = new ModelServices();
         private MotorServices motorServis = new MotorServices();
@@ -40,6 +41,7 @@ namespace AutoPrime.Forms
         {
             try
             {
+                //kreiranje novog oglasa preuzimajuci unese podatke sa forme
                 var oglas = new Ogla
                 {
                     korisnik_id = prijavljeni.VratiPrijavljeniId(),
@@ -73,12 +75,14 @@ namespace AutoPrime.Forms
             }
             catch
             {
-                MessageBox.Show("Molim vas popunite sve podatke!");
+                //upozorenje da nisu pravilno upisani podaci
+                MessageBox.Show("Potrebno je popuniti sve podatke!");
             }
         }
 
         private void FrmCreateAds_Load(object sender, EventArgs e)
         {
+            //ucitavanje podataka u comboboxeve
             LoadAllMarke();
             LoadAllMotori();
             LoadAllModeli();
@@ -106,6 +110,7 @@ namespace AutoPrime.Forms
 
         private void LoadWantedModels()
         {
+            //ucitavanje modela ovisno o marci vozila (npr. ako je Nissan marka, model ne moze biti Tiguan)
             var odabrano = cmbMarkaVozila.SelectedItem as Marka;
             int zeljeno;
             zeljeno = odabrano.Id_marka;
@@ -171,11 +176,13 @@ namespace AutoPrime.Forms
         }
         public static byte converterDemo(Image x)
         {
+            //Converter slike sa racunala u oblik byte
             ImageConverter _imageConverter = new ImageConverter();
             byte xByte = (byte)_imageConverter.ConvertTo(x, typeof(byte));
             return xByte;
         }
 
+        //F1 pomoć
         private void FrmCreateAds_HelpRequested(object sender, HelpEventArgs hlpevent)
         {
             string presentationLayerRoot = Directory.GetParent(Directory.GetParent(Directory.GetParent(Application.ExecutablePath).FullName).FullName).FullName;

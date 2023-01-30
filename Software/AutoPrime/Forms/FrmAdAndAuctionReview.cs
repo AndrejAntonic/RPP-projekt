@@ -112,10 +112,10 @@ namespace AutoPrime.Forms
                         oglasServices.UpdateOglasView(odabrani);
                     }
                     ShowAds();
-                    this.Hide();
                     //otvori detaljni pregled odabranog oglasa
                     FrmDetailAdAndAuctionReview otvori = new FrmDetailAdAndAuctionReview(odabrani);
                     otvori.ShowDialog();
+                    this.Close();
                  
                 }
                 else
@@ -203,9 +203,9 @@ namespace AutoPrime.Forms
                     Aukcije odabrana = dgvAukcije.CurrentRow.DataBoundItem as Aukcije;
                     if (odabrana != null)
                     {
-                        this.Hide();
                         FrmDetailAdAndAuctionReview frm = new FrmDetailAdAndAuctionReview(odabrana);
                         frm.Show();
+                        this.Close();
                     }
                 }
                 else
@@ -224,21 +224,25 @@ namespace AutoPrime.Forms
         //Juraj Gaši
         private void btnObrisiAukciju_Click(object sender, EventArgs e)
         {
+            //dohvati odabranu aukciju i Id korisnika te aukcije, usporedi sa prijavljenim korisnikom
             var odabranaAukcija = dgvAukcije.CurrentRow.DataBoundItem as Aukcije;
             var uzmiIdKorisnikaAukcije = kreiraokorisnik.GetKorisnikFromAukcija(odabranaAukcija.Id_aukcije);
             var prijavljen = prijavljeni.VratiPrijavljenog();
             
+            //ako nije isti id, ne da obrisati (ne smije korisnik moci obrisati tuđu aukciju)
             if (uzmiIdKorisnikaAukcije.Id_korisnika != prijavljen.Id_korisnika)
             {
                 MessageBox.Show("Mozete brisati samo aukcije koje ste vi kreirari!");
             }
+            //sigurnosno pitanje brisanja aukcije
             else {
-                DialogResult message = MessageBox.Show("Jeste li sigurni da želite obrisati oglas?", "Upozorenje", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                DialogResult message = MessageBox.Show("Jeste li sigurni da želite obrisati aukciju?", "Upozorenje", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (message == DialogResult.Yes)
                 {
                     aukcijeServices.RemoveAuction(odabranaAukcija);
                 }
             }
+            //Refresh GUI
             ShowAds();
             ShowAuctions();
         }

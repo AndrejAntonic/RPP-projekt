@@ -199,6 +199,7 @@ namespace AutoPrime.Forms
 
         }
 
+        //Juraj Gaši
         private void btnPonudi_Click(object sender, EventArgs e)
         {
             var najvecaPonuda = ponudeServisi.GetHighestPonuda(ponuda.Aukcije_id);
@@ -207,12 +208,14 @@ namespace AutoPrime.Forms
 
             var brojcina = Int32.Parse(txtPonudaBid.Text);
 
+            //ako je korisnik pokusao ponuditi manje od najvece ponude izbacuje mbox
             if(brojcina < najvecaPonuda.Ponuda1)
             {
                 MessageBox.Show("Morate ponuditi veću ponudu od trenutne najveće ponude.");
             }
             else
             {
+                //provjera da li je aukcija istekla
                 if(Aukcije.rok >= DateTime.Now) {
 
                 Ponuda novaNajvecaPonuda = new Ponuda

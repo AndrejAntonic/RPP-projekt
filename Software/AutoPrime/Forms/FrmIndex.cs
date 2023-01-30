@@ -27,12 +27,16 @@ namespace AutoPrime
             this.prijavljeniKorisnik = prijavljeniKorisnik;
         }
 
+        //Juraj Gaši
+        //vodi nas na formu kreiraj oglas
         private void btnKreirajOglas_Click(object sender, EventArgs e)
         {
             FrmCreateAds kreirajOglas = new FrmCreateAds();
             kreirajOglas.ShowDialog();
         }
 
+        //Juraj Gaši
+        //vodi nas na formu kreiraj aukciju
         private void btnKreirajAukciju_Click(object sender, EventArgs e)
         {
             FrmCreateAuction kreirajAukciju = new FrmCreateAuction();

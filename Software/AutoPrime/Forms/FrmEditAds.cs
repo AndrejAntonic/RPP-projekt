@@ -17,6 +17,7 @@ namespace AutoPrime.Forms
 {
     public partial class FrmEditAds : Form
     {
+        //Juraj Gaši
         private Ogla oglas = new Ogla();
         private OglasServices oglasServis = new OglasServices();
         private ModelServices modelServis = new ModelServices();
@@ -38,6 +39,7 @@ namespace AutoPrime.Forms
 
         private void btnUrediOglas_Click(object sender, EventArgs e)
         {
+            //uredi odabrani oglas
             oglas.naziv = txtNaslovOglasa.Text;
             oglas.Marka = cmbMarkaVozila.SelectedItem as Marka;
             oglas.Model = cmbModelVozila.SelectedItem as Model;
@@ -58,6 +60,7 @@ namespace AutoPrime.Forms
 
         private void FrmEditAds_Load(object sender, EventArgs e)
         {
+            //ucitavanje sadrzaja u combobox
             cmbMotor.DataSource = motorServis.GetMotors();
             cmbModelVozila.DataSource = modelServis.GetModels();
             cmbMarkaVozila.DataSource = markaServices.GetMarkas();
@@ -85,6 +88,7 @@ namespace AutoPrime.Forms
 
         private void LoadWantedModels()
         {
+            //ucitavanje modela ovisno o marci vozila (npr. ako je Nissan marka, model ne moze biti Tiguan)
             var odabrano = cmbMarkaVozila.SelectedItem as Marka;
             int zeljeno;
             zeljeno = odabrano.Id_marka;
@@ -168,11 +172,13 @@ namespace AutoPrime.Forms
         //umjesto ovog myb napravit u repozitoriju za slike da spremi sliku, isto tak i za ostecenja (mozd vec i ima pogledam kasnije)
         public static byte converterDemo(Image x)
         {
+            //pretvara sliku sa računala u oblik byte
             ImageConverter _imageConverter = new ImageConverter();
             byte xByte = (byte)_imageConverter.ConvertTo(x, typeof(byte));
             return xByte;
         }
 
+        //F1 pomoć
         private void FrmEditAds_HelpRequested(object sender, HelpEventArgs hlpevent)
         {
             string presentationLayerRoot = Directory.GetParent(Directory.GetParent(Directory.GetParent(Application.ExecutablePath).FullName).FullName).FullName;

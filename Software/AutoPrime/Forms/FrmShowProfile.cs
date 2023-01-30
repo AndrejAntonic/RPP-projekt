@@ -222,18 +222,22 @@ namespace AutoPrime
             return null;
         }
 
+        //Juraj Gaši
         private void btnDeleteAdvertisement_Click(object sender, EventArgs e)
         {
+            //dohvati selektirani oglas
             Ogla ogla = getSelectedAdvertisement();
 
             if (ogla != null)
             {
+                //sigurnosni upit za brisanje odabranog oglasa
                 DialogResult message = MessageBox.Show("Jeste li sigurni da želite obrisati oglas?", "Upozorenje", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if(message == DialogResult.Yes)
                 {
                     List<Zanimljivi_oglasi> zanimljivi_Oglasi = zanimljiviOglasiService.GetZanimljiviOglasiByOglasId(ogla.Id_oglas);
                     if (zanimljivi_Oglasi != null)
                     {
+                        //brisanje zanimljivog oglasa vezanog za taj oglas
                         foreach (var item in zanimljivi_Oglasi)
                         {
                             zanimljiviOglasiService.RemoveZanimljiviOglas(item);
@@ -265,15 +269,19 @@ namespace AutoPrime
             LoadInterestingAds();
         }
 
+        //Juraj Gaši
         private void btnUrediOglas_Click(object sender, EventArgs e)
         {
+            //Dohvati selektirani oglas
             Ogla ogla = getSelectedAdvertisement();
 
             if (ogla != null)
             {
+                //sigurnosni upit za uredivanje odabranog oglasa
                 DialogResult message = MessageBox.Show("Jeste li sigurni da želite urediti oglas?", "Upozorenje", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (message == DialogResult.Yes)
                 {
+                    //otvaranje forme za uredivanje oglasa i proslijedivanje selektiranog oglasa na novu formu
                     FrmEditAds urediOglas = new FrmEditAds(ogla);
                     urediOglas.ShowDialog();
                     LoadAllKorisnikPostings();

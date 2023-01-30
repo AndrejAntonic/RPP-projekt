@@ -38,18 +38,20 @@
             // dgvOglasi
             // 
             this.dgvOglasi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOglasi.Location = new System.Drawing.Point(27, 26);
+            this.dgvOglasi.Location = new System.Drawing.Point(20, 21);
+            this.dgvOglasi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvOglasi.Name = "dgvOglasi";
             this.dgvOglasi.RowHeadersWidth = 51;
             this.dgvOglasi.RowTemplate.Height = 24;
-            this.dgvOglasi.Size = new System.Drawing.Size(886, 421);
+            this.dgvOglasi.Size = new System.Drawing.Size(664, 342);
             this.dgvOglasi.TabIndex = 0;
             // 
             // btnDetaljan
             // 
-            this.btnDetaljan.Location = new System.Drawing.Point(27, 531);
+            this.btnDetaljan.Location = new System.Drawing.Point(20, 431);
+            this.btnDetaljan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDetaljan.Name = "btnDetaljan";
-            this.btnDetaljan.Size = new System.Drawing.Size(98, 42);
+            this.btnDetaljan.Size = new System.Drawing.Size(74, 34);
             this.btnDetaljan.TabIndex = 1;
             this.btnDetaljan.Text = "Detaljan prikaz";
             this.btnDetaljan.UseVisualStyleBackColor = true;
@@ -57,9 +59,10 @@
             // 
             // btnZatvori
             // 
-            this.btnZatvori.Location = new System.Drawing.Point(815, 531);
+            this.btnZatvori.Location = new System.Drawing.Point(611, 431);
+            this.btnZatvori.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnZatvori.Name = "btnZatvori";
-            this.btnZatvori.Size = new System.Drawing.Size(98, 42);
+            this.btnZatvori.Size = new System.Drawing.Size(74, 34);
             this.btnZatvori.TabIndex = 2;
             this.btnZatvori.Text = "Zatvori";
             this.btnZatvori.UseVisualStyleBackColor = true;
@@ -67,9 +70,10 @@
             // 
             // btnLeasing
             // 
-            this.btnLeasing.Location = new System.Drawing.Point(131, 531);
+            this.btnLeasing.Location = new System.Drawing.Point(98, 431);
+            this.btnLeasing.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnLeasing.Name = "btnLeasing";
-            this.btnLeasing.Size = new System.Drawing.Size(98, 42);
+            this.btnLeasing.Size = new System.Drawing.Size(74, 34);
             this.btnLeasing.TabIndex = 3;
             this.btnLeasing.Text = "Leasing auta";
             this.btnLeasing.UseVisualStyleBackColor = true;
@@ -77,15 +81,16 @@
             // 
             // FrmShowSimilar
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(941, 600);
+            this.ClientSize = new System.Drawing.Size(706, 488);
             this.Controls.Add(this.btnLeasing);
             this.Controls.Add(this.btnZatvori);
             this.Controls.Add(this.btnDetaljan);
             this.Controls.Add(this.dgvOglasi);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmShowSimilar";
-            this.Text = "FrmShowSimilar";
+            this.Text = "Prikaži slične automobile";
             this.Load += new System.EventHandler(this.FrmShowSimilar_Load);
             this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.FrmShowSimilar_HelpRequested);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOglasi)).EndInit();

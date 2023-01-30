@@ -327,7 +327,7 @@
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmAdAndAuctionReview";
-            this.Text = "FrmAdAndAuctionReview";
+            this.Text = "Pregled oglasa i aukcija";
             this.Load += new System.EventHandler(this.FrmAdAndAuctionReview_Load);
             this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.FrmAdAndAuctionReview_HelpRequested);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOglasi)).EndInit();
