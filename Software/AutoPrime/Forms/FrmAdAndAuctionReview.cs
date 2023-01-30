@@ -98,19 +98,36 @@ namespace AutoPrime.Forms
 
         private void btnPregledOglasa_Click(object sender, EventArgs e)
         {
-            Ogla odabrani = dgvOglasi.CurrentRow.DataBoundItem as Ogla;
-            
-            //povećaj broj_pregleda odabranog oglasa za jedan
-            if (odabrani != null)
+            try
             {
-                odabrani.broj_pregleda = odabrani.broj_pregleda + 1;
-                oglasServices.UpdateOglasView(odabrani);
-            }
-            ShowAds();
+                //provjeri je li odabran oglas
+                if (dgvOglasi.CurrentRow != null)
+                {
+                    Ogla odabrani = dgvOglasi.CurrentRow.DataBoundItem as Ogla;
 
-            //otvori detaljni pregled odabranog oglasa
-            FrmDetailAdAndAuctionReview otvori = new FrmDetailAdAndAuctionReview(odabrani);
-            otvori.ShowDialog();
+                    if (odabrani != null)
+                    {
+                        //povećaj broj_pregleda odabranog oglasa za jedan
+                        odabrani.broj_pregleda = odabrani.broj_pregleda + 1;
+                        oglasServices.UpdateOglasView(odabrani);
+                    }
+                    ShowAds();
+                    this.Hide();
+                    //otvori detaljni pregled odabranog oglasa
+                    FrmDetailAdAndAuctionReview otvori = new FrmDetailAdAndAuctionReview(odabrani);
+                    otvori.ShowDialog();
+                 
+                }
+                else
+                {
+                    MessageBox.Show("Odaberite jedan oglas!", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Došlo je do pogreške: " + ex.Message, "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
         private void cmbMarka_SelectedIndexChanged(object sender, EventArgs e)
@@ -178,12 +195,33 @@ namespace AutoPrime.Forms
 
         private void btnPregledAukcije_Click(object sender, EventArgs e)
         {
-            //otvori detaljni pregled odabrane aukcije
-            Aukcije odabrana = dgvAukcije.CurrentRow.DataBoundItem as Aukcije;
-            FrmDetailAdAndAuctionReview frm = new FrmDetailAdAndAuctionReview(odabrana);
-            frm.Show();
+            try
+            {
+                //otvori detaljni pregled odabrane aukcije te provjeri je li odabrana aukcija
+                if (dgvAukcije.CurrentRow!=null)
+                {
+                    Aukcije odabrana = dgvAukcije.CurrentRow.DataBoundItem as Aukcije;
+                    if (odabrana != null)
+                    {
+                        this.Hide();
+                        FrmDetailAdAndAuctionReview frm = new FrmDetailAdAndAuctionReview(odabrana);
+                        frm.Show();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Odaberite jednu aukciju!", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Došlo je do pogreške: " + ex.Message, "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
+        //Juraj Gaši
         private void btnObrisiAukciju_Click(object sender, EventArgs e)
         {
             var odabranaAukcija = dgvAukcije.CurrentRow.DataBoundItem as Aukcije;
@@ -205,6 +243,8 @@ namespace AutoPrime.Forms
             ShowAuctions();
         }
 
+        //Bruno Pavlovic
+        //F1 pomoc
         private void FrmAdAndAuctionReview_HelpRequested(object sender, HelpEventArgs hlpevent)
         {
             string presentationLayerRoot = Directory.GetParent(Directory.GetParent(Directory.GetParent(Application.ExecutablePath).FullName).FullName).FullName;
