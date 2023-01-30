@@ -32,7 +32,18 @@ namespace AutoPrime.Forms
             dgvOglasi.DataSource = servis.GetLeasingOglas();
             dgvOglasi.Columns["slikas"].Visible = false;
             dgvOglasi.Columns["korisniks"].Visible = false;
-           
+            dgvOglasi.Columns["Id_oglas"].Visible = false;
+            dgvOglasi.Columns["korisnik_id"].Visible = false;
+            dgvOglasi.Columns["marka_id"].Visible = false;
+            dgvOglasi.Columns["model_id"].Visible = false;
+            dgvOglasi.Columns["motor_id"].Visible = false;
+            dgvOglasi.Columns["iznajmljeno_id"].Visible = false;
+            dgvOglasi.Columns["prodano_korisnik_id"].Visible = false;
+            dgvOglasi.Columns["Korisnik1"].Visible = false;
+            dgvOglasi.Columns["leasing"].Visible = false;
+            dgvOglasi.Columns["ostecenje"].Visible = false;
+
+
         }
 
         private void btnDetaljno_Click(object sender, EventArgs e)

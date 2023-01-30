@@ -48,13 +48,11 @@ namespace AutoPrime.Forms
                 else
                 {
                     MessageBox.Show("Lozinke se ne poklapaju!", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    this.Close();
                 }
             }
             else
             {
                 MessageBox.Show("Korisnik s navedenim podacima ne postoji", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                this.Close();
             }
             
         }

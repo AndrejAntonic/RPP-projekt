@@ -63,10 +63,10 @@
             // 
             // btnPromjeni
             // 
-            this.btnPromjeni.Location = new System.Drawing.Point(143, 366);
+            this.btnPromjeni.Location = new System.Drawing.Point(119, 366);
             this.btnPromjeni.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPromjeni.Name = "btnPromjeni";
-            this.btnPromjeni.Size = new System.Drawing.Size(75, 23);
+            this.btnPromjeni.Size = new System.Drawing.Size(85, 32);
             this.btnPromjeni.TabIndex = 2;
             this.btnPromjeni.Text = "Promjeni";
             this.btnPromjeni.UseVisualStyleBackColor = true;
@@ -110,10 +110,10 @@
             // 
             // btnOdustani
             // 
-            this.btnOdustani.Location = new System.Drawing.Point(224, 366);
+            this.btnOdustani.Location = new System.Drawing.Point(210, 366);
             this.btnOdustani.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnOdustani.Name = "btnOdustani";
-            this.btnOdustani.Size = new System.Drawing.Size(75, 23);
+            this.btnOdustani.Size = new System.Drawing.Size(90, 32);
             this.btnOdustani.TabIndex = 9;
             this.btnOdustani.Text = "Odustani";
             this.btnOdustani.UseVisualStyleBackColor = true;
