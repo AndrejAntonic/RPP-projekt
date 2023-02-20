@@ -35,7 +35,6 @@ namespace DataAccessLayer.Repositories
         {
             var slika = new Slika
             {
-                Id_slike = entity.Id_slike,
                 slika1 = entity.slika1,
                 ostecenje_id = entity.ostecenje_id
             };

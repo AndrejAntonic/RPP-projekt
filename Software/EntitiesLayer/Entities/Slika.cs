@@ -9,13 +9,13 @@ namespace EntitiesLayer.Entities
     public partial class Slika
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id_slike { get; set; }
 
         public int oglas_id { get; set; }
 
         [Column("slika")]
-        public byte? slika1 { get; set; }
+        public byte[] slika1 { get; set; }
 
         public int? ostecenje_id { get; set; }
 

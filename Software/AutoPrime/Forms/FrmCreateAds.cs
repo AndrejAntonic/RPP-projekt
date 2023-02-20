@@ -142,7 +142,7 @@ namespace AutoPrime.Forms
 
                 using (var repo = new SlikaRepository())
                 {
-                    Slika slika = new Slika { slika1 = images?.Length > 0 ? images[0] : (byte?)null };
+                    Slika slika = new Slika { slika1 = images, oglas_id = 2};
                     var slikaServis = new SlikaServices();
                     slikaServis.AddSlika(slika);
                 }
