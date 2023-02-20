@@ -22,6 +22,7 @@ namespace AutoPrime.Forms
         private ModelServices modelServis = new ModelServices();
         private MotorServices motorServis = new MotorServices();
         private MarkaServices markaServices = new MarkaServices();
+        private SlikaServices SlikaServis = new SlikaServices();
         private OstecenjaServices ostecenjaServis = new OstecenjaServices();
         private PrijavljeniKorisnik prijavljeni = new PrijavljeniKorisnik();
 
@@ -133,26 +134,31 @@ namespace AutoPrime.Forms
 
         private void btnDodajSliku_Click(object sender, EventArgs e)
         {
-            /*try
-            {*/
-                byte[] images = null;
-                FileStream stream = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
-                BinaryReader binaryReader = new BinaryReader(stream);
-                images = binaryReader.ReadBytes((int)stream.Length);
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image files (*.jpg, *.jpeg, *.png) | *.jpg; *.jpeg; *.png";
 
-                using (var repo = new SlikaRepository())
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                // Load the selected image into the PictureBox
+                pbSlika.Image = Image.FromFile(openFileDialog.FileName);
+
+                // Convert the Image object to a byte array
+                byte[] imageBytes;
+                using (MemoryStream ms = new MemoryStream())
                 {
-                    Slika slika = new Slika { slika1 = images, oglas_id = 2};
-                    var slikaServis = new SlikaServices();
-                    slikaServis.AddSlika(slika);
+                    pbSlika.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                    imageBytes = ms.ToArray();
                 }
 
-                MessageBox.Show("Data saved successfully.");
-           /* }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }*/
+                // Save the byte array to the database
+                Slika slika = new Slika
+                {
+                    oglas_id = 2,
+                    slika1 = imageBytes
+                };
+
+                SlikaServis.AddSlika(slika);
+            }
         }
 
         private void btnDodajOstecenja_Click(object sender, EventArgs e)
