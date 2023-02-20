@@ -24,7 +24,6 @@ namespace AutoPrime.Forms
         private MotorServices motorServis = new MotorServices();
         private MarkaServices markaServices = new MarkaServices();
         private OstecenjaServices ostecenjaServis = new OstecenjaServices();
-        private SlikaServices slikaServis = new SlikaServices();
         private PrijavljeniKorisnik prijavljeni = new PrijavljeniKorisnik();
         public FrmEditAds(Ogla odabrani)
         {

@@ -23,7 +23,6 @@ namespace AutoPrime.Forms
         private MotorServices motorServis = new MotorServices();
         private MarkaServices markaServices = new MarkaServices();
         private OstecenjaServices ostecenjaServis = new OstecenjaServices();
-        private SlikaServices slikaServis = new SlikaServices();
         private PrijavljeniKorisnik prijavljeni = new PrijavljeniKorisnik();
 
 
@@ -117,32 +116,42 @@ namespace AutoPrime.Forms
             cmbModelVozila.DataSource = modelServis.GetCertainModels(zeljeno);
         }
 
+        string imgLocation = "";
+
+
+        private void btnPretraziSliku_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Filter = " png files(*.png)|*.png|jpg files(*.jpg)|*.jpg|All files(*.*)|*.*";
+
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                imgLocation = dialog.FileName.ToString();
+                pbSlika.ImageLocation = imgLocation;
+            }
+        }
+
         private void btnDodajSliku_Click(object sender, EventArgs e)
         {
             try
             {
+                byte[] images = null;
+                FileStream stream = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader = new BinaryReader(stream);
+                images = binaryReader.ReadBytes((int)stream.Length);
 
-                // kreiranje objekta OpenFileDialog za pretragu slike
-
-                OpenFileDialog open = new OpenFileDialog();
-
-                // filtriranje dialogboxa kako bi korisnik mogao izabrati samo određene vrste slike
-
-                open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
-
-                //ako je korisnik odabrao neku sliku radi sljedece
-
-                if (open.ShowDialog() == DialogResult.OK)
+                using (var repo = new SlikaRepository())
                 {
-                    //kreiraj objekt Image klase i pridruzi ime slike, dodaj sliku u bazu pomocu funkcije
-
-                    Image img = new Bitmap(open.FileName);
-                    //converterDemo(img);
+                    Slika slika = new Slika { slika1 = images?.Length > 0 ? images[0] : (byte?)null };
+                    var slikaServis = new SlikaServices();
+                    slikaServis.AddSlika(slika);
                 }
+
+                MessageBox.Show("Data saved successfully.");
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Nije moguce izabrati takvu sliku.");
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -189,5 +198,7 @@ namespace AutoPrime.Forms
             string pdfPath = presentationLayerRoot + "\\HelpDocumentation\\HelpDocumentationFrmCreateAds.pdf";
             Process.Start(pdfPath);
         }
+
+        
     }
 }
