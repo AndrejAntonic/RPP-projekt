@@ -33,15 +33,10 @@ namespace DataAccessLayer.Repositories
 
         public override int Add(Slika entity, bool saveChanges = true)
         {
-            var oglas = Context.Oglas.SingleOrDefault(o => o.Id_oglas == entity.Ogla.Id_oglas);
-            var ostecenja = Context.Oštećenja.SingleOrDefault(o => o.Id_ostecenja == entity.Oštećenja.Id_ostecenja);
-
             var slika = new Slika
             {
                 Id_slike = entity.Id_slike,
-                oglas_id = oglas.Id_oglas,
                 slika1 = entity.slika1,
-                //Oštećenja = ostecenja,
                 ostecenje_id = entity.ostecenje_id
             };
 

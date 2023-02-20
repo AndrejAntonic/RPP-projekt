@@ -133,8 +133,8 @@ namespace AutoPrime.Forms
 
         private void btnDodajSliku_Click(object sender, EventArgs e)
         {
-            try
-            {
+            /*try
+            {*/
                 byte[] images = null;
                 FileStream stream = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
                 BinaryReader binaryReader = new BinaryReader(stream);
@@ -148,11 +148,11 @@ namespace AutoPrime.Forms
                 }
 
                 MessageBox.Show("Data saved successfully.");
-            }
+           /* }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            }
+            }*/
         }
 
         private void btnDodajOstecenja_Click(object sender, EventArgs e)
