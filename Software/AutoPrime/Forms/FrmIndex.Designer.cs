@@ -37,6 +37,7 @@
             this.btnLeasing = new System.Windows.Forms.Button();
             this.btnKalkulator = new System.Windows.Forms.Button();
             this.btnProfil = new System.Windows.Forms.Button();
+            this.btnSlikaTester = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNajtrazeniji)).BeginInit();
             this.SuspendLayout();
             // 
@@ -137,11 +138,23 @@
             this.btnProfil.UseVisualStyleBackColor = true;
             this.btnProfil.Click += new System.EventHandler(this.btnProfil_Click);
             // 
+            // btnSlikaTester
+            // 
+            this.btnSlikaTester.Location = new System.Drawing.Point(16, 245);
+            this.btnSlikaTester.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSlikaTester.Name = "btnSlikaTester";
+            this.btnSlikaTester.Size = new System.Drawing.Size(216, 28);
+            this.btnSlikaTester.TabIndex = 9;
+            this.btnSlikaTester.Text = "Slika tester";
+            this.btnSlikaTester.UseVisualStyleBackColor = true;
+            this.btnSlikaTester.Click += new System.EventHandler(this.btnSlikaTester_Click);
+            // 
             // FrmIndex
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(807, 642);
+            this.Controls.Add(this.btnSlikaTester);
             this.Controls.Add(this.btnProfil);
             this.Controls.Add(this.btnKalkulator);
             this.Controls.Add(this.btnLeasing);
@@ -173,6 +186,7 @@
         private System.Windows.Forms.Button btnLeasing;
         private System.Windows.Forms.Button btnKalkulator;
         private System.Windows.Forms.Button btnProfil;
+        private System.Windows.Forms.Button btnSlikaTester;
     }
 }
 

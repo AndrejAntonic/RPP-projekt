@@ -121,5 +121,11 @@ namespace AutoPrime
             string pdfPath = presentationLayerRoot + "\\HelpDocumentation\\HelpDocumentationFrmIndex.pdf";
             Process.Start(pdfPath);
         }
+
+        private void btnSlikaTester_Click(object sender, EventArgs e)
+        {
+            SlikaTester tester = new SlikaTester();
+            tester.ShowDialog();
+        }
     }
 }

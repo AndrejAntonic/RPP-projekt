@@ -22,10 +22,10 @@ namespace DataAccessLayer.Repositories
             return query;
         }
 
-        public IQueryable<Slika> GetCertainSlika(string phrase)
+        public IQueryable<Slika> GetCertainSlika(int idOglasa)
         {
             var query = from e in Entities
-                        where e.Id_slike.ToString().Contains(phrase)
+                        where e.oglas_id == idOglasa
                         select e;
 
             return query;

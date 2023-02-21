@@ -244,7 +244,7 @@
             // btnDodajSliku
             // 
             this.btnDodajSliku.Location = new System.Drawing.Point(617, 270);
-            this.btnDodajSliku.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDodajSliku.Margin = new System.Windows.Forms.Padding(4);
             this.btnDodajSliku.Name = "btnDodajSliku";
             this.btnDodajSliku.Size = new System.Drawing.Size(124, 28);
             this.btnDodajSliku.TabIndex = 22;
@@ -255,7 +255,7 @@
             // btnDodajOstecenja
             // 
             this.btnDodajOstecenja.Location = new System.Drawing.Point(617, 312);
-            this.btnDodajOstecenja.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDodajOstecenja.Margin = new System.Windows.Forms.Padding(4);
             this.btnDodajOstecenja.Name = "btnDodajOstecenja";
             this.btnDodajOstecenja.Size = new System.Drawing.Size(124, 28);
             this.btnDodajOstecenja.TabIndex = 23;
@@ -266,7 +266,7 @@
             // dtpDatum
             // 
             this.dtpDatum.Location = new System.Drawing.Point(209, 501);
-            this.dtpDatum.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpDatum.Margin = new System.Windows.Forms.Padding(4);
             this.dtpDatum.Name = "dtpDatum";
             this.dtpDatum.Size = new System.Drawing.Size(265, 22);
             this.dtpDatum.TabIndex = 24;
@@ -282,9 +282,9 @@
             // 
             // pbSlika
             // 
-            this.pbSlika.Location = new System.Drawing.Point(602, 45);
+            this.pbSlika.Location = new System.Drawing.Point(552, 12);
             this.pbSlika.Name = "pbSlika";
-            this.pbSlika.Size = new System.Drawing.Size(157, 164);
+            this.pbSlika.Size = new System.Drawing.Size(241, 197);
             this.pbSlika.TabIndex = 26;
             this.pbSlika.TabStop = false;
             // 

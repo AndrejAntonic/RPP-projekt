@@ -20,11 +20,11 @@ namespace BusinessLogicModel.Services
             }
         }
 
-        public List<Slika> GetCertainSlikas(string phrase)
+        public List<Slika> GetCertainSlikas(int idOglasa)
         {
             using (var repo = new SlikaRepository())
             {
-                List<Slika> slike = repo.GetCertainSlika(phrase).ToList();
+                List<Slika> slike = repo.GetCertainSlika(idOglasa).ToList();
 
                 return slike;
             }
