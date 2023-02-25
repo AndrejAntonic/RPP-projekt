@@ -26,6 +26,7 @@ namespace AutoPrime.Forms
         private OstecenjaServices ostecenjaServis = new OstecenjaServices();
         private PrijavljeniKorisnik prijavljeni = new PrijavljeniKorisnik();
 
+        int trenutni = 0;
 
         public FrmCreateAds()
         {
@@ -39,8 +40,7 @@ namespace AutoPrime.Forms
 
         private void btnDodajOglas_Click(object sender, EventArgs e)
         {
-            try
-            {
+
                 //kreiranje novog oglasa preuzimajuci unese podatke sa forme
                 var oglas = new Ogla
                 {
@@ -58,26 +58,28 @@ namespace AutoPrime.Forms
                     datum = dtpDatum.Value
                 };
 
-                /*var ostecenja = new Oštećenja
-                {
-
-                };
-
-                var slika = new Slika
-                {
-
-                };*/
-
                 oglasServis.AddOglas(oglas);
-                //ostecenjaServis.AddOstecenja(ostecenja);
-                //slikaServis.AddSlika(slika);
-                Close();
-            }
-            catch
+
+                int trenutniSad = PronadiTrenutniId();
+
+                FrmAddPictures dodajSlike = new FrmAddPictures(trenutniSad);
+                dodajSlike.ShowDialog();
+                this.Close();
+            
+            /*catch
             {
                 //upozorenje da nisu pravilno upisani podaci
                 MessageBox.Show("Potrebno je popuniti sve podatke!");
-            }
+            }*/
+        }
+
+
+        private int PronadiTrenutniId()
+        {
+            int trenutniKorisnik = prijavljeni.VratiPrijavljeniId();
+            Ogla upravoDodani = oglasServis.GetLastOglasById(trenutniKorisnik);
+            trenutni = upravoDodani.Id_oglas;
+            return trenutni;
         }
 
         private void FrmCreateAds_Load(object sender, EventArgs e)
@@ -160,6 +162,7 @@ namespace AutoPrime.Forms
                 SlikaServis.AddSlika(slika);
             }
         }
+
 
         private void btnDodajOstecenja_Click(object sender, EventArgs e)
         {

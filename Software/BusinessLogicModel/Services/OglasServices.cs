@@ -50,6 +50,16 @@ namespace BusinessLogicModel.Services
             }
         }
 
+        public Ogla GetLastOglasById(int id)
+        {
+            using (var repo = new OglasRepository())
+            {
+                Ogla ogla = repo.GetOglasByKorisnikId(id).ToList().LastOrDefault();
+
+                return ogla;
+            }
+        }
+
         public List<Ogla> GetOglasByKorisnikId(int id)
         {
             using (var repo = new OglasRepository())
