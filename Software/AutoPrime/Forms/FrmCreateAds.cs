@@ -40,7 +40,8 @@ namespace AutoPrime.Forms
 
         private void btnDodajOglas_Click(object sender, EventArgs e)
         {
-
+            try
+            {
                 //kreiranje novog oglasa preuzimajuci unese podatke sa forme
                 var oglas = new Ogla
                 {
@@ -65,12 +66,12 @@ namespace AutoPrime.Forms
                 FrmAddPictures dodajSlike = new FrmAddPictures(trenutniSad);
                 dodajSlike.ShowDialog();
                 this.Close();
-            
-            /*catch
+            }
+            catch
             {
                 //upozorenje da nisu pravilno upisani podaci
                 MessageBox.Show("Potrebno je popuniti sve podatke!");
-            }*/
+            }
         }
 
 
