@@ -22,6 +22,14 @@ namespace DataAccessLayer.Repositories
             return query;
         }
 
+        public IQueryable<int> GetAllLast()
+        {
+            var query = from e in Entities
+                        select e.Id_ostecenja;
+
+            return query;
+        }
+
         public IQueryable<Oštećenja> GetCertainOstecenja(string phrase)
         {
             var query = from e in Entities

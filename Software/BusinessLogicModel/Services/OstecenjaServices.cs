@@ -30,6 +30,16 @@ namespace BusinessLogicModel.Services
             }
         }
 
+        public int GetLastOstecenje()
+        {
+            using (var repo = new OstecenjaRepository())
+            {
+                int ostecenjas = repo.GetAllLast().ToList().LastOrDefault();
+
+                return ostecenjas;
+            }
+        }
+
         public bool AddOstecenja(Oštećenja ostecenjas)
         {
             bool isSuccesful = false;

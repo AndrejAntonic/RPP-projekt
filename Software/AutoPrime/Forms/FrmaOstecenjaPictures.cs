@@ -64,7 +64,8 @@ namespace AutoPrime.Forms
 
                     ostecenjaServis.AddOstecenja(ostecenja);
 
-                    int privremeniIdOstecenja = ostecenja.Id_ostecenja;
+                    int privremeniIdOstecenja = VratiOglasId();
+                    MessageBox.Show("Id ostecenja: " + privremeniIdOstecenja);
 
                     Slika slikaOstecenja = new Slika
                     {
@@ -81,6 +82,13 @@ namespace AutoPrime.Forms
                     MessageBox.Show("Slika oštećenja nije dodana.");
                 }
             }
+        }
+
+        private int VratiOglasId()
+        {
+            var prijavljeniKorisnik = prijavljeni.VratiPrijavljeniId();
+            int zadnjiId = ostecenjaServis.GetLastOstecenje();
+            return zadnjiId;
         }
     }
 }
