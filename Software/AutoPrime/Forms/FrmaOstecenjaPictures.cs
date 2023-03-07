@@ -14,18 +14,24 @@ using System.Windows.Forms;
 
 namespace AutoPrime.Forms
 {
-    public partial class FrmAddPictures : Form
+    public partial class FrmaOstecenjaPictures : Form
     {
-        private SlikaServices SlikaServis = new SlikaServices();
+
+        //Juraj Gaši
         private OglasServices oglasServis = new OglasServices();
+        private ModelServices modelServis = new ModelServices();
+        private MotorServices motorServis = new MotorServices();
+        private MarkaServices markaServices = new MarkaServices();
+        private SlikaServices SlikaServis = new SlikaServices();
+        private OstecenjaServices ostecenjaServis = new OstecenjaServices();
         private PrijavljeniKorisnik prijavljeni = new PrijavljeniKorisnik();
 
         int trenutni;
-        Slika helpSlika;
-        public FrmAddPictures(int trenutniSad)
+
+        public FrmaOstecenjaPictures(int trenutniSad)
         {
             InitializeComponent();
-            trenutni = trenutniSad;
+            this.trenutni = trenutniSad;
         }
 
         private void btnDodajSlike_Click(object sender, EventArgs e)
@@ -50,40 +56,30 @@ namespace AutoPrime.Forms
 
                 if (result == DialogResult.Yes)
                 {
-                    Slika slika = new Slika
+
+                    Oštećenja ostecenja = new Oštećenja
+                    {
+                        opis_ostecenja = txtOpisOstecenja.Text
+                    };
+
+                    ostecenjaServis.AddOstecenja(ostecenja);
+
+                    int privremeniIdOstecenja = ostecenja.Id_ostecenja;
+
+                    Slika slikaOstecenja = new Slika
                     {
                         oglas_id = trenutni,
-                        slika1 = imageBytes
+                        slika1 = imageBytes,
+                        ostecenje_id = privremeniIdOstecenja
                     };
-                    helpSlika = slika;
 
-                    SlikaServis.AddSlika(slika);
-                    MessageBox.Show("Slika je dodana!");
+                    SlikaServis.AddSlika(slikaOstecenja);
+                    MessageBox.Show("Slika oštećenja je dodana!");
                 }
                 else
                 {
-                    MessageBox.Show("Slika nije dodana.");
-                }               
-            }
-        }
-
-        private void FrmAddPictures_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnGotovo_Click(object sender, EventArgs e)
-        {
-            var oglasHelp = oglasServis.GetOneOglasById(helpSlika.oglas_id);
-            if(oglasHelp.ostecenje == 1)
-            {
-                FrmaOstecenjaPictures ostecenjefrm = new FrmaOstecenjaPictures(trenutni);
-                ostecenjefrm.ShowDialog();
-                this.Close();
-            }
-            else
-            {
-                this.Close();
+                    MessageBox.Show("Slika oštećenja nije dodana.");
+                }
             }
         }
     }

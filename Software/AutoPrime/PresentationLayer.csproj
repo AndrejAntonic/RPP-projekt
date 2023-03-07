@@ -65,6 +65,12 @@
     <Compile Include="Forms\FrmAddPictures.Designer.cs">
       <DependentUpon>FrmAddPictures.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FrmaOstecenjaPictures.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmaOstecenjaPictures.Designer.cs">
+      <DependentUpon>FrmaOstecenjaPictures.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FrmIndex.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -186,6 +192,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmAddPictures.resx">
       <DependentUpon>FrmAddPictures.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmaOstecenjaPictures.resx">
+      <DependentUpon>FrmaOstecenjaPictures.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmCreateAds.resx">
       <DependentUpon>FrmCreateAds.cs</DependentUpon>

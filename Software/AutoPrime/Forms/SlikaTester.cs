@@ -28,7 +28,7 @@ namespace AutoPrime.Forms
 
         private void btnPrikazi_Click(object sender, EventArgs e)
         {
-            int idOglasa = 2;
+            int idOglasa = 45;
 
             // Retrieve the list of Slika objects for the specified oglas ID
             List<Slika> slike = slikaServis.GetCertainSlikas(idOglasa);

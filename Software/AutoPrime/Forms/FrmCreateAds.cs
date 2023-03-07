@@ -40,8 +40,7 @@ namespace AutoPrime.Forms
 
         private void btnDodajOglas_Click(object sender, EventArgs e)
         {
-            try
-            {
+           
                 //kreiranje novog oglasa preuzimajuci unese podatke sa forme
                 var oglas = new Ogla
                 {
@@ -66,12 +65,11 @@ namespace AutoPrime.Forms
                 FrmAddPictures dodajSlike = new FrmAddPictures(trenutniSad);
                 dodajSlike.ShowDialog();
                 this.Close();
-            }
-            catch
-            {
+            
+
                 //upozorenje da nisu pravilno upisani podaci
                 MessageBox.Show("Potrebno je popuniti sve podatke!");
-            }
+            
         }
 
 
@@ -119,51 +117,6 @@ namespace AutoPrime.Forms
             zeljeno = odabrano.Id_marka;
             cmbModelVozila.DataSource = modelServis.GetCertainModels(zeljeno);
         }
-
-        string imgLocation = "";
-
-
-        private void btnPretraziSliku_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog dialog = new OpenFileDialog();
-            dialog.Filter = " png files(*.png)|*.png|jpg files(*.jpg)|*.jpg|All files(*.*)|*.*";
-
-            if (dialog.ShowDialog() == DialogResult.OK)
-            {
-                imgLocation = dialog.FileName.ToString();
-                pbSlika.ImageLocation = imgLocation;
-            }
-        }
-
-        private void btnDodajSliku_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Image files (*.jpg, *.jpeg, *.png) | *.jpg; *.jpeg; *.png";
-
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                // Load the selected image into the PictureBox
-                pbSlika.Image = Image.FromFile(openFileDialog.FileName);
-
-                // Convert the Image object to a byte array
-                byte[] imageBytes;
-                using (MemoryStream ms = new MemoryStream())
-                {
-                    pbSlika.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
-                    imageBytes = ms.ToArray();
-                }
-
-                // Save the byte array to the database
-                Slika slika = new Slika
-                {
-                    oglas_id = 2,
-                    slika1 = imageBytes
-                };
-
-                SlikaServis.AddSlika(slika);
-            }
-        }
-
 
         private void btnDodajOstecenja_Click(object sender, EventArgs e)
         {

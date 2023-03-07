@@ -40,6 +40,8 @@ namespace BusinessLogicModel.Services
             }
         }
 
+
+
         public Ogla GetOneOglasById(int id)
         {
             using(var repo = new OglasRepository())

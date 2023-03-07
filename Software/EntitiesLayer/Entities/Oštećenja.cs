@@ -14,7 +14,7 @@ namespace EntitiesLayer.Entities
         }
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id_ostecenja { get; set; }
 
         [Required]
